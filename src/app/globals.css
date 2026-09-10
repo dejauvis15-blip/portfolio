@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0a0a0b;
+  --bg-panel: #141416;
+  --bg-elevated: #1b1b1e;
+  --bg-elevated-2: #252529;
+  --fg: #f3f2ee;
+  --muted: #9b9aa1;
+  --muted-2: #67666d;
+  --border: rgba(243, 242, 238, 0.14);
+  --border-strong: rgba(243, 242, 238, 0.28);
+  --accent: #cf9d4f;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-panel: var(--bg-panel);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-elevated-2: var(--bg-elevated-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-muted-2: var(--muted-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: #0a0a0b;
+}
+
+* {
+  border-color: var(--border);
+}
+
+/* Thin, quiet scrollbar to match the editorial tone */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 0;
+}
+
+.font-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
