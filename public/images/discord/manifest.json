@@ -1,0 +1,192 @@
+[
+  {
+    "alt": "Final forum notification settings screen, light mode",
+    "filename": "final-forum-notification-settings-screen-light-mode.png",
+    "bytes": 90310
+  },
+  {
+    "alt": "Final forum notification settings screen, dark mode",
+    "filename": "final-forum-notification-settings-screen-dark-mode.png",
+    "bytes": 112066
+  },
+  {
+    "alt": "Final search filter screen, light mode",
+    "filename": "final-search-filter-screen-light-mode.png",
+    "bytes": 158214
+  },
+  {
+    "alt": "Final search filter screen, dark mode",
+    "filename": "final-search-filter-screen-dark-mode.png",
+    "bytes": 156175
+  },
+  {
+    "alt": "FigJam flow diagram showing navigation from Global through Server and Channel settings, branching to Forum settings if the channel is a forum, with a long-press shortcut",
+    "filename": "figjam-flow-diagram-showing-navigation-from-global-through-server-and-channel-settings-branching-to-forum-settings-if-the-channel-is-a-forum-with-a-long-press-shortcut.png",
+    "bytes": 72824
+  },
+  {
+    "alt": "Global notifications low-fidelity wireframe",
+    "filename": "global-notifications-low-fidelity-wireframe.png",
+    "bytes": 20263
+  },
+  {
+    "alt": "Server notifications low-fidelity wireframe",
+    "filename": "server-notifications-low-fidelity-wireframe.png",
+    "bytes": 16444
+  },
+  {
+    "alt": "Channel notifications low-fidelity wireframe",
+    "filename": "channel-notifications-low-fidelity-wireframe.png",
+    "bytes": 13233
+  },
+  {
+    "alt": "Forum notifications low-fidelity wireframe",
+    "filename": "forum-notifications-low-fidelity-wireframe.png",
+    "bytes": 19058
+  },
+  {
+    "alt": "Global notifications refined wireframe, light mode",
+    "filename": "global-notifications-refined-wireframe-light-mode.png",
+    "bytes": 91471
+  },
+  {
+    "alt": "Server notifications refined wireframe, light mode",
+    "filename": "server-notifications-refined-wireframe-light-mode.png",
+    "bytes": 87698
+  },
+  {
+    "alt": "Channel notifications refined wireframe, light mode",
+    "filename": "channel-notifications-refined-wireframe-light-mode.png",
+    "bytes": 84894
+  },
+  {
+    "alt": "Forum notifications refined wireframe, light mode",
+    "filename": "forum-notifications-refined-wireframe-light-mode.png",
+    "bytes": 90310
+  },
+  {
+    "alt": "Global notifications refined wireframe, dark mode",
+    "filename": "global-notifications-refined-wireframe-dark-mode.png",
+    "bytes": 108291
+  },
+  {
+    "alt": "Server notifications refined wireframe, dark mode",
+    "filename": "server-notifications-refined-wireframe-dark-mode.png",
+    "bytes": 105268
+  },
+  {
+    "alt": "Channel notifications refined wireframe, dark mode",
+    "filename": "channel-notifications-refined-wireframe-dark-mode.png",
+    "bytes": 103665
+  },
+  {
+    "alt": "Forum notifications refined wireframe, dark mode",
+    "filename": "forum-notifications-refined-wireframe-dark-mode.png",
+    "bytes": 112066
+  },
+  {
+    "alt": "Global notifications screen, light mode",
+    "filename": "global-notifications-screen-light-mode.png",
+    "bytes": 102327
+  },
+  {
+    "alt": "Server notifications screen, light mode",
+    "filename": "server-notifications-screen-light-mode.png",
+    "bytes": 99840
+  },
+  {
+    "alt": "Channel notifications screen, light mode",
+    "filename": "channel-notifications-screen-light-mode.png",
+    "bytes": 99495
+  },
+  {
+    "alt": "Forum notifications screen, light mode",
+    "filename": "forum-notifications-screen-light-mode.png",
+    "bytes": 105677
+  },
+  {
+    "alt": "Global notifications screen, dark mode",
+    "filename": "global-notifications-screen-dark-mode.png",
+    "bytes": 108878
+  },
+  {
+    "alt": "Server notifications screen, dark mode",
+    "filename": "server-notifications-screen-dark-mode.png",
+    "bytes": 105915
+  },
+  {
+    "alt": "Channel notifications screen, dark mode",
+    "filename": "channel-notifications-screen-dark-mode.png",
+    "bytes": 104637
+  },
+  {
+    "alt": "Forum notifications screen, dark mode",
+    "filename": "forum-notifications-screen-dark-mode.png",
+    "bytes": 112827
+  },
+  {
+    "alt": "Search flow diagram showing the branch between results found and empty state, with the filter dropdown as an optional detour",
+    "filename": "search-flow-diagram-showing-the-branch-between-results-found-and-empty-state-with-the-filter-dropdown-as-an-optional-detour.png",
+    "bytes": 77560
+  },
+  {
+    "alt": "Search Recent wireframe screen",
+    "filename": "search-recent-wireframe-screen.png",
+    "bytes": 90609
+  },
+  {
+    "alt": "Search Results wireframe screen",
+    "filename": "search-results-wireframe-screen.png",
+    "bytes": 108955
+  },
+  {
+    "alt": "Search Empty State wireframe screen",
+    "filename": "search-empty-state-wireframe-screen.png",
+    "bytes": 90579
+  },
+  {
+    "alt": "Search Filter Dropdown wireframe screen",
+    "filename": "search-filter-dropdown-wireframe-screen.png",
+    "bytes": 116519
+  },
+  {
+    "alt": "Search Recent screen, light mode",
+    "filename": "search-recent-screen-light-mode.png",
+    "bytes": 179158
+  },
+  {
+    "alt": "Search Results screen, light mode",
+    "filename": "search-results-screen-light-mode.png",
+    "bytes": 122166
+  },
+  {
+    "alt": "Search Empty State screen, light mode",
+    "filename": "search-empty-state-screen-light-mode.png",
+    "bytes": 90620
+  },
+  {
+    "alt": "Search Filter screen, light mode",
+    "filename": "search-filter-screen-light-mode.png",
+    "bytes": 158214
+  },
+  {
+    "alt": "Search Recent screen, dark mode",
+    "filename": "search-recent-screen-dark-mode.png",
+    "bytes": 173341
+  },
+  {
+    "alt": "Search Results screen, dark mode",
+    "filename": "search-results-screen-dark-mode.png",
+    "bytes": 134593
+  },
+  {
+    "alt": "Search Empty State screen, dark mode",
+    "filename": "search-empty-state-screen-dark-mode.png",
+    "bytes": 94080
+  },
+  {
+    "alt": "Search Filter screen, dark mode",
+    "filename": "search-filter-screen-dark-mode.png",
+    "bytes": 156175
+  }
+]
