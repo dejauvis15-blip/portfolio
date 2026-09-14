@@ -20,7 +20,7 @@ export const navLinks = [
 export const infoStrip = [
   { value: "UXD", label: "Concentration" },
   { value: "UTK", label: "University of Tennessee, Knoxville (UTK)" },
-  { value: "2027", label: "Expected Graduation" },
+  { value: "2028", label: "Expected Graduation" },
   {
     value: "FCMF",
     label: "Fibers & Composites Manufacturing Facility (FCMF)",
