@@ -25,7 +25,7 @@ export default function ImageFrame({
   return (
     <Reveal delay={delay} className={className}>
       <div
-        className={`relative w-full ${aspect} ${rounded ? "rounded-3xl" : ""} border border-border bg-bg-elevated overflow-hidden`}
+        className={`relative w-full ${aspect} ${rounded ? "rounded-xl" : ""} border border-border bg-bg-elevated overflow-hidden`}
       >
         <Image
           src={src}
