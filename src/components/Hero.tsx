@@ -10,13 +10,10 @@ export default function Hero() {
     <section className="relative pt-32 md:pt-40 lg:pt-44 pb-20 md:pb-28">
       <div className="mx-auto max-w-3xl px-6 flex flex-col items-center text-center">
         <Reveal delay={0.05}>
-          <h1 className="font-display normal-case leading-[1.2] tracking-tight text-[7vw] sm:text-4xl md:text-5xl">
+          <h1 className="font-display normal-case leading-[1.2] tracking-tight text-balance text-[7vw] sm:text-4xl md:text-5xl">
             <span className="font-light text-muted">
               Jauvis&nbsp;
-              <span className="relative inline-flex">
-                <Balloon />s
-              </span>
-              &nbsp;a&nbsp;
+              <Balloon />s&nbsp;a&nbsp;
             </span>
             <span className="font-black text-fg">product designer</span>
             <span className="font-light text-muted">
