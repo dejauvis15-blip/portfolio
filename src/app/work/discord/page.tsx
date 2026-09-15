@@ -147,7 +147,7 @@ export default function DiscordCaseStudy() {
     <>
       <CaseHero project={project} />
 
-      <section className="py-16 md:py-20 border-b border-border">
+      <section className="py-16 md:py-20">
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
           <Reveal className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl">
             <div>

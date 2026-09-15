@@ -4,7 +4,7 @@ import Reveal, { RevealItem } from "@/components/Reveal";
 
 export default function Process() {
   return (
-    <section id="process" className="scroll-mt-20 py-28 md:py-36 border-t border-border bg-bg-panel">
+    <section id="process" className="scroll-mt-20 py-28 md:py-36">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
         <Reveal className="mb-16 md:mb-20">
           <p className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-4">

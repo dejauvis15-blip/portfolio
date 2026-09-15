@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 
 export default function NextProject({ project }: { project: Project }) {
   return (
-    <section className="border-t border-border py-20 md:py-28">
+    <section className="py-20 md:py-28">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
         <Reveal>
           <p className="text-sm uppercase tracking-[0.2em] text-muted mb-6">

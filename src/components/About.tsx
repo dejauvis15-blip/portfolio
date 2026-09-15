@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 
 export default function About() {
   return (
-    <section className="py-28 md:py-36 border-t border-border">
+    <section className="py-28 md:py-36">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-8 lg:gap-x-10">
           <Reveal className="lg:col-span-4">
