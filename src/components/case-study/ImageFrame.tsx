@@ -8,6 +8,7 @@ export default function ImageFrame({
   aspect = "aspect-[16/9]",
   delay = 0,
   priority = false,
+  rounded = false,
   className = "",
 }: {
   src: string;
@@ -16,12 +17,16 @@ export default function ImageFrame({
   aspect?: string;
   delay?: number;
   priority?: boolean;
+  /** Softer, fully-rounded corners instead of the default square frame. */
+  rounded?: boolean;
   /** Extra classes on the outer wrapper — e.g. a grid col-span. */
   className?: string;
 }) {
   return (
     <Reveal delay={delay} className={className}>
-      <div className={`relative w-full ${aspect} border border-border bg-bg-elevated overflow-hidden`}>
+      <div
+        className={`relative w-full ${aspect} ${rounded ? "rounded-3xl" : ""} border border-border bg-bg-elevated overflow-hidden`}
+      >
         <Image
           src={src}
           alt={alt}
