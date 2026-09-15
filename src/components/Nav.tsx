@@ -27,7 +27,7 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-bg-elevated border-b border-border" : "bg-bg border-b border-transparent"
+        scrolled ? "bg-bg-elevated" : "bg-bg"
       }`}
     >
       <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16 h-16 md:h-20 flex items-center justify-between">
