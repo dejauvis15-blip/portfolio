@@ -64,3 +64,13 @@ body {
 .font-display {
   font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
 }
+
+@keyframes balloon-float {
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-6%) rotate(2deg);
+  }
+}

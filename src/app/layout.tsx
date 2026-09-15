@@ -7,7 +7,7 @@ import "./globals.css";
 const display = Big_Shoulders({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
+  weight: ["300", "600", "700", "800", "900"],
 });
 
 const body = Inter({

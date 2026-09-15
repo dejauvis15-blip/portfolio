@@ -1,105 +1,93 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { projects } from "@/lib/data";
+import { projects, site } from "@/lib/data";
 import Reveal from "@/components/Reveal";
+import { DiscordMark, TeslaMark } from "@/components/icons";
 
 export default function SelectedWork() {
   const [tesla, discord] = projects;
 
   return (
-    <section id="work" className="scroll-mt-20 py-28 md:py-36 border-t border-border">
+    <section id="work" className="scroll-mt-20 py-24 md:py-32 border-t border-border">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
-        <Reveal className="flex items-end justify-between gap-6 mb-16 md:mb-20">
-          <div>
-            <p className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-4">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Featured Work
-            </p>
-            <h2 className="font-display uppercase leading-[0.9] text-[12vw] sm:text-[8vw] lg:text-6xl xl:text-7xl">
-              Selected Work
-            </h2>
-          </div>
-          <p className="hidden md:block font-display text-2xl text-muted-2">
-            (02)
+        <Reveal className="mb-10 md:mb-12">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-2">
+            Selected Work
           </p>
         </Reveal>
 
-        {/* 01 — Tesla: full-width landscape presentation */}
-        <Reveal>
-          <Link href="/work/tesla" className="group block">
-            <div className="relative aspect-[16/10] md:aspect-[21/9] w-full overflow-hidden border border-border bg-bg-elevated">
-              <Image
-                src={tesla.heroImage.src}
-                alt={tesla.heroImage.alt}
-                fill
-                sizes="100vw"
-                priority
-                className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-              <span className="absolute top-6 left-6 font-display text-lg text-fg/90 tracking-wide">
-                {tesla.index}
-              </span>
-            </div>
-            <div className="mt-6 flex flex-col md:flex-row md:items-end justify-between gap-4 border-t border-border pt-6 transition-colors group-hover:border-border-strong">
-              <div>
-                <h3 className="font-display uppercase leading-none text-4xl md:text-6xl">
-                  {tesla.name}
-                </h3>
-                <p className="mt-2 text-muted">Homepage Redesign</p>
-              </div>
-              <div className="flex items-center gap-6 md:gap-10 text-xs md:text-sm uppercase tracking-[0.1em] text-muted">
-                <span>{tesla.discipline.join(" · ")}</span>
-                <span>{tesla.year}</span>
-                <ArrowUpRight
-                  size={22}
-                  className="text-fg transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+          {/* 01 — Tesla: image nudges down, caption fades up from the top */}
+          <Reveal delay={0.05}>
+            <Link
+              href="/work/tesla"
+              className="group relative block aspect-square overflow-hidden rounded-2xl border border-border bg-black"
+            >
+              <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:translate-y-4 group-hover:scale-[1.03]">
+                <Image
+                  src={tesla.heroImage.src}
+                  alt={tesla.heroImage.alt}
+                  fill
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                  className="object-cover"
                 />
+                <div className="absolute inset-0 bg-black/35" />
               </div>
-            </div>
-          </Link>
-        </Reveal>
 
-        {/* 02 — Discord: asymmetric split presentation */}
-        <Reveal delay={0.05} className="mt-24 md:mt-32">
-          <Link href="/work/discord" className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-            <div className="lg:col-span-5 relative aspect-[4/5] overflow-hidden border border-border bg-bg-elevated order-2 lg:order-1">
-              <Image
-                src={discord.heroImage.src}
-                alt={discord.heroImage.alt}
-                fill
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-              />
-              <span className="absolute top-6 left-6 font-display text-lg text-fg/90 tracking-wide">
-                {discord.index}
-              </span>
-            </div>
-            <div className="lg:col-span-7 order-1 lg:order-2 flex flex-col justify-between border border-border bg-bg-panel p-8 md:p-12 transition-colors group-hover:border-border-strong">
-              <div>
-                <h3 className="font-display uppercase leading-none text-4xl md:text-6xl">
-                  {discord.name}
-                </h3>
-                <p className="mt-2 text-muted">UX/UI Project</p>
-                <p className="mt-6 max-w-md text-muted text-sm md:text-base leading-relaxed">
-                  {discord.summary}
-                </p>
-              </div>
-              <div className="mt-10 flex items-center justify-between gap-6 text-xs md:text-sm uppercase tracking-[0.1em] text-muted border-t border-border pt-6">
-                <span>{discord.discipline.join(" · ")}</span>
-                <span>{discord.year}</span>
-                <span className="ml-auto flex items-center gap-2 text-fg">
-                  View Case Study
-                  <ArrowUpRight
-                    size={18}
-                    className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                  />
+              <div className="absolute inset-x-0 top-9 flex flex-col items-center gap-2 opacity-0 -translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-black/80">
+                  <TeslaMark className="h-4 w-4 text-white" />
+                </span>
+                <span className="font-display text-sm font-extrabold text-white">
+                  {site.name}
+                </span>
+                <span className="font-mono text-[11px] tracking-wide text-white/70">
+                  Tesla &middot; Homepage Redesign
                 </span>
               </div>
-            </div>
-          </Link>
-        </Reveal>
+
+              <span className="absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                {tesla.index} &middot; {tesla.category}
+              </span>
+            </Link>
+          </Reveal>
+
+          {/* 02 — Discord: phone shifts aside, caption slides in from the left */}
+          <Reveal delay={0.1}>
+            <Link
+              href="/work/discord"
+              className="group relative block aspect-square overflow-hidden rounded-2xl border border-border bg-[#141310]"
+            >
+              <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:translate-x-[42%]">
+                <div className="relative h-[84%] aspect-[458/930] overflow-hidden rounded-[1.6rem] border-2 border-white/15 shadow-xl">
+                  <Image
+                    src="/images/discord/forum-notifications-screen-dark-mode.png"
+                    alt="Discord forum notification settings screen, dark mode"
+                    fill
+                    sizes="(min-width: 640px) 25vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="absolute inset-0 flex flex-col items-start justify-center gap-2 pl-6 opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-black/80">
+                  <DiscordMark className="h-[18px] w-[18px]" />
+                </span>
+                <span className="font-display text-sm font-extrabold text-white">
+                  {site.name}
+                </span>
+                <span className="font-mono text-[11px] tracking-wide text-white/70">
+                  Discord &middot; Notifications &amp; Search
+                </span>
+              </div>
+
+              <span className="absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                {discord.index} &middot; {discord.category}
+              </span>
+            </Link>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

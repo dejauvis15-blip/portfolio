@@ -17,15 +17,11 @@ export const navLinks = [
   { label: "About", href: "/about" },
 ];
 
-export const infoStrip = [
-  { value: "UXD", label: "Concentration" },
-  { value: "UTK", label: "University of Tennessee, Knoxville (UTK)" },
-  { value: "2028", label: "Expected Graduation" },
-  {
-    value: "FCMF",
-    label: "Fibers & Composites Manufacturing Facility (FCMF)",
-  },
-];
+export const heroPills = [
+  { icon: "pin", label: "Located in Knoxville" },
+  { icon: "briefcase", label: "Open to internship opportunities" },
+  { icon: "file", label: "Resume", href: "/resume.pdf" },
+] as const;
 
 export const capabilities = [
   {
