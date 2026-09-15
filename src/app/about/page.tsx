@@ -14,19 +14,6 @@ export default function AboutPage() {
   return (
     <>
       <section className="relative overflow-hidden pt-28 md:pt-36 pb-20 md:pb-28">
-        <div className="absolute inset-0 -z-10" aria-hidden="true">
-          <Image
-            src="/images/about-skyline.jpg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-bg/65" />
-          <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-bg/60" />
-        </div>
-
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-14 lg:gap-x-10 items-end">
             <div className="lg:col-span-7">
