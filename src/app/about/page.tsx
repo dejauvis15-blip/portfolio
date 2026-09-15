@@ -18,12 +18,6 @@ export default function AboutPage() {
     <>
       <section className="relative overflow-hidden pt-28 md:pt-36 pb-20 md:pb-28">
         <div className="mx-auto max-w-3xl px-6 md:px-10 flex flex-col items-center text-center">
-          <Reveal>
-            <p className="flex items-center justify-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-6">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              About
-            </p>
-          </Reveal>
           <Reveal delay={0.08}>
             <p className="font-display font-normal leading-[1.15] text-[6vw] sm:text-3xl lg:text-4xl text-balance">
               People&rsquo;s{" "}
@@ -84,13 +78,13 @@ export default function AboutPage() {
       </section>
 
       <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
+        <div className="mx-auto max-w-2xl px-6">
           <Reveal>
             <p className="text-sm uppercase tracking-[0.2em] text-muted-2 mb-8">
               Experience
             </p>
           </Reveal>
-          <Reveal stagger={0.06} className="flex flex-col gap-8 max-w-2xl">
+          <Reveal stagger={0.06} className="flex flex-col gap-8">
             {experience.map((job) => (
               <RevealItem
                 key={job.org}
@@ -121,13 +115,13 @@ export default function AboutPage() {
       </section>
 
       <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
+        <div className="mx-auto max-w-2xl px-6">
           <Reveal>
             <p className="text-sm uppercase tracking-[0.2em] text-muted-2 mb-8">
               Education
             </p>
           </Reveal>
-          <Reveal stagger={0.06} className="flex flex-col gap-8 max-w-2xl">
+          <Reveal stagger={0.06} className="flex flex-col gap-8">
             {education.map((edu) => {
               return (
                 <RevealItem
