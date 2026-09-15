@@ -102,6 +102,23 @@ export const about = {
   bio: "I'm a UX/Product design student concentrating in User Experience Design within the Information Science program at the University of Tennessee, Knoxville. Alongside coursework, I work as an Undergraduate Media and Website Design Assistant at the Fibers and Composites Manufacturing Facility (FCMF), where I design and maintain digital media for the facility's web presence.",
 };
 
+export const education = [
+  {
+    school: "University of Tennessee",
+    program: "B.S. Information Science — UX Design Concentration",
+    location: "Knoxville, TN",
+    period: "Aug 2025 – Present",
+    icon: "ut",
+  },
+  {
+    school: "University of Virginia's College at Wise",
+    program: "Computer Science",
+    location: "Wise, VA",
+    period: "Aug 2024 – May 2025",
+    icon: "uva",
+  },
+] as const;
+
 export type CaseStudyImage = {
   src: string;
   alt: string;
