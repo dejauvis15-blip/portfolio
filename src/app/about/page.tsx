@@ -49,7 +49,7 @@ export default function AboutPage() {
               </div>
 
               {/* Desk setup — front-right card */}
-              <div className="absolute bottom-0 right-0 z-10 w-[52%] rotate-6 drop-shadow-2xl">
+              <div className="absolute bottom-0 -right-6 md:-right-10 z-10 w-[52%] rotate-6 drop-shadow-2xl">
                 <Image
                   src="/images/about-collage/desk.png"
                   alt=""
