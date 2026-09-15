@@ -203,17 +203,16 @@ export default function TeslaCaseStudy() {
                 individual sections and the vehicle mega-menu.
               </p>
             </Reveal>
+
+            <ImageFrame
+              card
+              className="max-w-xl mx-auto"
+              aspect="aspect-[1044/3200]"
+              src="/images/tesla/full-homepage.jpg"
+              alt="Full Tesla homepage redesign, scrolling from the hero through Cybertruck, Model Y, Model 3, and Model S sections"
+            />
           </div>
-        </div>
 
-        {/* Full-page scroll capture, shown full-bleed */}
-        <ImageFrame
-          aspect="aspect-[1044/3200]"
-          src="/images/tesla/full-homepage.jpg"
-          alt="Full Tesla homepage redesign, scrolling from the hero through Cybertruck, Model Y, Model 3, and Model S sections"
-        />
-
-        <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
           <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <ImageFrame
               card
