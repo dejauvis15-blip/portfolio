@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { getProject, projects } from "@/lib/data";
 import CaseHero from "@/components/case-study/CaseHero";
 import SectionHeading from "@/components/case-study/SectionHeading";
 import ImageFrame from "@/components/case-study/ImageFrame";
 import NextProject from "@/components/case-study/NextProject";
 import Reveal, { RevealItem } from "@/components/Reveal";
+
+const quickLinks = [
+  { href: "#problem", label: "The Problem" },
+  { href: "#goals", label: "Goals" },
+  { href: "#final-design", label: "Final Design" },
+];
 
 const project = getProject("tesla")!;
 const nextProject = projects.find((p) => p.slug !== "tesla")!;
@@ -69,10 +77,24 @@ export default function TeslaCaseStudy() {
                 with Tesla&rsquo;s innovative brand.
               </p>
             </Reveal>
+            <Reveal delay={0.12}>
+              <div className="mt-8 flex flex-wrap gap-2">
+                {quickLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="inline-flex items-center gap-2 rounded-full border border-border bg-bg-elevated px-5 py-2.5 text-sm text-fg transition-colors hover:border-accent hover:text-accent"
+                  >
+                    <ArrowRight size={16} />
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </Reveal>
           </div>
 
           {/* 02 — Problem */}
-          <div className="max-w-3xl mt-24 md:mt-32">
+          <div id="problem" className="max-w-3xl mt-24 md:mt-32 scroll-mt-24">
             <SectionHeading number="02" title="Problem" />
             <Reveal delay={0.05}>
               <p className="text-lg text-muted leading-relaxed">
@@ -95,7 +117,7 @@ export default function TeslaCaseStudy() {
           </div>
 
           {/* 03 — Goals */}
-          <div className="mt-24 md:mt-32">
+          <div id="goals" className="mt-24 md:mt-32 scroll-mt-24">
             <SectionHeading number="03" title="Goals" />
             <Reveal stagger={0.06} className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-border max-w-4xl">
               {goals.map((goal, i) => (
@@ -173,7 +195,7 @@ export default function TeslaCaseStudy() {
           </div>
 
           {/* 06 — Final design */}
-          <div className="mt-24 md:mt-32">
+          <div id="final-design" className="mt-24 md:mt-32 scroll-mt-24">
             <SectionHeading number="05" title="Final Design" />
             <Reveal delay={0.05} className="max-w-3xl mb-10">
               <p className="text-lg text-muted leading-relaxed">
