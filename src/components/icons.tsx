@@ -20,11 +20,12 @@ export function DiscordMark({ className = "h-4 w-4" }: { className?: string }) {
 export function Balloon({ className = "" }: { className?: string }) {
   return (
     <span
-      className={`relative inline-block h-[1em] w-[0.62em] align-[-0.06em] ${className}`}
+      className={`relative inline-block h-[1em] w-[0.5em] align-[-0.08em] ${className}`}
     >
       <svg
         viewBox="0 0 24 40"
-        className="absolute left-1/2 bottom-0 h-[1.32em] w-[0.98em] -translate-x-1/2 motion-safe:animate-[balloon-float_3.2s_ease-in-out_infinite]"
+        preserveAspectRatio="xMidYMax meet"
+        className="absolute inset-x-0 bottom-0 h-[1.3em] w-full motion-safe:animate-[balloon-float_3.2s_ease-in-out_infinite]"
         aria-hidden="true"
       >
         <path

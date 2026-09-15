@@ -35,8 +35,8 @@ export default function SelectedWork() {
               </div>
 
               <div className="absolute inset-x-0 top-9 flex flex-col items-center gap-2 opacity-0 -translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-black/80">
-                  <TeslaMark className="h-4 w-4 text-white" />
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/15 bg-black/80">
+                  <TeslaMark className="h-3 w-3 text-white" />
                 </span>
                 <span className="font-display text-sm font-extrabold text-white">
                   {site.name}
