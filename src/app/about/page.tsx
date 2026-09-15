@@ -38,14 +38,42 @@ export default function AboutPage() {
             </div>
             <div className="lg:col-span-5">
               <Reveal delay={0.1}>
-                <div className="relative aspect-[4/5] w-full max-w-sm mx-auto lg:max-w-none border border-border-strong bg-bg-elevated overflow-hidden">
-                  <Image
-                    src="/images/portrait.jpg"
-                    alt="Jauvis Dozier"
-                    fill
-                    sizes="(min-width: 1024px) 40vw, 90vw"
-                    className="object-cover"
-                  />
+                <div className="relative mx-auto aspect-[4/5] w-full max-w-sm lg:max-w-md">
+                  {/* Road photo — back card */}
+                  <div className="absolute left-0 top-0 z-0 aspect-[2/3] w-[58%] -rotate-6 overflow-hidden rounded-2xl shadow-2xl shadow-black/60 ring-1 ring-white/10">
+                    <Image
+                      src="/images/about-collage/road.webp"
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 25vw, 55vw"
+                      className="object-cover"
+                    />
+                  </div>
+
+                  {/* Desk setup — front-right card */}
+                  <div className="absolute bottom-0 right-0 z-10 w-[52%] rotate-6 drop-shadow-2xl">
+                    <Image
+                      src="/images/about-collage/desk.png"
+                      alt=""
+                      width={296}
+                      height={395}
+                      sizes="(min-width: 1024px) 22vw, 45vw"
+                      className="h-auto w-full"
+                    />
+                  </div>
+
+                  {/* Portrait — top layer */}
+                  <div className="absolute left-[18%] top-[36%] z-20 w-[64%] -rotate-3 drop-shadow-2xl">
+                    <Image
+                      src="/images/about-collage/portrait-circle.png"
+                      alt="Jauvis Dozier"
+                      width={339}
+                      height={387}
+                      priority
+                      sizes="(min-width: 1024px) 26vw, 56vw"
+                      className="h-auto w-full"
+                    />
+                  </div>
                 </div>
               </Reveal>
             </div>
