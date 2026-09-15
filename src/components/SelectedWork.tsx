@@ -21,7 +21,7 @@ export default function SelectedWork() {
           <Reveal delay={0.05}>
             <Link
               href="/work/tesla"
-              className="group relative block aspect-square overflow-hidden rounded-2xl border border-border bg-black"
+              className="group relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
             >
               <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:translate-y-4">
                 <div className="relative w-[78%] aspect-[3/2] overflow-hidden rounded-xl border border-white/15 shadow-xl">
@@ -57,7 +57,7 @@ export default function SelectedWork() {
           <Reveal delay={0.1}>
             <Link
               href="/work/discord"
-              className="group relative block aspect-square overflow-hidden rounded-2xl border border-border bg-[#141310]"
+              className="group relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
             >
               <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:translate-x-[42%]">
                 <div className="relative h-[84%] aspect-[458/930] overflow-hidden rounded-[1.6rem] border-2 border-white/15 shadow-xl">
