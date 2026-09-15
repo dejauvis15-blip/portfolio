@@ -11,14 +11,17 @@ export default function NextProject({ project }: { project: Project }) {
           <p className="text-sm uppercase tracking-[0.2em] text-muted mb-6">
             Next Project
           </p>
-          <Link href={`/work/${project.slug}`} className="group flex items-end justify-between gap-6">
+          <Link href={`/work/${project.slug}`} className="group block">
             <h2 className="font-display uppercase leading-[0.88] text-[13vw] sm:text-[9vw] lg:text-7xl xl:text-8xl transition-colors group-hover:text-accent">
               {project.name}
             </h2>
-            <ArrowUpRight
-              size={48}
-              className="shrink-0 mb-2 transition-transform duration-300 group-hover:translate-x-2 group-hover:-translate-y-2"
-            />
+            <span className="mt-6 inline-flex items-center gap-2 rounded-full border border-border-strong px-5 py-2.5 text-sm uppercase tracking-[0.1em] transition-colors group-hover:border-accent group-hover:text-accent">
+              View Case Study
+              <ArrowUpRight
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+              />
+            </span>
           </Link>
         </Reveal>
       </div>

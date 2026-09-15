@@ -11,7 +11,7 @@ export default function CaseHero({ project }: { project: Project }) {
         <Reveal>
           <Link
             href="/#work"
-            className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.1em] text-muted hover:text-fg transition-colors mb-10"
+            className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-muted transition-colors hover:border-accent hover:text-fg mb-10"
           >
             <ArrowLeft size={14} />
             Back to work
@@ -38,36 +38,38 @@ export default function CaseHero({ project }: { project: Project }) {
         </Reveal>
 
         <Reveal delay={0.24}>
-          <dl className="mt-14 grid grid-cols-2 md:grid-cols-4 border-t border-border">
+          <dl className="mt-14 flex flex-wrap gap-2">
             <Meta label="Category" value={project.discipline.join(" · ")} />
             <Meta label="Year" value={project.year} />
             <Meta label="Role" value={project.role} />
             <Meta label="Tools" value={project.tools.join(", ")} />
           </dl>
         </Reveal>
-      </div>
 
-      <Reveal delay={0.1} className="mt-16 md:mt-20">
-        <div className="relative aspect-[16/9] md:aspect-[21/9] w-full border-y border-border bg-bg-elevated">
-          <Image
-            src={project.heroImage.src}
-            alt={project.heroImage.alt}
-            fill
-            sizes="100vw"
-            priority
-            className="object-cover object-top"
-          />
-        </div>
-      </Reveal>
+        <Reveal delay={0.1} className="mt-16 md:mt-20">
+          <div className="relative aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-3xl border border-border bg-bg-elevated">
+            <Image
+              src={project.heroImage.src}
+              alt={project.heroImage.alt}
+              fill
+              sizes="100vw"
+              priority
+              className="object-cover object-top"
+            />
+          </div>
+        </Reveal>
+      </div>
     </section>
   );
 }
 
 function Meta({ label, value }: { label: string; value: string }) {
   return (
-    <div className="border-r border-b md:border-b-0 border-border bg-bg-elevated py-5 px-4">
-      <dt className="text-xs uppercase tracking-[0.12em] text-muted-2">{label}</dt>
-      <dd className="mt-1.5 text-sm md:text-base">{value}</dd>
+    <div className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-elevated px-4 py-2">
+      <dt className="text-xs uppercase tracking-[0.1em] text-muted-2">
+        {label}
+      </dt>
+      <dd className="text-sm">{value}</dd>
     </div>
   );
 }
