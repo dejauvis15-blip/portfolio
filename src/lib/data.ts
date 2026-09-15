@@ -108,14 +108,14 @@ export const education = [
     program: "B.S. Information Science, UX Design Concentration",
     location: "Knoxville, TN",
     period: "Aug 2025 – Present",
-    icon: "ut",
+    logo: "/images/logos/ut.png",
   },
   {
     school: "University of Virginia's College at Wise",
     program: "Computer Science",
     location: "Wise, VA",
     period: "Aug 2024 – May 2025",
-    icon: "uva",
+    logo: "/images/logos/uva-wise.png",
   },
 ] as const;
 
