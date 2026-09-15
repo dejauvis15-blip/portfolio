@@ -1,12 +1,9 @@
-import { Baloo_2 } from "next/font/google";
 import { MapPin, Briefcase, FileText } from "lucide-react";
 import { heroPills } from "@/lib/data";
 import Reveal from "@/components/Reveal";
 import { Balloon } from "@/components/icons";
 
 const pillIcons = { pin: MapPin, briefcase: Briefcase, file: FileText };
-
-const cartoon = Baloo_2({ subsets: ["latin"], weight: "800" });
 
 export default function Hero() {
   return (
@@ -18,7 +15,7 @@ export default function Hero() {
               Jauvis&nbsp;
               <Balloon />s&nbsp;a&nbsp;
             </span>
-            <span className={`${cartoon.className} text-fg`}>
+            <span className="font-black text-fg">
               product designer
             </span>
             <span className="font-light text-muted">

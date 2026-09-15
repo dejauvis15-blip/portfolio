@@ -1,19 +1,13 @@
 import type { Metadata } from "next";
-import { Big_Shoulders, Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const display = Big_Shoulders({
+const poppins = Poppins({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["300", "600", "700", "800", "900"],
-});
-
-const body = Inter({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +21,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${display.variable} ${body.variable} h-full antialiased`}
+      className={`${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg text-fg">
         <Nav />
