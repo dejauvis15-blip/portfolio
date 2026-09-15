@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { about, capabilities, tools, site } from "@/lib/data";
+import { about, education, capabilities, tools, site } from "@/lib/data";
 import Reveal, { RevealItem } from "@/components/Reveal";
+import { UTMark, UVAWiseMark } from "@/components/icons";
+
+const educationIcons = { ut: UTMark, uva: UVAWiseMark };
 
 export const metadata: Metadata = {
   title: "About — Jauvis Dozier",
@@ -81,6 +84,38 @@ export default function AboutPage() {
               <br />
               <span className="text-muted">at {about.org}</span>
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
+          <Reveal>
+            <p className="text-sm uppercase tracking-[0.2em] text-muted-2 mb-8">
+              Education
+            </p>
+          </Reveal>
+          <Reveal stagger={0.06} className="flex flex-col gap-8 max-w-2xl">
+            {education.map((edu) => {
+              const Icon = educationIcons[edu.icon];
+              return (
+                <RevealItem
+                  key={edu.school}
+                  className="flex items-center justify-between gap-6"
+                >
+                  <div className="flex items-center gap-4">
+                    <Icon />
+                    <div>
+                      <p className="font-medium">{edu.school}</p>
+                      <p className="text-sm text-muted">{edu.program}</p>
+                    </div>
+                  </div>
+                  <p className="shrink-0 text-sm text-muted-2 whitespace-nowrap">
+                    {edu.period}
+                  </p>
+                </RevealItem>
+              );
+            })}
           </Reveal>
         </div>
       </section>
