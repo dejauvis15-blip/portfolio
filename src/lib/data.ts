@@ -58,6 +58,11 @@ export const tools = [
   "Webflow",
   "WordPress",
   "Python",
+  "React",
+  "JavaScript",
+  "CSS",
+  "C",
+  "C++",
 ];
 
 export const process = [

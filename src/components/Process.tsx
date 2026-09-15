@@ -1,5 +1,5 @@
-import { ArrowRight, ArrowDown } from "lucide-react";
-import { process } from "@/lib/data";
+import type { CSSProperties } from "react";
+import { process, tools } from "@/lib/data";
 import Reveal, { RevealItem } from "@/components/Reveal";
 
 export default function Process() {
@@ -16,55 +16,53 @@ export default function Process() {
           </h2>
         </Reveal>
 
-        {/* Desktop / tablet: horizontal row */}
-        <Reveal stagger={0.06} className="hidden md:flex border-t border-l border-border">
-          {process.map((step, i) => (
+        <Reveal
+          stagger={0.06}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5"
+        >
+          {process.map((step) => (
             <RevealItem
               key={step.number}
-              className="relative flex-1 border-r border-border p-6 lg:p-8 min-w-0"
+              className="flex flex-col gap-3 rounded-2xl bg-bg-elevated p-6 md:p-7 transition-colors hover:bg-bg-elevated-2"
             >
-              <span className="font-display text-sm text-muted-2">
+              <span className="inline-flex w-fit items-center rounded-full bg-accent/15 px-2.5 py-1 font-display text-xs text-accent">
                 {step.number}
               </span>
-              <h3 className="mt-5 font-display uppercase text-xl lg:text-2xl tracking-wide">
+              <h3 className="font-display uppercase text-xl tracking-wide">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm text-muted leading-relaxed">
+              <p className="text-sm text-muted leading-relaxed">
                 {step.description}
               </p>
-              {i < process.length - 1 && (
-                <ArrowRight
-                  size={16}
-                  className="hidden lg:block absolute top-8 -right-2 text-muted-2 z-10 bg-bg-panel"
-                />
-              )}
             </RevealItem>
           ))}
         </Reveal>
 
-        {/* Mobile: vertical timeline */}
-        <Reveal stagger={0.06} className="md:hidden flex flex-col">
-          {process.map((step, i) => (
-            <RevealItem key={step.number} className="relative pl-8 pb-10 last:pb-0">
-              {i < process.length - 1 && (
-                <span className="absolute left-[5px] top-3 bottom-0 w-px bg-border" />
-              )}
-              <span className="absolute left-0 top-1 h-2.5 w-2.5 rounded-full border border-accent" />
-              <span className="font-display text-xs text-muted-2">
-                {step.number}
-              </span>
-              <h3 className="mt-2 font-display uppercase text-xl tracking-wide">
-                {step.title}
-              </h3>
-              <p className="mt-2 text-sm text-muted leading-relaxed max-w-sm">
-                {step.description}
-              </p>
-              {i < process.length - 1 && (
-                <ArrowDown size={14} className="mt-4 text-muted-2" />
-              )}
-            </RevealItem>
-          ))}
-        </Reveal>
+        <div className="mt-24 md:mt-32">
+          <Reveal>
+            <p className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-10">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              Tools &amp; Technologies
+            </p>
+          </Reveal>
+          <Reveal stagger={0.04} className="flex flex-wrap gap-3">
+            {tools.map((tool, i) => (
+              <RevealItem key={tool}>
+                <span
+                  className="motion-safe:animate-[bubble-float_var(--bubble-duration)_ease-in-out_infinite] inline-block rounded-full border border-border bg-bg-elevated px-5 py-2.5 text-sm text-muted transition-colors hover:border-accent hover:text-fg md:text-base"
+                  style={
+                    {
+                      "--bubble-duration": `${5 + (i % 4)}s`,
+                      animationDelay: `${(i % 5) * 0.4}s`,
+                    } as CSSProperties
+                  }
+                >
+                  {tool}
+                </span>
+              </RevealItem>
+            ))}
+          </Reveal>
+        </div>
       </div>
     </section>
   );
