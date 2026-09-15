@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { about, education, capabilities, tools, site } from "@/lib/data";
+import { about, experience, education, capabilities, tools, site } from "@/lib/data";
 import Reveal, { RevealItem } from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -81,6 +81,43 @@ export default function AboutPage() {
               <br />
               <span className="text-muted">at {about.org}</span>
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
+          <Reveal>
+            <p className="text-sm uppercase tracking-[0.2em] text-muted-2 mb-8">
+              Experience
+            </p>
+          </Reveal>
+          <Reveal stagger={0.06} className="flex flex-col gap-8 max-w-2xl">
+            {experience.map((job) => (
+              <RevealItem
+                key={job.org}
+                className="flex items-center justify-between gap-6"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
+                    <Image
+                      src={job.logo}
+                      alt={`${job.org} logo`}
+                      width={28}
+                      height={28}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-medium">{job.org}</p>
+                    <p className="text-sm text-muted">{job.role}</p>
+                  </div>
+                </div>
+                <p className="shrink-0 text-sm text-muted-2 whitespace-nowrap">
+                  {job.period}
+                </p>
+              </RevealItem>
+            ))}
           </Reveal>
         </div>
       </section>
