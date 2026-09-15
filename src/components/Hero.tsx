@@ -1,9 +1,12 @@
+import { Baloo_2 } from "next/font/google";
 import { MapPin, Briefcase, FileText } from "lucide-react";
 import { heroPills } from "@/lib/data";
 import Reveal from "@/components/Reveal";
 import { Balloon } from "@/components/icons";
 
 const pillIcons = { pin: MapPin, briefcase: Briefcase, file: FileText };
+
+const cartoon = Baloo_2({ subsets: ["latin"], weight: "800" });
 
 export default function Hero() {
   return (
@@ -15,7 +18,9 @@ export default function Hero() {
               Jauvis&nbsp;
               <Balloon />s&nbsp;a&nbsp;
             </span>
-            <span className="font-black text-fg">product designer</span>
+            <span className={`${cartoon.className} text-fg`}>
+              product designer
+            </span>
             <span className="font-light text-muted">
               &nbsp;honing his craft.
             </span>
@@ -24,7 +29,7 @@ export default function Hero() {
 
         <Reveal delay={0.14}>
           <p className="mt-4 max-w-md text-sm md:text-base text-muted-2">
-            One typeface, two weights — thin for what&apos;s incidental, black
+            Thin Big Shoulders for what&apos;s incidental, a bouncier Baloo
             for what isn&apos;t.
           </p>
         </Reveal>
