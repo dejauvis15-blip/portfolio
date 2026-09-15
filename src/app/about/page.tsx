@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { about, experience, education, capabilities, site } from "@/lib/data";
+import { about, experience, education, site } from "@/lib/data";
 import Reveal, { RevealItem } from "@/components/Reveal";
 
 const cartoon = Fredoka({ subsets: ["latin"], weight: "700" });
@@ -149,25 +149,6 @@ export default function AboutPage() {
                 </RevealItem>
               );
             })}
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
-          <Reveal>
-            <p className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-10">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              What I Do
-            </p>
-          </Reveal>
-          <Reveal stagger={0.05} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-border">
-            {capabilities.map((cap) => (
-              <RevealItem key={cap.title} className="border-r border-b border-border p-6 md:p-8">
-                <h3 className="font-display uppercase text-lg tracking-wide">{cap.title}</h3>
-                <p className="mt-2 text-sm text-muted leading-relaxed">{cap.description}</p>
-              </RevealItem>
-            ))}
           </Reveal>
         </div>
       </section>
