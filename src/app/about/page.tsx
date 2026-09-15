@@ -1,9 +1,8 @@
-import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { about, experience, education, capabilities, tools, site } from "@/lib/data";
+import { about, experience, education, capabilities, site } from "@/lib/data";
 import Reveal, { RevealItem } from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -175,34 +174,6 @@ export default function AboutPage() {
               <RevealItem key={cap.title} className="border-r border-b border-border p-6 md:p-8">
                 <h3 className="font-display uppercase text-lg tracking-wide">{cap.title}</h3>
                 <p className="mt-2 text-sm text-muted leading-relaxed">{cap.description}</p>
-              </RevealItem>
-            ))}
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
-          <Reveal>
-            <p className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-10">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Tools &amp; Technologies
-            </p>
-          </Reveal>
-          <Reveal stagger={0.04} className="flex flex-wrap gap-3">
-            {tools.map((tool, i) => (
-              <RevealItem key={tool}>
-                <span
-                  className="motion-safe:animate-[bubble-float_var(--bubble-duration)_ease-in-out_infinite] inline-block rounded-full border border-border bg-bg-elevated px-5 py-2.5 text-sm text-muted transition-colors hover:border-accent hover:text-fg md:text-base"
-                  style={
-                    {
-                      "--bubble-duration": `${5 + (i % 4)}s`,
-                      animationDelay: `${(i % 5) * 0.4}s`,
-                    } as CSSProperties
-                  }
-                >
-                  {tool}
-                </span>
               </RevealItem>
             ))}
           </Reveal>
