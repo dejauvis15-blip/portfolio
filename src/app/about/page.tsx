@@ -4,9 +4,6 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { about, education, capabilities, tools, site } from "@/lib/data";
 import Reveal, { RevealItem } from "@/components/Reveal";
-import { UTMark, UVAWiseMark } from "@/components/icons";
-
-const educationIcons = { ut: UTMark, uva: UVAWiseMark };
 
 export const metadata: Metadata = {
   title: "About — Jauvis Dozier",
@@ -97,14 +94,21 @@ export default function AboutPage() {
           </Reveal>
           <Reveal stagger={0.06} className="flex flex-col gap-8 max-w-2xl">
             {education.map((edu) => {
-              const Icon = educationIcons[edu.icon];
               return (
                 <RevealItem
                   key={edu.school}
                   className="flex items-center justify-between gap-6"
                 >
                   <div className="flex items-center gap-4">
-                    <Icon />
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
+                      <Image
+                        src={edu.logo}
+                        alt={`${edu.school} logo`}
+                        width={28}
+                        height={28}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
                     <div>
                       <p className="font-medium">{edu.school}</p>
                       <p className="text-sm text-muted">{edu.program}</p>

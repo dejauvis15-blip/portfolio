@@ -16,32 +16,6 @@ export function DiscordMark({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
-/** University of Tennessee monogram — Volunteer orange with a bold "T". */
-export function UTMark({ className = "h-10 w-10" }: { className?: string }) {
-  return (
-    <div
-      className={`flex items-center justify-center rounded-lg font-display text-lg font-black text-white ${className}`}
-      style={{ backgroundColor: "#FF8200" }}
-      aria-hidden="true"
-    >
-      T
-    </div>
-  );
-}
-
-/** University of Virginia's College at Wise monogram — navy with a Cavalier-orange "W". */
-export function UVAWiseMark({ className = "h-10 w-10" }: { className?: string }) {
-  return (
-    <div
-      className={`flex items-center justify-center rounded-lg font-display text-lg font-black text-[#E57200] ${className}`}
-      style={{ backgroundColor: "#232D4B" }}
-      aria-hidden="true"
-    >
-      W
-    </div>
-  );
-}
-
 /** A small white balloon, drifting in place — stands in for the dotted "i" in "is". */
 export function Balloon({ className = "" }: { className?: string }) {
   return (
