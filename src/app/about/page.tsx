@@ -17,87 +17,68 @@ export default function AboutPage() {
   return (
     <>
       <section className="relative overflow-hidden pt-28 md:pt-36 pb-20 md:pb-28">
-        <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-14 lg:gap-x-10 items-center">
-            <div className="lg:col-span-7">
-              <Reveal>
-                <p className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-6">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                  About
-                </p>
-              </Reveal>
-              <Reveal delay={0.08}>
-                <p className="font-display font-normal leading-[1.15] text-[6vw] sm:text-3xl lg:text-4xl text-balance">
-                  People&rsquo;s{" "}
-                  <span
-                    className={`${cartoon.className} font-bold text-[7vw] sm:text-4xl lg:text-5xl`}
-                  >
-                    Dreams
-                  </span>{" "}
-                  never end
-                </p>
-              </Reveal>
-            </div>
-            <div className="lg:col-span-5">
-              <Reveal delay={0.1}>
-                <div className="relative mx-auto aspect-[4/5] w-full max-w-[240px] lg:max-w-[300px]">
-                  {/* Road photo — back card */}
-                  <div className="absolute left-0 top-0 z-0 aspect-[2/3] w-[58%] -rotate-6 overflow-hidden rounded-2xl shadow-2xl shadow-black/60 ring-1 ring-white/10">
-                    <Image
-                      src="/images/about-collage/road.webp"
-                      alt=""
-                      fill
-                      sizes="(min-width: 1024px) 25vw, 55vw"
-                      className="object-cover"
-                    />
-                  </div>
-
-                  {/* Desk setup — front-right card */}
-                  <div className="absolute bottom-0 right-0 z-10 w-[52%] rotate-6 drop-shadow-2xl">
-                    <Image
-                      src="/images/about-collage/desk.png"
-                      alt=""
-                      width={296}
-                      height={395}
-                      sizes="(min-width: 1024px) 22vw, 45vw"
-                      className="h-auto w-full"
-                    />
-                  </div>
-
-                  {/* Portrait — top layer */}
-                  <div className="absolute left-[18%] top-[36%] z-20 w-[64%] -rotate-3 drop-shadow-2xl">
-                    <Image
-                      src="/images/about-collage/portrait-circle.png"
-                      alt="Jauvis Dozier"
-                      width={339}
-                      height={387}
-                      priority
-                      sizes="(min-width: 1024px) 26vw, 56vw"
-                      className="h-auto w-full"
-                    />
-                  </div>
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
-          <Reveal className="max-w-3xl">
-            <p className="text-lg md:text-xl leading-relaxed text-fg/90">
+        <div className="mx-auto max-w-3xl px-6 md:px-10 flex flex-col items-center text-center">
+          <Reveal>
+            <p className="flex items-center justify-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-6">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+              About
+            </p>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <p className="font-display font-normal leading-[1.15] text-[6vw] sm:text-3xl lg:text-4xl text-balance">
+              People&rsquo;s{" "}
+              <span
+                className={`${cartoon.className} font-bold text-[7vw] sm:text-4xl lg:text-5xl`}
+              >
+                Dreams
+              </span>{" "}
+              never end
+            </p>
+          </Reveal>
+          <Reveal delay={0.14}>
+            <p className="mt-6 max-w-xl text-base md:text-lg leading-relaxed text-fg/90">
               {about.bio}
             </p>
           </Reveal>
 
-          <Reveal delay={0.1} className="mt-12 max-w-3xl border-t border-border pt-8">
-            <p className="text-xs uppercase tracking-[0.12em] text-muted-2 mb-2">Currently</p>
-            <p className="text-lg md:text-xl">
-              {about.role}
-              <br />
-              <span className="text-muted">at {about.org}</span>
-            </p>
+          <Reveal delay={0.2} className="mt-14 w-full max-w-[240px] lg:max-w-[300px]">
+            <div className="relative mx-auto aspect-[4/5] w-full">
+              {/* Road photo — back card */}
+              <div className="absolute left-0 top-0 z-0 aspect-[2/3] w-[58%] -rotate-6 overflow-hidden rounded-2xl shadow-2xl shadow-black/60 ring-1 ring-white/10">
+                <Image
+                  src="/images/about-collage/road.webp"
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 55vw"
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Desk setup — front-right card */}
+              <div className="absolute bottom-0 right-0 z-10 w-[52%] rotate-6 drop-shadow-2xl">
+                <Image
+                  src="/images/about-collage/desk.png"
+                  alt=""
+                  width={296}
+                  height={395}
+                  sizes="(min-width: 1024px) 22vw, 45vw"
+                  className="h-auto w-full"
+                />
+              </div>
+
+              {/* Portrait — top layer */}
+              <div className="absolute left-[18%] top-[36%] z-20 w-[64%] -rotate-3 drop-shadow-2xl">
+                <Image
+                  src="/images/about-collage/portrait-circle.png"
+                  alt="Jauvis Dozier"
+                  width={339}
+                  height={387}
+                  priority
+                  sizes="(min-width: 1024px) 26vw, 56vw"
+                  className="h-auto w-full"
+                />
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
