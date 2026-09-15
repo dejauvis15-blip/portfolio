@@ -1,4 +1,4 @@
-import { Baloo_2 } from "next/font/google";
+import { Fredoka } from "next/font/google";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { about, experience, education, capabilities, site } from "@/lib/data";
 import Reveal, { RevealItem } from "@/components/Reveal";
 
-const cartoon = Baloo_2({ subsets: ["latin"], weight: "800" });
+const cartoon = Fredoka({ subsets: ["latin"], weight: "700" });
 
 export const metadata: Metadata = {
   title: "About — Jauvis Dozier",
@@ -18,7 +18,7 @@ export default function AboutPage() {
     <>
       <section className="relative overflow-hidden pt-28 md:pt-36 pb-20 md:pb-28">
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-14 lg:gap-x-10 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-14 lg:gap-x-10 items-center">
             <div className="lg:col-span-7">
               <Reveal>
                 <p className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-6">
@@ -27,9 +27,11 @@ export default function AboutPage() {
                 </p>
               </Reveal>
               <Reveal delay={0.08}>
-                <p className="font-display font-extrabold leading-[1.15] text-[9vw] sm:text-5xl lg:text-6xl text-balance">
+                <p className="font-display font-normal leading-[1.15] text-[6vw] sm:text-3xl lg:text-4xl text-balance">
                   People&rsquo;s{" "}
-                  <span className={`${cartoon.className} font-extrabold`}>
+                  <span
+                    className={`${cartoon.className} font-bold text-[7vw] sm:text-4xl lg:text-5xl`}
+                  >
                     Dreams
                   </span>{" "}
                   never end
@@ -38,7 +40,7 @@ export default function AboutPage() {
             </div>
             <div className="lg:col-span-5">
               <Reveal delay={0.1}>
-                <div className="relative mx-auto aspect-[4/5] w-full max-w-sm lg:max-w-md">
+                <div className="relative mx-auto aspect-[4/5] w-full max-w-[240px] lg:max-w-[300px]">
                   {/* Road photo — back card */}
                   <div className="absolute left-0 top-0 z-0 aspect-[2/3] w-[58%] -rotate-6 overflow-hidden rounded-2xl shadow-2xl shadow-black/60 ring-1 ring-white/10">
                     <Image
