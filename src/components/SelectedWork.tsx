@@ -8,7 +8,7 @@ export default function SelectedWork() {
   const [tesla, discord] = projects;
 
   return (
-    <section id="work" className="scroll-mt-20 py-24 md:py-32 border-t border-border">
+    <section id="work" className="scroll-mt-20 py-24 md:py-32">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
         <Reveal className="mb-10 md:mb-12">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-2">
