@@ -47,17 +47,15 @@ export default function CaseHero({ project }: { project: Project }) {
         </Reveal>
 
         <Reveal delay={0.1} className="mt-16 md:mt-20">
-          <div className="rounded-xl border border-border bg-bg-elevated p-3 md:p-5">
-            <div className="relative aspect-[16/9] md:aspect-[24/9] w-full overflow-hidden rounded-lg">
-              <Image
-                src={project.heroImage.src}
-                alt={project.heroImage.alt}
-                fill
-                sizes="100vw"
-                priority
-                className="object-cover object-top"
-              />
-            </div>
+          <div className="relative aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-xl border border-border bg-bg-elevated">
+            <Image
+              src={project.heroImage.src}
+              alt={project.heroImage.alt}
+              fill
+              sizes="100vw"
+              priority
+              className="object-cover object-top"
+            />
           </div>
         </Reveal>
       </div>
