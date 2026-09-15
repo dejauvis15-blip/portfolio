@@ -23,15 +23,16 @@ export default function SelectedWork() {
               href="/work/tesla"
               className="group relative block aspect-square overflow-hidden rounded-2xl border border-border bg-black"
             >
-              <div className="absolute inset-0 transition-transform duration-500 ease-out group-hover:translate-y-4 group-hover:scale-[1.03]">
-                <Image
-                  src={tesla.heroImage.src}
-                  alt={tesla.heroImage.alt}
-                  fill
-                  sizes="(min-width: 640px) 50vw, 100vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-black/35" />
+              <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:translate-y-4">
+                <div className="relative w-[78%] aspect-[3/2] overflow-hidden rounded-xl border border-white/15 shadow-xl">
+                  <Image
+                    src={tesla.heroImage.src}
+                    alt={tesla.heroImage.alt}
+                    fill
+                    sizes="(min-width: 640px) 40vw, 78vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
 
               <div className="absolute inset-x-0 top-9 flex flex-col items-center gap-2 opacity-0 -translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
