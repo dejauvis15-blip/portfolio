@@ -102,6 +102,16 @@ export const about = {
   bio: "I'm a UX/Product design student concentrating in User Experience Design within the Information Science program at the University of Tennessee, Knoxville. Alongside coursework, I work as an Undergraduate Media and Website Design Assistant at the Fibers and Composites Manufacturing Facility (FCMF), where I design and maintain digital media for the facility's web presence.",
 };
 
+export const experience = [
+  {
+    org: "Fibers and Composites Manufacturing Facility (FCMF)",
+    role: "Undergraduate Media & Website Design Assistant",
+    location: "Knoxville, TN",
+    period: "Jun 2026 – Present",
+    logo: "/images/logos/ut.png",
+  },
+] as const;
+
 export const education = [
   {
     school: "University of Tennessee",
