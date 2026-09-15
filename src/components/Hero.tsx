@@ -28,13 +28,6 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={0.14}>
-          <p className="mt-4 max-w-md text-sm md:text-base text-muted-2">
-            Thin Big Shoulders for what&apos;s incidental, a bouncier Baloo
-            for what isn&apos;t.
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.22}>
           <div className="mt-7 flex flex-wrap justify-center gap-2">
             {heroPills.map((pill) => {
               const Icon = pillIcons[pill.icon];
