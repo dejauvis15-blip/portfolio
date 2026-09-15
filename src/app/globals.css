@@ -25,7 +25,7 @@
   --color-border-strong: var(--border-strong);
   --color-accent: var(--accent);
   --font-display: var(--font-display);
-  --font-sans: var(--font-body);
+  --font-sans: var(--font-display);
 }
 
 html {
@@ -36,7 +36,7 @@ html {
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
 }
 
 ::selection {
