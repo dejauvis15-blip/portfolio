@@ -216,13 +216,13 @@ export default function TeslaCaseStudy() {
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
           <div className="mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <ImageFrame
-              rounded
+              card
               aspect="aspect-[1417/1062]"
               src="/images/tesla/street-poster.jpg"
               alt="Tesla homepage redesign presented as a street poster mockup"
             />
             <ImageFrame
-              rounded
+              card
               aspect="aspect-[1728/1040]"
               src="/images/tesla/cybertruck-band.jpg"
               alt="Cybertruck section of the Tesla homepage redesign"
@@ -231,20 +231,20 @@ export default function TeslaCaseStudy() {
 
           <div className="mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
             <ImageFrame
-              rounded
+              card
               aspect="aspect-[867/650]"
               src="/images/tesla/final-desktop.jpg"
               alt="Tesla Model S page shown on a laptop mockup"
             />
             <ImageFrame
-              rounded
+              card
               aspect="aspect-[730/458]"
               src="/images/tesla/final-tablet.jpg"
               alt="Tesla Model 3 page shown on a tablet mockup held in hand"
               delay={0.05}
             />
             <ImageFrame
-              rounded
+              card
               aspect="aspect-[604/453]"
               src="/images/tesla/final-laptop.jpg"
               alt="Tesla vehicle mega-menu navigation shown on a laptop mockup"
