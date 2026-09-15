@@ -1,9 +1,12 @@
+import { Baloo_2 } from "next/font/google";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { about, experience, education, capabilities, site } from "@/lib/data";
 import Reveal, { RevealItem } from "@/components/Reveal";
+
+const cartoon = Baloo_2({ subsets: ["latin"], weight: "800" });
 
 export const metadata: Metadata = {
   title: "About — Jauvis Dozier",
@@ -24,15 +27,12 @@ export default function AboutPage() {
                 </p>
               </Reveal>
               <Reveal delay={0.08}>
-                <h1 className="font-display uppercase leading-[0.88] text-[13vw] sm:text-[9vw] lg:text-7xl xl:text-8xl">
-                  {about.name}
-                </h1>
-              </Reveal>
-              <Reveal delay={0.16}>
-                <p className="mt-6 text-lg text-muted max-w-lg">
-                  {about.program}
-                  <br />
-                  {about.school}
+                <p className="font-display font-extrabold leading-[1.15] text-[9vw] sm:text-5xl lg:text-6xl text-balance">
+                  People&rsquo;s{" "}
+                  <span className={`${cartoon.className} font-extrabold`}>
+                    Dreams
+                  </span>{" "}
+                  never end
                 </p>
               </Reveal>
             </div>
