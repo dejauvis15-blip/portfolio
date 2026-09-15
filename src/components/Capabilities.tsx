@@ -13,7 +13,7 @@ const icons = [PenTool, Search, Workflow, Globe, Boxes, Palette];
 
 export default function Capabilities() {
   return (
-    <section id="capabilities" className="scroll-mt-20 py-28 md:py-36 border-t border-border bg-bg-panel">
+    <section id="capabilities" className="scroll-mt-20 py-28 md:py-36">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 lg:gap-x-10">
           <Reveal className="lg:col-span-4">

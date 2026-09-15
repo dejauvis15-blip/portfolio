@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 
 export default function FinalCTA() {
   return (
-    <section className="relative py-28 md:py-40 border-t border-border overflow-hidden">
+    <section className="relative py-28 md:py-40 overflow-hidden">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute top-10 right-[8%] h-2 w-2 rounded-full border border-border-strong hidden lg:block"

@@ -66,7 +66,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 border-t border-border">
+      <section className="py-20 md:py-28">
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
           <Reveal className="max-w-3xl">
             <p className="text-lg md:text-xl leading-relaxed text-fg/90">
@@ -85,7 +85,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 border-t border-border">
+      <section className="py-20 md:py-28">
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
           <Reveal>
             <p className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-10">
@@ -104,7 +104,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 border-t border-border">
+      <section className="py-20 md:py-28">
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
           <Reveal>
             <p className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-10">
@@ -122,7 +122,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-24 md:py-32 border-t border-border">
+      <section className="py-24 md:py-32">
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
           <Reveal className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <h2 className="font-display uppercase leading-[0.9] text-[10vw] sm:text-[6vw] lg:text-5xl">
