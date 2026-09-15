@@ -38,7 +38,7 @@ export default function Hero() {
                 </>
               );
               const classes =
-                "inline-flex items-center gap-1.5 rounded-full border border-border px-3.5 py-2 text-[13px] font-light text-muted transition-colors hover:border-accent hover:text-fg";
+                "inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.06] backdrop-blur-xl px-3.5 py-2 text-[13px] font-light text-muted transition-colors hover:border-white/25 hover:bg-white/10 hover:text-fg";
               return "href" in pill && pill.href ? (
                 <a
                   key={pill.label}
