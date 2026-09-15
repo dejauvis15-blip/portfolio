@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -188,10 +189,20 @@ export default function AboutPage() {
               Tools &amp; Technologies
             </p>
           </Reveal>
-          <Reveal stagger={0.04} className="flex flex-wrap gap-x-8 gap-y-3">
-            {tools.map((tool) => (
-              <RevealItem key={tool} className="text-muted text-sm md:text-base">
-                {tool}
+          <Reveal stagger={0.04} className="flex flex-wrap gap-3">
+            {tools.map((tool, i) => (
+              <RevealItem key={tool}>
+                <span
+                  className="motion-safe:animate-[bubble-float_var(--bubble-duration)_ease-in-out_infinite] inline-block rounded-full border border-border bg-bg-elevated px-5 py-2.5 text-sm text-muted transition-colors hover:border-accent hover:text-fg md:text-base"
+                  style={
+                    {
+                      "--bubble-duration": `${5 + (i % 4)}s`,
+                      animationDelay: `${(i % 5) * 0.4}s`,
+                    } as CSSProperties
+                  }
+                >
+                  {tool}
+                </span>
               </RevealItem>
             ))}
           </Reveal>
