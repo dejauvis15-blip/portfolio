@@ -105,7 +105,7 @@ export const about = {
 export const education = [
   {
     school: "University of Tennessee",
-    program: "B.S. Information Science — UX Design Concentration",
+    program: "B.S. Information Science, UX Design Concentration",
     location: "Knoxville, TN",
     period: "Aug 2025 – Present",
     icon: "ut",
