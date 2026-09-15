@@ -10,7 +10,7 @@
   --muted-2: #67666d;
   --border: rgba(243, 242, 238, 0.14);
   --border-strong: rgba(243, 242, 238, 0.28);
-  --accent: #cf9d4f;
+  --accent: #f3f2ee;
 }
 
 @theme inline {
@@ -72,21 +72,5 @@ body {
   }
   50% {
     transform: translateY(-6%) rotate(2deg);
-  }
-}
-
-@keyframes bubble-float {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(3px, -7px);
-  }
-  50% {
-    transform: translate(-4px, 2px);
-  }
-  75% {
-    transform: translate(2px, 5px);
   }
 }
