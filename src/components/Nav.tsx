@@ -25,40 +25,42 @@ export default function Nav() {
   }, [open]);
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-bg-elevated" : "bg-bg"
-      }`}
-    >
-      <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16 h-16 md:h-20 flex items-center justify-between">
-        <Link
-          href="/"
-          className="font-display text-xl md:text-2xl tracking-wide uppercase"
-          onClick={() => setOpen(false)}
-        >
-          Jauvis Dozier
-        </Link>
+    <header className="fixed top-0 inset-x-0 z-50 px-4 pt-4 md:px-6 md:pt-5">
+      <div
+        className={`mx-auto max-w-[1600px] rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-xl transition-shadow duration-300 ${
+          scrolled ? "shadow-lg shadow-black/30" : ""
+        }`}
+      >
+        <div className="px-4 md:px-8 lg:px-10 h-14 md:h-16 flex items-center justify-between">
+          <Link
+            href="/"
+            className="font-display text-xl md:text-2xl tracking-wide uppercase"
+            onClick={() => setOpen(false)}
+          >
+            Jauvis Dozier
+          </Link>
 
-        <nav className="hidden md:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm uppercase tracking-[0.12em] text-muted hover:text-fg transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+          <nav className="hidden md:flex items-center gap-10">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm uppercase tracking-[0.12em] text-muted hover:text-fg transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-        <button
-          type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden p-2 -mr-2 text-fg"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+          <button
+            type="button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((v) => !v)}
+            className="md:hidden p-2 -mr-2 text-fg"
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -68,9 +70,9 @@ export default function Nav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden overflow-hidden bg-bg border-b border-border"
+            className="md:hidden overflow-hidden"
           >
-            <div className="px-6 py-6 flex flex-col gap-5">
+            <div className="mt-2 rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-xl px-6 py-6 flex flex-col gap-5">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
