@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import { process, tools } from "@/lib/data";
 import Reveal, { RevealItem } from "@/components/Reveal";
 
@@ -23,7 +22,7 @@ export default function Process() {
           {process.map((step) => (
             <RevealItem
               key={step.number}
-              className="flex flex-col gap-3 rounded-2xl bg-bg-elevated p-6 md:p-7 transition-colors hover:bg-bg-elevated-2"
+              className="relative flex flex-col gap-3 rounded-2xl bg-bg-elevated p-6 md:p-7 transition-[transform,box-shadow,background-color] duration-300 ease-out hover:z-10 hover:scale-[1.06] hover:bg-bg-elevated-2 hover:shadow-2xl hover:shadow-black/40"
             >
               <span className="inline-flex w-fit items-center rounded-full bg-accent/15 px-2.5 py-1 font-display text-xs text-accent">
                 {step.number}
@@ -42,21 +41,13 @@ export default function Process() {
           <Reveal>
             <p className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-10">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Tools &amp; Technologies
+              Tools
             </p>
           </Reveal>
           <Reveal stagger={0.04} className="flex flex-wrap gap-3">
-            {tools.map((tool, i) => (
+            {tools.map((tool) => (
               <RevealItem key={tool}>
-                <span
-                  className="motion-safe:animate-[bubble-float_var(--bubble-duration)_ease-in-out_infinite] inline-block rounded-full border border-border bg-bg-elevated px-5 py-2.5 text-sm text-muted transition-colors hover:border-accent hover:text-fg md:text-base"
-                  style={
-                    {
-                      "--bubble-duration": `${5 + (i % 4)}s`,
-                      animationDelay: `${(i % 5) * 0.4}s`,
-                    } as CSSProperties
-                  }
-                >
+                <span className="inline-block rounded-full border border-border bg-bg-elevated px-5 py-2.5 text-sm text-muted transition-colors hover:border-accent hover:text-fg md:text-base">
                   {tool}
                 </span>
               </RevealItem>
