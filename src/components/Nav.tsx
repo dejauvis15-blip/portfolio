@@ -25,12 +25,12 @@ export default function Nav() {
   }, [open]);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 px-4 pt-4 md:px-6 md:pt-5">
-      <div
-        className={`mx-auto max-w-[1600px] rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-xl transition-shadow duration-300 ${
-          scrolled ? "shadow-lg shadow-black/30" : ""
-        }`}
-      >
+    <header
+      className={`fixed top-0 inset-x-0 z-50 transition-colors duration-300 ${
+        scrolled ? "bg-bg border-b border-white/10" : ""
+      }`}
+    >
+      <div className="mx-auto max-w-[1600px]">
         <div className="px-4 md:px-8 lg:px-10 h-14 md:h-16 flex items-center justify-between">
           <Link
             href="/"
@@ -72,7 +72,7 @@ export default function Nav() {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="md:hidden overflow-hidden"
           >
-            <div className="mt-2 rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-xl px-6 py-6 flex flex-col gap-5">
+            <div className="bg-bg border-b border-white/10 px-6 py-6 flex flex-col gap-5">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
