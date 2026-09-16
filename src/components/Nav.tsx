@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Allura, Baloo_2 } from "next/font/google";
@@ -11,8 +12,12 @@ const script = Allura({ subsets: ["latin"], weight: "400" });
 const puffy = Baloo_2({ subsets: ["latin"], weight: "800" });
 
 export default function Nav() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" || pathname.startsWith("/work/") : pathname.startsWith(href);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -52,7 +57,9 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm uppercase tracking-[0.12em] text-muted hover:text-fg transition-colors"
+                className={`text-sm uppercase tracking-[0.12em] transition-colors ${
+                  isActive(link.href) ? "text-fg" : "text-muted hover:text-fg"
+                }`}
               >
                 {link.label}
               </Link>
