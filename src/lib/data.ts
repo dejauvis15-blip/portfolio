@@ -191,8 +191,31 @@ export const projects: Project[] = [
       alt: "Discord server notifications screen shown in a lifestyle phone mockup",
     },
   },
+  {
+    slug: "netflix",
+    index: "03",
+    name: "NETFLIX",
+    title: "Netflix Homepage Redesign",
+    discipline: ["UX/UI Design", "Product Design"],
+    category: "UX Research · UI Design",
+    year: "2026",
+    role: "Solo UX/UI Designer",
+    tools: ["Figma", "FigJam"],
+    summary:
+      "Netflix's 2025 “elevated” redesign enlarged title cards and drew a blunt user backlash: more clutter, longer scrolling, and no way to fix it themselves. This case study treats that backlash as a design brief — cutting visual density, shortening the path to something worth watching, and giving people real row-level control the way Apple TV and Google TV already do.",
+    heroImage: {
+      src: "/images/netflix/polished-homepage.png",
+      alt: "Netflix homepage redesign with an Apple TV-inspired hero card and a customizable row stack",
+    },
+  },
 ];
 
 export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);
+}
+
+/** The next project in sequence, wrapping around at the end of the list. */
+export function getNextProject(slug: string) {
+  const i = projects.findIndex((p) => p.slug === slug);
+  return projects[(i + 1) % projects.length];
 }

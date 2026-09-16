@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { projects, site } from "@/lib/data";
 import Reveal from "@/components/Reveal";
-import { DiscordMark, TeslaMark } from "@/components/icons";
+import { DiscordMark, NetflixMark, TeslaMark } from "@/components/icons";
 
 export default function SelectedWork() {
-  const [tesla, discord] = projects;
+  const [tesla, discord, netflix] = projects;
 
   return (
     <section id="work" className="scroll-mt-20 py-24 md:py-32">
@@ -16,7 +16,7 @@ export default function SelectedWork() {
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {/* 01 — Tesla: image nudges down, caption fades up from the top */}
           <Reveal delay={0.05}>
             <Link
@@ -85,6 +85,44 @@ export default function SelectedWork() {
 
               <span className="absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                 {discord.index} &middot; {discord.category}
+              </span>
+            </Link>
+          </Reveal>
+
+          {/* 03 — Netflix: hero card zooms in slightly, caption fades up from the top */}
+          <Reveal delay={0.15}>
+            <Link
+              href="/work/netflix"
+              className="group relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
+            >
+              <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-105">
+                <div className="relative w-[78%] aspect-[16/10] overflow-hidden rounded-xl border border-white/15 shadow-xl">
+                  <video
+                    src="/videos/netflix/prototype-demo.mp4"
+                    poster={netflix.heroImage.src}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 h-full w-full object-cover object-top"
+                  />
+                </div>
+              </div>
+
+              <div className="absolute inset-x-0 top-9 flex flex-col items-center gap-2 opacity-0 -translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/15 bg-black/80">
+                  <NetflixMark className="h-3.5 w-3.5" />
+                </span>
+                <span className="font-display text-sm font-extrabold text-white">
+                  {site.name}
+                </span>
+                <span className="font-mono text-[11px] tracking-wide text-white/70">
+                  Netflix &middot; Homepage Redesign
+                </span>
+              </div>
+
+              <span className="absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                {netflix.index} &middot; {netflix.category}
               </span>
             </Link>
           </Reveal>
