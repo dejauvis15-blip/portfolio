@@ -51,7 +51,7 @@ export default function Nav() {
               Jauvis
             </span>
             <span className={`${puffy.className} font-extrabold`}>Dozier</span>
-            <StickManWalk className="w-5 h-5 md:w-6 md:h-6 text-fg" />
+            <StickManWalk className="w-5 h-5 md:w-6 md:h-6 text-fg self-center" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-10">
