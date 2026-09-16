@@ -1,11 +1,10 @@
-import { Allura, Baloo_2 } from "next/font/google";
+import { Baloo_2 } from "next/font/google";
 import { MapPin, Briefcase, FileText } from "lucide-react";
 import { heroPills } from "@/lib/data";
 import Reveal from "@/components/Reveal";
 
 const pillIcons = { pin: MapPin, briefcase: Briefcase, file: FileText };
 
-const script = Allura({ subsets: ["latin"], weight: "400" });
 const cartoon = Baloo_2({ subsets: ["latin"], weight: "800" });
 
 export default function Hero() {
@@ -14,16 +13,11 @@ export default function Hero() {
       <div className="mx-auto max-w-3xl px-6 flex flex-col items-center text-center">
         <Reveal delay={0.05}>
           <h1 className="font-display normal-case leading-[1.2] tracking-tight text-balance text-[7vw] sm:text-4xl md:text-5xl">
-            <span className="font-light text-muted">
-              <span className={script.className}>Jauvis</span>
-              &nbsp;is&nbsp;a&nbsp;
-            </span>
+            <span className="font-light text-fg">Jauvis&nbsp;is&nbsp;a&nbsp;</span>
             <span className={`${cartoon.className} font-extrabold text-fg`}>
               product designer
             </span>
-            <span className="font-light text-muted">
-              &nbsp;honing his craft.
-            </span>
+            <span className="font-light text-fg">&nbsp;honing his craft.</span>
           </h1>
         </Reveal>
 
