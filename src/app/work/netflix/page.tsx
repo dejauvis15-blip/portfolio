@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowDown, ExternalLink, Undo2, RotateCcw, TriangleAlert } from "lucide-react";
+import { ArrowRight, ExternalLink, Undo2, RotateCcw, TriangleAlert } from "lucide-react";
 import { getProject, getNextProject } from "@/lib/data";
 import CaseHero from "@/components/case-study/CaseHero";
 import SectionHeading from "@/components/case-study/SectionHeading";
@@ -116,7 +116,7 @@ export default function NetflixCaseStudy() {
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.12em] text-muted-2">Platform</p>
-              <p className="mt-1.5 text-sm md:text-base">Desktop web (1728×1117, MacBook Pro 16&Prime;)</p>
+              <p className="mt-1.5 text-sm md:text-base">Desktop web (1728px wide, MacBook Pro 16&Prime;)</p>
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.12em] text-muted-2">Deliverables</p>
@@ -225,12 +225,12 @@ export default function NetflixCaseStudy() {
                 <StageHead
                   n={1}
                   title="Wireframe"
-                  desc="A low-detail general layout established the core structure: hero, row stack, and an early annotation calling out where row-level controls (reorder, pin, hide) needed to live. This stage was about proving the layout could hold the new controls without a fundamentally different information architecture."
+                  desc="A low-detail general layout established the core structure: a hero, a row stack, and a colored status dot in each row header marking where reorder, pin, and hide controls would eventually live. This stage was about proving the layout could hold the new controls without a fundamentally different information architecture."
                 />
                 <ImageFrame
                   aspect="aspect-[1440/1601]"
                   src={`${IMG}/wireframe-general-layout.png`}
-                  alt="Homepage general layout wireframe, showing the hero, row stack, and an annotation calling out where row controls need to live"
+                  alt="Homepage general layout wireframe, showing a placeholder hero and a generic row stack with a status dot marking where row controls will live"
                   className="max-w-2xl"
                 />
               </div>
@@ -239,12 +239,12 @@ export default function NetflixCaseStudy() {
                 <StageHead
                   n={2}
                   title="Low-Fidelity"
-                  desc="This pass tightened spacing, established the row-control icon set (reorder handle, pin, hide), and confirmed the row structure would scale across different card counts and row types before any real visual polish was applied."
+                  desc="This pass filled in the hero with real content shape, metadata, and a mute control, plus the Customize Rows entry point above the row stack, while keeping every row a plain gray placeholder. Confirming the layout could carry real content before spending any time on artwork or color."
                 />
                 <ImageFrame
                   aspect="aspect-[1440/1429]"
                   src={`${IMG}/low-fidelity-homepage.png`}
-                  alt="Low-fidelity homepage pass with the reorder, pin, and hide icon set established on every row"
+                  alt="Low-fidelity homepage pass with a working hero (title, metadata, Play and More Info buttons, mute control) and a Customize Rows entry point above the still-placeholder row stack"
                   className="max-w-2xl"
                 />
               </div>
@@ -256,26 +256,19 @@ export default function NetflixCaseStudy() {
                   desc="The final visual language borrows deliberately from Apple TV's homescreen: a smaller, inset hero card with rounded corners and real depth instead of a flat, edge-to-edge banner; consistent 14px-radius rounded title cards across every row; and a unified badge system (New Season, Recently Added, Leaving Soon) using the same full-width red band everywhere it appears. The hero carries a short, muted autoplay video loop, mirroring Netflix's own hover-preview pattern, behind the title, genre line, and synopsis, sitting on a gradient dark enough to stay legible regardless of what's playing underneath."
                 />
                 <ImageFrame
-                  aspect="aspect-[1728/1921]"
+                  aspect="aspect-[1728/1922]"
                   src={`${IMG}/polished-homepage.png`}
                   alt="Polished, Apple TV-inspired Netflix homepage redesign with an inset hero card, rounded title cards, and a unified badge system"
                   priority
                 />
                 <Reveal delay={0.1} className="mt-8">
                   <p className="text-sm md:text-base text-muted leading-relaxed max-w-2xl">
-                    The finished homepage was framed at 1728×1117, the
+                    Every screen was designed at 1728 pixels wide, the
                     native logical resolution of a MacBook Pro 16&Prime;, so
                     the deliverable reads as a real, on-device screen rather
                     than an arbitrary canvas size.
                   </p>
                 </Reveal>
-                <ImageFrame
-                  delay={0.05}
-                  aspect="aspect-[1728/1117]"
-                  src={`${IMG}/macbook-framed.png`}
-                  alt="Netflix homepage redesign framed in a MacBook Pro 16-inch viewport"
-                  className="mt-6"
-                />
               </div>
             </div>
           </div>
@@ -293,18 +286,13 @@ export default function NetflixCaseStudy() {
                 remove it from the homepage entirely. A persistent
                 &ldquo;Customize Rows&rdquo; entry point sits above the row
                 stack at all times, so the feature is discoverable without
-                hunting through settings.
+                hunting through settings. Reorder, pin, and hide controls live
+                right in the row header, not a separate mode you have to
+                switch into, as shown on the Continue Watching row of the
+                polished homepage above.
               </p>
             </Reveal>
           </div>
-          <ImageFrame
-            delay={0.1}
-            aspect="aspect-[1728/259]"
-            src={`${IMG}/row-controls-closeup.png`}
-            alt="Row controls on every row: a drag handle to reorder, a pin toggle, and a hide toggle, shown on the Continue Watching row"
-            caption="Reorder, pin, and hide controls live in the row header itself, not a separate mode you have to switch into."
-            className="mt-10 max-w-4xl"
-          />
 
           {/* 06 — Customize Rows panel */}
           <div className="mt-24 md:mt-32">
@@ -320,10 +308,10 @@ export default function NetflixCaseStudy() {
               </p>
             </Reveal>
             <ImageFrame
-              aspect="aspect-[680/730]"
-              src={`${IMG}/customize-rows-panel.png`}
-              alt="Customize Rows panel, open state, showing Continue Watching pinned, reorderable rows, a three-row-minimum guardrail note, and a Hidden Rows section"
-              className="max-w-md"
+              aspect="aspect-[1728/1922]"
+              src={`${IMG}/customize-rows-open.png`}
+              alt="Customize Rows panel open over the homepage, showing Continue Watching pinned, two reorderable rows, a three-row-minimum guardrail note, and a Hidden Rows section listing Family TV Favorites"
+              className="max-w-2xl"
             />
           </div>
 
@@ -348,11 +336,11 @@ export default function NetflixCaseStudy() {
               ))}
             </Reveal>
             <ImageFrame
-              aspect="aspect-[389/88]"
-              src={`${IMG}/undo-toast.png`}
-              alt="Undo toast reading Row hidden — Family TV Favorites, with a one-tap Undo action"
-              caption="Hiding a row never reads as silently permanent: an immediate, dismissible toast offers a one-tap Undo."
-              className="max-w-sm"
+              aspect="aspect-[1728/1922]"
+              src={`${IMG}/customize-rows-restored.png`}
+              alt="Customize Rows panel after tapping Restore: Family TV Favorites is back in the list with its toggle on, alongside the other three visible rows"
+              caption="Restoring a row from the Hidden Rows list lands on the same result as hitting Undo before the toast expires."
+              className="max-w-2xl"
             />
           </div>
 
@@ -434,7 +422,12 @@ export default function NetflixCaseStudy() {
               </a>
             </Reveal>
 
-            <FlowDiagram />
+            <ImageFrame
+              aspect="aspect-[7960/2732]"
+              src={`${IMG}/user-flow-diagram.png`}
+              alt="FigJam flow diagram for the row customization system: browsing the homepage into row edit mode, branching into reorder, pin, and hide, with the hide branch running through the three-row guardrail, the undo toast, and the Hidden Rows list, both recovery paths converging on the same restored state"
+              caption="Mapped in FigJam before any screen was built: three branches off row edit mode, and both recovery paths (Undo, Restore) converging on the same result."
+            />
           </div>
 
           {/* 11 — Reflection */}
@@ -509,108 +502,5 @@ function StageHead({ n, title, desc }: { n: number; title: string; desc: string 
         <p className="mt-2 text-sm md:text-base text-muted leading-relaxed max-w-2xl">{desc}</p>
       </div>
     </Reveal>
-  );
-}
-
-/**
- * A lightweight, code-drawn recreation of the actual Row Customization user
- * flow mapped in FigJam (branches, guardrail decision, and the two recovery
- * paths back to the same restored state).
- */
-function FlowDiagram() {
-  return (
-    <Reveal delay={0.15} className="border border-border p-6 md:p-10">
-      <div className="flex flex-col items-center gap-2 text-center">
-        <FlowNode>Browsing homepage</FlowNode>
-        <ArrowDown size={16} className="text-muted-2" />
-        <div className="flex flex-wrap justify-center gap-3">
-          <FlowNode variant="entry">Long-press row header</FlowNode>
-          <FlowNode variant="entry">Tap Customize Rows</FlowNode>
-        </div>
-        <ArrowDown size={16} className="text-muted-2" />
-        <FlowNode>Row edit mode — reorder, pin, hide controls appear</FlowNode>
-      </div>
-
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Reorder branch */}
-        <div className="border border-border p-5 flex flex-col items-center gap-3 text-center">
-          <p className="text-xs uppercase tracking-[0.1em] text-accent">Reorder</p>
-          <FlowNode small>Drag reorder handle</FlowNode>
-          <ArrowDown size={14} className="text-muted-2" />
-          <FlowNode small>Order saved automatically</FlowNode>
-          <ArrowDown size={14} className="text-muted-2" />
-          <FlowNode small variant="end">Back to homepage</FlowNode>
-        </div>
-
-        {/* Pin branch */}
-        <div className="border border-border p-5 flex flex-col items-center gap-3 text-center">
-          <p className="text-xs uppercase tracking-[0.1em] text-accent">Pin</p>
-          <FlowNode small>Tap pin icon</FlowNode>
-          <ArrowDown size={14} className="text-muted-2" />
-          <FlowNode small>Row pinned to top</FlowNode>
-          <ArrowDown size={14} className="text-muted-2" />
-          <FlowNode small variant="end">Back to homepage</FlowNode>
-        </div>
-
-        {/* Hide branch */}
-        <div className="border border-border p-5 flex flex-col items-center gap-3 text-center">
-          <p className="text-xs uppercase tracking-[0.1em] text-accent">Hide</p>
-          <FlowNode small>Tap hide icon</FlowNode>
-          <ArrowDown size={14} className="text-muted-2" />
-          <FlowNode small variant="decision">3+ rows still visible?</FlowNode>
-          <div className="flex gap-2 text-[11px] text-muted-2">
-            <span>No → blocked, keep 3 rows</span>
-          </div>
-          <ArrowDown size={14} className="text-muted-2" />
-          <FlowNode small>Row hidden</FlowNode>
-          <ArrowDown size={14} className="text-muted-2" />
-          <FlowNode small>Toast: Row hidden, Undo</FlowNode>
-          <div className="mt-2 grid grid-cols-2 gap-3 w-full text-left">
-            <div className="flex flex-col items-center gap-2 text-center">
-              <p className="text-[11px] text-muted-2">Tap Undo</p>
-              <ArrowDown size={12} className="text-muted-2" />
-              <FlowNode small variant="end">Row restored</FlowNode>
-            </div>
-            <div className="flex flex-col items-center gap-2 text-center">
-              <p className="text-[11px] text-muted-2">Toast expires</p>
-              <ArrowDown size={12} className="text-muted-2" />
-              <FlowNode small>Hidden Rows list</FlowNode>
-              <ArrowDown size={12} className="text-muted-2" />
-              <p className="text-[11px] text-muted-2">Tap Restore</p>
-              <ArrowDown size={12} className="text-muted-2" />
-              <FlowNode small variant="end">Row restored</FlowNode>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Reveal>
-  );
-}
-
-function FlowNode({
-  children,
-  small = false,
-  variant = "default",
-}: {
-  children: React.ReactNode;
-  small?: boolean;
-  variant?: "default" | "entry" | "decision" | "end";
-}) {
-  const styles =
-    variant === "entry"
-      ? "border-border-strong text-fg"
-      : variant === "decision"
-        ? "border-accent/50 text-fg"
-        : variant === "end"
-          ? "border-accent/40 text-accent"
-          : "border-border text-fg";
-  return (
-    <span
-      className={`inline-block rounded-lg border ${styles} bg-bg-elevated px-3.5 py-2 ${
-        small ? "text-xs" : "text-sm"
-      } leading-snug`}
-    >
-      {children}
-    </span>
   );
 }
