@@ -64,3 +64,21 @@ body {
 .font-display {
   font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
 }
+
+@keyframes stick-man-wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-28deg);
+  }
+  75% {
+    transform: rotate(-8deg);
+  }
+}
+
+.stick-man-arm {
+  transform-box: view-box;
+  transform-origin: 12px 10px;
+  animation: stick-man-wave 1.2s ease-in-out infinite;
+}
