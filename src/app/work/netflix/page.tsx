@@ -239,9 +239,9 @@ export default function NetflixCaseStudy() {
                 />
                 <ImageFrame
                   rounded
-                  aspect="aspect-[1440/1601]"
-                  src={`${IMG}/wireframe-general-layout.png`}
-                  alt="Homepage general layout wireframe, showing a placeholder hero and a generic row stack with a status dot marking where row controls will live"
+                  aspect="aspect-[1440/1429]"
+                  src={`${IMG}/low-fidelity-homepage.png`}
+                  alt="Low fidelity homepage pass with a working hero (title, metadata, Play and More Info buttons, mute control) and a Customize Rows entry point above the still placeholder row stack"
                   className="max-w-2xl mx-auto text-center"
                 />
               </div>
@@ -254,9 +254,9 @@ export default function NetflixCaseStudy() {
                 />
                 <ImageFrame
                   rounded
-                  aspect="aspect-[1440/1429]"
-                  src={`${IMG}/low-fidelity-homepage.png`}
-                  alt="Low fidelity homepage pass with a working hero (title, metadata, Play and More Info buttons, mute control) and a Customize Rows entry point above the still placeholder row stack"
+                  aspect="aspect-[1440/1601]"
+                  src={`${IMG}/wireframe-general-layout.png`}
+                  alt="Homepage general layout wireframe, showing a placeholder hero and a generic row stack with a status dot marking where row controls will live"
                   className="max-w-2xl mx-auto text-center"
                 />
               </div>
