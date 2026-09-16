@@ -27,12 +27,12 @@ export default function Hero() {
               const Icon = pillIcons[pill.icon];
               const content = (
                 <>
-                  <Icon size={14} className="text-muted-2" />
+                  <Icon size={14} className="text-fg" />
                   {pill.label}
                 </>
               );
               const classes =
-                "inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.06] backdrop-blur-xl px-3.5 py-2 text-[13px] font-light text-muted transition-colors hover:border-white/25 hover:bg-white/10 hover:text-fg";
+                "inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.06] backdrop-blur-xl px-3.5 py-2 text-[13px] font-light text-fg transition-colors hover:border-white/25 hover:bg-white/10";
               return "href" in pill && pill.href ? (
                 <a
                   key={pill.label}
