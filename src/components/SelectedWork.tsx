@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { projects, site } from "@/lib/data";
 import Reveal from "@/components/Reveal";
-import { DiscordMark, TeslaMark } from "@/components/icons";
+import { DiscordMark } from "@/components/icons";
 
 export default function SelectedWork() {
   const [tesla, discord, netflix] = projects;
@@ -51,8 +51,14 @@ export default function SelectedWork() {
               </div>
 
               <div className="absolute inset-x-0 top-9 flex flex-col items-center gap-2 opacity-0 -translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/15 bg-black/80">
-                  <TeslaMark className="h-3 w-3 text-white" />
+                <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg border border-white/15">
+                  <Image
+                    src="/images/tesla/logo-icon.jpg"
+                    alt="Tesla"
+                    width={32}
+                    height={32}
+                    className="h-full w-full object-cover"
+                  />
                 </span>
                 <span className="font-display text-sm font-extrabold text-white">
                   {site.name}

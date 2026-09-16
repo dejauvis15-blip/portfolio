@@ -1,13 +1,5 @@
 // Small brand marks and decorative glyphs that aren't in lucide-react.
 
-export function TeslaMark({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
-      <path d="M12,5.362 L14.104,2.336 C14.104,2.336 17.712,2.426 21.304,4.929 C20.300,7.631 18.095,8.629 18.095,8.629 L18.170,7.213 L12,23.0 L6.680,7.213 L6.755,8.629 C6.755,8.629 4.550,7.631 3.546,4.929 C7.138,2.426 10.746,2.336 10.746,2.336 Z" />
-    </svg>
-  );
-}
-
 export function DiscordMark({ className = "h-4 w-4" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="#5865F2" aria-hidden="true">
