@@ -38,12 +38,14 @@ export default function Nav() {
         <div className="px-4 md:px-8 lg:px-10 h-14 md:h-16 flex items-center justify-between">
           <Link
             href="/"
-            className="font-display text-xl md:text-2xl tracking-wide uppercase"
+            className="font-display text-xl md:text-2xl tracking-wide uppercase inline-flex items-baseline"
             onClick={() => setOpen(false)}
           >
-            <span className={`${script.className} normal-case tracking-normal text-2xl md:text-3xl align-middle`}>
+            <span
+              className={`${script.className} normal-case tracking-normal text-3xl md:text-4xl -mr-1 md:-mr-1.5 relative z-10`}
+            >
               Jauvis
-            </span>{" "}
+            </span>
             <span className={`${puffy.className} font-extrabold`}>Dozier</span>
           </Link>
 
