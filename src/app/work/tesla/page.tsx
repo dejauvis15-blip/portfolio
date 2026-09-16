@@ -52,8 +52,8 @@ export default function TeslaCaseStudy() {
       <section className="py-24 md:py-32">
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
           {/* 01 — Overview */}
-          <div className="max-w-3xl">
-            <SectionHeading number="01" title="Overview" />
+          <div className="max-w-3xl mx-auto text-center">
+            <SectionHeading number="01" title="Overview" className="justify-center" />
             <Reveal delay={0.05}>
               <p className="text-lg text-muted leading-relaxed">
                 The Tesla homepage redesign was a self-directed UX/UI project
@@ -78,7 +78,7 @@ export default function TeslaCaseStudy() {
               </p>
             </Reveal>
             <Reveal delay={0.12}>
-              <div className="mt-8 flex flex-wrap gap-2">
+              <div className="mt-8 flex flex-wrap justify-center gap-2">
                 {quickLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -94,8 +94,8 @@ export default function TeslaCaseStudy() {
           </div>
 
           {/* 02 — Problem */}
-          <div id="problem" className="max-w-3xl mt-24 md:mt-32 scroll-mt-24">
-            <SectionHeading number="02" title="Problem" />
+          <div id="problem" className="max-w-3xl mx-auto mt-24 md:mt-32 scroll-mt-24 text-center">
+            <SectionHeading number="02" title="Problem" className="justify-center" />
             <Reveal delay={0.05}>
               <p className="text-lg text-muted leading-relaxed">
                 Tesla&rsquo;s existing homepage effectively showcases its
@@ -117,9 +117,9 @@ export default function TeslaCaseStudy() {
           </div>
 
           {/* 03 — Goals */}
-          <div id="goals" className="mt-24 md:mt-32 scroll-mt-24">
-            <SectionHeading number="03" title="Goals" />
-            <Reveal stagger={0.06} className="grid grid-cols-1 md:grid-cols-2 border-t border-l border-border max-w-4xl">
+          <div id="goals" className="mt-24 md:mt-32 scroll-mt-24 text-center">
+            <SectionHeading number="03" title="Goals" className="justify-center" />
+            <Reveal stagger={0.06} className="mx-auto grid grid-cols-1 md:grid-cols-2 border-t border-l border-border max-w-4xl text-left">
               {goals.map((goal, i) => (
                 <RevealItem
                   key={goal}
@@ -141,7 +141,7 @@ export default function TeslaCaseStudy() {
       {/* 04 — Vehicle lineup: full-bleed imagery */}
       <section className="py-4">
         <Reveal>
-          <p className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16 text-xs uppercase tracking-[0.15em] text-muted-2 mb-4">
+          <p className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16 text-xs uppercase tracking-[0.15em] text-muted-2 mb-4 text-center">
             Brand photography referenced during the redesign
           </p>
         </Reveal>
@@ -163,21 +163,21 @@ export default function TeslaCaseStudy() {
       <section className="py-24 md:py-32">
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
           {/* 05 — Typography & Color */}
-          <div className="mt-0">
-            <SectionHeading number="04" title="Typography &amp; Color" />
-            <Reveal delay={0.05} className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl">
+          <div className="mt-0 text-center">
+            <SectionHeading number="04" title="Typography &amp; Color" className="justify-center" />
+            <Reveal delay={0.05} className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl">
               <div>
                 <p className="font-display text-8xl leading-none">Aa</p>
                 <p className="mt-4 text-sm uppercase tracking-[0.1em] text-muted">
                   Inter
                 </p>
-                <p className="mt-4 text-muted leading-relaxed max-w-sm">
+                <p className="mt-4 mx-auto text-muted leading-relaxed max-w-sm">
                   Tesla&rsquo;s redesign uses a clean and modern type system
                   to reinforce the brand&rsquo;s innovative and premium
                   identity while maintaining readability across all devices.
                 </p>
               </div>
-              <div className="flex flex-col gap-4 justify-center">
+              <div className="flex flex-col gap-4 items-center justify-center">
                 {swatches.map((s) => (
                   <div key={s.hex} className="flex items-center gap-4">
                     <span
@@ -195,9 +195,9 @@ export default function TeslaCaseStudy() {
           </div>
 
           {/* 06 — Final design */}
-          <div id="final-design" className="mt-24 md:mt-32 scroll-mt-24">
-            <SectionHeading number="05" title="Final Design" />
-            <Reveal delay={0.05} className="max-w-3xl mb-10">
+          <div id="final-design" className="mt-24 md:mt-32 scroll-mt-24 text-center">
+            <SectionHeading number="05" title="Final Design" className="justify-center" />
+            <Reveal delay={0.05} className="max-w-3xl mx-auto mb-10">
               <p className="text-lg text-muted leading-relaxed">
                 The finished redesign, from the full homepage layout down to
                 individual sections and the vehicle mega-menu.

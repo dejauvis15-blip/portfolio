@@ -149,7 +149,7 @@ export default function DiscordCaseStudy() {
 
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
-          <Reveal className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl">
+          <Reveal className="mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             <div>
               <p className="text-xs uppercase tracking-[0.12em] text-muted-2">Scope</p>
               <p className="mt-1.5 text-sm md:text-base">Notification settings navigation</p>
@@ -169,16 +169,16 @@ export default function DiscordCaseStudy() {
       <section className="py-24 md:py-32">
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
           {/* Final solution cover */}
-          <Reveal>
+          <Reveal className="max-w-3xl mx-auto text-center">
             <p className="text-xs uppercase tracking-[0.15em] text-accent mb-3">Final solution</p>
             <h2 className="font-display uppercase text-3xl md:text-4xl">Notifications + Search</h2>
-            <p className="mt-3 text-muted max-w-xl">
+            <p className="mt-3 text-muted max-w-xl mx-auto">
               Representative final screens from both redesigns, shown in light and dark mode.
             </p>
           </Reveal>
 
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-            <div>
+            <div className="text-center">
               <p className="text-sm uppercase tracking-[0.1em] text-muted mb-5">
                 Notification settings <span className="text-muted-2">— Forum controls</span>
               </p>
@@ -195,7 +195,7 @@ export default function DiscordCaseStudy() {
                 />
               </div>
             </div>
-            <div>
+            <div className="text-center">
               <p className="text-sm uppercase tracking-[0.1em] text-muted mb-5">
                 Search <span className="text-muted-2">— Filter experience</span>
               </p>
@@ -215,8 +215,8 @@ export default function DiscordCaseStudy() {
           </div>
 
           {/* 01 — The problem */}
-          <div className="mt-24 md:mt-32 max-w-3xl">
-            <SectionHeading number="01" title="The Problem" />
+          <div className="mt-24 md:mt-32 max-w-3xl mx-auto text-center">
+            <SectionHeading number="01" title="The Problem" className="justify-center" />
             <Reveal delay={0.05}>
               <p className="text-lg text-muted leading-relaxed">
                 I ran a heuristic audit of Discord&rsquo;s mobile app and kept
@@ -228,7 +228,7 @@ export default function DiscordCaseStudy() {
             </Reveal>
           </div>
 
-          <Reveal stagger={0.06} className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl">
+          <Reveal stagger={0.06} className="mt-10 mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl">
             {painPoints.map((p) => (
               <RevealItem key={p.text} className="border border-border p-6">
                 <span
@@ -243,7 +243,7 @@ export default function DiscordCaseStudy() {
             ))}
           </Reveal>
 
-          <Reveal delay={0.1} className="mt-8 max-w-3xl">
+          <Reveal delay={0.1} className="mt-8 max-w-3xl mx-auto text-center">
             <p className="text-muted leading-relaxed">
               I&rsquo;m starting with the highest-severity one here:{" "}
               <strong className="text-fg">notification fragmentation</strong>,
@@ -256,16 +256,18 @@ export default function DiscordCaseStudy() {
 
           {/* 02 — Research */}
           <div className="mt-24 md:mt-32">
-            <SectionHeading number="02" title="What the Research Showed" />
-            <Reveal delay={0.05} className="max-w-3xl mb-10">
-              <p className="text-lg text-muted leading-relaxed">
-                To make the gap concrete, I compared Discord&rsquo;s
-                notification screens against Slack&rsquo;s, side by side,
-                pulling straight from real app screenshots instead of just
-                going on assumption.
-              </p>
-            </Reveal>
-            <Reveal stagger={0.08} className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
+            <div className="max-w-3xl mx-auto text-center">
+              <SectionHeading number="02" title="What the Research Showed" className="justify-center" />
+              <Reveal delay={0.05} className="mb-10">
+                <p className="text-lg text-muted leading-relaxed">
+                  To make the gap concrete, I compared Discord&rsquo;s
+                  notification screens against Slack&rsquo;s, side by side,
+                  pulling straight from real app screenshots instead of just
+                  going on assumption.
+                </p>
+              </Reveal>
+            </div>
+            <Reveal stagger={0.08} className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl">
               <RevealItem className="border border-border p-8">
                 <h3 className="font-display uppercase text-xl">Discord Today</h3>
                 <p className="mt-4 text-sm md:text-base text-muted leading-relaxed">
@@ -290,9 +292,9 @@ export default function DiscordCaseStudy() {
           </div>
 
           {/* 03 — Problem stated precisely */}
-          <div className="mt-24 md:mt-32">
-            <SectionHeading number="03" title="The Problem, Stated Precisely" />
-            <Reveal delay={0.05} className="max-w-3xl mb-8">
+          <div className="mt-24 md:mt-32 text-center">
+            <SectionHeading number="03" title="The Problem, Stated Precisely" className="justify-center" />
+            <Reveal delay={0.05} className="max-w-3xl mx-auto mb-8">
               <p className="text-muted leading-relaxed">
                 Vague complaints don&rsquo;t design well, so I turned
                 &ldquo;forum notifications suck&rdquo; into something
@@ -300,48 +302,55 @@ export default function DiscordCaseStudy() {
                 against.
               </p>
             </Reveal>
-            <Callout>
-              Users can&rsquo;t reliably control forum notifications because
-              settings are split across global, server, and per-channel
-              menus, with no forum-specific option, despite forums behaving
-              nothing like a regular channel.
-            </Callout>
+            <div className="mx-auto max-w-3xl flex justify-center">
+              <Callout>
+                Users can&rsquo;t reliably control forum notifications because
+                settings are split across global, server, and per-channel
+                menus, with no forum-specific option, despite forums behaving
+                nothing like a regular channel.
+              </Callout>
+            </div>
           </div>
 
           {/* 04 — Approach */}
           <div className="mt-24 md:mt-32">
-            <SectionHeading number="04" title="Designing the Fix" />
-            <Reveal delay={0.05} className="max-w-3xl mb-10">
-              <p className="text-lg text-muted leading-relaxed">
-                Instead of patching the existing three menus, I treated
-                notification settings as one single drill-down hierarchy:
-                Global, then Server, then Channel, with Forum branching off
-                Channel as its own distinct step instead of a separate,
-                hard-to-find fourth place. A long-press shortcut jumps
-                straight into the right level, so I didn&rsquo;t have to
-                duplicate controls in a second system.
-              </p>
-            </Reveal>
+            <div className="max-w-3xl mx-auto text-center">
+              <SectionHeading number="04" title="Designing the Fix" className="justify-center" />
+              <Reveal delay={0.05} className="mb-10">
+                <p className="text-lg text-muted leading-relaxed">
+                  Instead of patching the existing three menus, I treated
+                  notification settings as one single drill-down hierarchy:
+                  Global, then Server, then Channel, with Forum branching off
+                  Channel as its own distinct step instead of a separate,
+                  hard-to-find fourth place. A long-press shortcut jumps
+                  straight into the right level, so I didn&rsquo;t have to
+                  duplicate controls in a second system.
+                </p>
+              </Reveal>
+            </div>
             <ImageFrame
               aspect="aspect-[16/9]"
               src={`${IMG}/figjam-flow-diagram-showing-navigation-from-global-through-server-and-channel-settings-branching-to-forum-settings-if-the-channel-is-a-forum-with-a-long-press-shortcut.png`}
               alt="FigJam flow diagram showing navigation from Global through Server and Channel settings, branching to Forum settings"
               caption="The actual FigJam flow used to plan the screens: global settings cascade down, branch to forum-specific controls when relevant, and a long-press shortcut skips straight to the right level."
+              className="max-w-4xl mx-auto text-center"
             />
           </div>
 
           {/* 05 — What forums need */}
           <div className="mt-24 md:mt-32">
-            <SectionHeading number="05" title="What Forums Actually Need" />
-            <Reveal delay={0.05} className="max-w-3xl mb-10">
-              <p className="text-lg text-muted leading-relaxed">
-                Forums just generate a different shape of activity than a
-                regular channel: parallel threads and tags instead of one
-                linear conversation, so I wanted the controls to reflect that
-                instead of inheriting generic channel settings.
-              </p>
-            </Reveal>
-            <Reveal stagger={0.08} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="max-w-3xl mx-auto text-center">
+              <SectionHeading number="05" title="What Forums Actually Need" className="justify-center" />
+              <Reveal delay={0.05} className="mb-10">
+                <p className="text-lg text-muted leading-relaxed">
+                  Forums just generate a different shape of activity than a
+                  regular channel: parallel threads and tags instead of one
+                  linear conversation, so I wanted the controls to reflect that
+                  instead of inheriting generic channel settings.
+                </p>
+              </Reveal>
+            </div>
+            <Reveal stagger={0.08} className="mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
               {forumFeatures.map((f) => (
                 <RevealItem key={f.title} className="border border-border p-6 md:p-8">
                   <h4 className="font-medium">
@@ -359,9 +368,9 @@ export default function DiscordCaseStudy() {
           </div>
 
           {/* 06 — From structure to screen */}
-          <div className="mt-24 md:mt-32">
-            <SectionHeading number="06" title="From Structure to Screen" />
-            <Reveal delay={0.05} className="max-w-2xl mb-14">
+          <div className="mt-24 md:mt-32 text-center">
+            <SectionHeading number="06" title="From Structure to Screen" className="justify-center" />
+            <Reveal delay={0.05} className="max-w-2xl mx-auto mb-14">
               <p className="text-lg text-muted leading-relaxed">
                 I built this out in three passes, each one adding more
                 fidelity without changing the underlying structure.
@@ -393,8 +402,8 @@ export default function DiscordCaseStudy() {
           </div>
 
           {/* 07 — Reflection */}
-          <div className="mt-24 md:mt-32 max-w-3xl">
-            <SectionHeading number="07" title="What This Actually Fixes" />
+          <div className="mt-24 md:mt-32 max-w-3xl mx-auto text-center">
+            <SectionHeading number="07" title="What This Actually Fixes" className="justify-center" />
             <Reveal delay={0.05}>
               <p className="text-lg text-muted leading-relaxed mb-8">
                 Mapping this back against my original heuristic audit, the
@@ -402,7 +411,7 @@ export default function DiscordCaseStudy() {
                 not just a general sense of clutter.
               </p>
             </Reveal>
-            <Reveal stagger={0.06} className="space-y-5 border-t border-border pt-8">
+            <Reveal stagger={0.06} className="space-y-5 border-t border-border pt-8 text-left">
               {notifTakeaways.map((t) => (
                 <RevealItem key={t.label} className="flex gap-4">
                   <span className="h-1.5 w-1.5 rounded-full bg-accent mt-2.5 shrink-0" />
@@ -423,15 +432,15 @@ export default function DiscordCaseStudy() {
           </div>
 
           {/* Divider */}
-          <Reveal className="mt-28 md:mt-36 pt-10 border-t border-border-strong">
+          <Reveal className="mt-28 md:mt-36 pt-10 border-t border-border-strong text-center">
             <p className="text-sm font-medium uppercase tracking-[0.15em] text-accent">
               Second Problem
             </p>
           </Reveal>
 
           {/* 08 — Search problem */}
-          <div className="mt-10 max-w-3xl">
-            <SectionHeading number="08" title="Search You Can't Trust" />
+          <div className="mt-10 max-w-3xl mx-auto text-center">
+            <SectionHeading number="08" title="Search You Can't Trust" className="justify-center" />
             <Reveal delay={0.05}>
               <p className="text-lg text-muted leading-relaxed">
                 That same audit flagged a second issue at equal severity: a
@@ -446,8 +455,8 @@ export default function DiscordCaseStudy() {
           </div>
 
           {/* 09 — Search research */}
-          <div className="mt-24 md:mt-32 max-w-3xl">
-            <SectionHeading number="09" title="Starting From What's Actually There" />
+          <div className="mt-24 md:mt-32 max-w-3xl mx-auto text-center">
+            <SectionHeading number="09" title="Starting From What's Actually There" className="justify-center" />
             <Reveal delay={0.05}>
               <p className="text-lg text-muted leading-relaxed">
                 My first pass at this problem invented a search UI from
@@ -467,42 +476,47 @@ export default function DiscordCaseStudy() {
           </div>
 
           {/* 10 — Search problem stated precisely */}
-          <div className="mt-24 md:mt-32">
-            <SectionHeading number="10" title="The Problem, Stated Precisely" />
-            <Callout>
-              After a recent mobile update, Discord&rsquo;s in-app search
-              became unreliable. Unlike comparable apps, which give users
-              visible feedback about search scope and progress,
-              Discord&rsquo;s search offers no indication of why results are
-              missing, incomplete, or slow, leaving no way to tell a broken
-              search from a genuinely empty one.
-            </Callout>
+          <div className="mt-24 md:mt-32 text-center">
+            <SectionHeading number="10" title="The Problem, Stated Precisely" className="justify-center" />
+            <div className="mx-auto max-w-3xl flex justify-center">
+              <Callout>
+                After a recent mobile update, Discord&rsquo;s in-app search
+                became unreliable. Unlike comparable apps, which give users
+                visible feedback about search scope and progress,
+                Discord&rsquo;s search offers no indication of why results are
+                missing, incomplete, or slow, leaving no way to tell a broken
+                search from a genuinely empty one.
+              </Callout>
+            </div>
           </div>
 
           {/* 11 — Search flow */}
           <div className="mt-24 md:mt-32">
-            <SectionHeading number="11" title="A Decision, Not a Hierarchy" />
-            <Reveal delay={0.05} className="max-w-3xl mb-10">
-              <p className="text-lg text-muted leading-relaxed">
-                Notifications turned out to be a drill-down tree. Search is a
-                completely different shape: a linear task with a branch
-                depending on whether results come back, plus an optional
-                detour into the filter dropdown that loops back to the same
-                spot instead of going deeper into anything.
-              </p>
-            </Reveal>
+            <div className="max-w-3xl mx-auto text-center">
+              <SectionHeading number="11" title="A Decision, Not a Hierarchy" className="justify-center" />
+              <Reveal delay={0.05} className="mb-10">
+                <p className="text-lg text-muted leading-relaxed">
+                  Notifications turned out to be a drill-down tree. Search is a
+                  completely different shape: a linear task with a branch
+                  depending on whether results come back, plus an optional
+                  detour into the filter dropdown that loops back to the same
+                  spot instead of going deeper into anything.
+                </p>
+              </Reveal>
+            </div>
             <ImageFrame
               aspect="aspect-[16/9]"
               src={`${IMG}/search-flow-diagram-showing-the-branch-between-results-found-and-empty-state-with-the-filter-dropdown-as-an-optional-detour.png`}
               alt="Search flow diagram showing the branch between results found and empty state"
               caption="Query in, status feedback, then a branch: results or a specific empty-state reason. The filter dropdown loops back rather than advancing."
+              className="max-w-4xl mx-auto text-center"
             />
           </div>
 
           {/* 12 — Search evolution */}
-          <div className="mt-24 md:mt-32">
-            <SectionHeading number="12" title="From Baseline to Polished Mockup" />
-            <Reveal delay={0.05} className="max-w-2xl mb-14">
+          <div className="mt-24 md:mt-32 text-center">
+            <SectionHeading number="12" title="From Baseline to Polished Mockup" className="justify-center" />
+            <Reveal delay={0.05} className="max-w-2xl mx-auto mb-14">
               <p className="text-lg text-muted leading-relaxed">
                 Only two stages here instead of three, since these
                 wireframes started from Discord&rsquo;s real screens, there
@@ -528,8 +542,8 @@ export default function DiscordCaseStudy() {
           </div>
 
           {/* 13 — Search reflection */}
-          <div className="mt-24 md:mt-32 max-w-3xl">
-            <SectionHeading number="13" title="What This Fixes — and Doesn't" />
+          <div className="mt-24 md:mt-32 max-w-3xl mx-auto text-center">
+            <SectionHeading number="13" title="What This Fixes — and Doesn't" className="justify-center" />
             <Reveal delay={0.05}>
               <p className="text-lg text-muted leading-relaxed mb-8">
                 Being honest, this redesign ended up narrower than my first
@@ -538,7 +552,7 @@ export default function DiscordCaseStudy() {
                 reasonably well. What it does add:
               </p>
             </Reveal>
-            <Reveal stagger={0.06} className="space-y-5 border-t border-border pt-8">
+            <Reveal stagger={0.06} className="space-y-5 border-t border-border pt-8 text-left">
               {searchTakeaways.map((t) => (
                 <RevealItem key={t.label} className="flex gap-4">
                   <span className="h-1.5 w-1.5 rounded-full bg-accent mt-2.5 shrink-0" />
@@ -562,8 +576,8 @@ export default function DiscordCaseStudy() {
           </div>
 
           {/* 14 — Validation plan */}
-          <div className="mt-24 md:mt-32 max-w-3xl">
-            <SectionHeading number="14" title="How This Would Be Validated" />
+          <div className="mt-24 md:mt-32 max-w-3xl mx-auto text-center">
+            <SectionHeading number="14" title="How This Would Be Validated" className="justify-center" />
             <Reveal delay={0.05}>
               <p className="text-lg text-muted leading-relaxed">
                 Everything above is grounded in heuristic evaluation,
@@ -587,7 +601,7 @@ export default function DiscordCaseStudy() {
             </Reveal>
 
             <SubHead>Tasks: Notifications</SubHead>
-            <Reveal stagger={0.06} className="space-y-6">
+            <Reveal stagger={0.06} className="space-y-6 text-left">
               {notifTasks.map((t) => (
                 <RevealItem key={t.title}>
                   <h4 className="font-medium">{t.title}</h4>
@@ -597,7 +611,7 @@ export default function DiscordCaseStudy() {
             </Reveal>
 
             <SubHead>Tasks: Search</SubHead>
-            <Reveal stagger={0.06} className="space-y-6">
+            <Reveal stagger={0.06} className="space-y-6 text-left">
               {searchTasks.map((t) => (
                 <RevealItem key={t.title}>
                   <h4 className="font-medium">{t.title}</h4>
@@ -621,8 +635,8 @@ export default function DiscordCaseStudy() {
             </Reveal>
           </div>
 
-          <Reveal delay={0.1} className="mt-20 pt-8 border-t border-border">
-            <p className="text-sm text-muted-2 italic max-w-2xl">
+          <Reveal delay={0.1} className="mt-20 pt-8 border-t border-border text-center">
+            <p className="text-sm text-muted-2 italic max-w-2xl mx-auto">
               Part of a broader mobile navigation study across three app
               interfaces. This case study covers just the notification
               settings and search reliability sections for Discord.
@@ -638,21 +652,19 @@ export default function DiscordCaseStudy() {
 
 function StageHead({ n, title, desc }: { n: number; title: string; desc: string }) {
   return (
-    <Reveal className="flex items-start gap-4 mb-8">
-      <span className="font-display text-lg text-muted-2 shrink-0">
+    <Reveal className="flex flex-col items-center text-center gap-1 mb-8 mx-auto max-w-2xl">
+      <span className="font-display text-lg text-muted-2">
         {String(n).padStart(2, "0")}
       </span>
-      <div>
-        <h3 className="font-display uppercase text-xl md:text-2xl">{title}</h3>
-        <p className="mt-2 text-sm md:text-base text-muted leading-relaxed max-w-2xl">{desc}</p>
-      </div>
+      <h3 className="font-display uppercase text-xl md:text-2xl">{title}</h3>
+      <p className="mt-2 text-sm md:text-base text-muted leading-relaxed">{desc}</p>
     </Reveal>
   );
 }
 
 function SubHead({ children }: { children: React.ReactNode }) {
   return (
-    <h4 className="font-display uppercase text-base tracking-wide mt-10 mb-4 text-fg/90">
+    <h4 className="font-display uppercase text-base tracking-wide mt-10 mb-4 text-fg/90 text-center">
       {children}
     </h4>
   );
