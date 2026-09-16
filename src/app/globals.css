@@ -65,20 +65,38 @@ body {
   font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
 }
 
-@keyframes stick-man-wave {
+@keyframes stick-man-swing-forward {
   0%, 100% {
-    transform: rotate(0deg);
+    transform: rotate(18deg);
   }
-  25% {
-    transform: rotate(-28deg);
-  }
-  75% {
-    transform: rotate(-8deg);
+  50% {
+    transform: rotate(-18deg);
   }
 }
 
-.stick-man-arm {
+@keyframes stick-man-swing-back {
+  0%, 100% {
+    transform: rotate(-18deg);
+  }
+  50% {
+    transform: rotate(18deg);
+  }
+}
+
+.stick-man-leg-a {
   transform-box: view-box;
-  transform-origin: 12px 10px;
-  animation: stick-man-wave 1.2s ease-in-out infinite;
+  transform-origin: 12px 15px;
+  animation: stick-man-swing-forward 0.7s ease-in-out infinite;
+}
+
+.stick-man-leg-b {
+  transform-box: view-box;
+  transform-origin: 12px 15px;
+  animation: stick-man-swing-back 0.7s ease-in-out infinite;
+}
+
+.stick-man-arm-walk {
+  transform-box: view-box;
+  transform-origin: 12.5px 9.5px;
+  animation: stick-man-swing-back 0.7s ease-in-out infinite;
 }
