@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { projects, site } from "@/lib/data";
@@ -6,6 +9,18 @@ import { DiscordMark, NetflixMark, TeslaMark } from "@/components/icons";
 
 export default function SelectedWork() {
   const [tesla, discord, netflix] = projects;
+  const netflixVideoRef = useRef<HTMLVideoElement>(null);
+
+  const playNetflixPreview = () => {
+    netflixVideoRef.current?.play();
+  };
+
+  const resetNetflixPreview = () => {
+    const video = netflixVideoRef.current;
+    if (!video) return;
+    video.pause();
+    video.currentTime = 0;
+  };
 
   return (
     <section id="work" className="scroll-mt-20 py-24 md:py-32">
@@ -93,17 +108,22 @@ export default function SelectedWork() {
           <Reveal delay={0.15}>
             <Link
               href="/work/netflix"
+              onMouseEnter={playNetflixPreview}
+              onMouseLeave={resetNetflixPreview}
+              onFocus={playNetflixPreview}
+              onBlur={resetNetflixPreview}
               className="group relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
             >
               <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-105">
                 <div className="relative w-[78%] aspect-[16/10] overflow-hidden rounded-xl border border-white/15 shadow-xl">
                   <video
-                    src="/videos/netflix/prototype-demo.mp4"
+                    ref={netflixVideoRef}
+                    src="/videos/netflix/prototype-demo-hover.mp4"
                     poster={netflix.heroImage.src}
-                    autoPlay
                     loop
                     muted
                     playsInline
+                    preload="none"
                     className="absolute inset-0 h-full w-full object-cover object-top"
                   />
                 </div>
