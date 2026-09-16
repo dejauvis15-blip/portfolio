@@ -23,34 +23,3 @@ export function NetflixMark({ className = "h-4 w-4" }: { className?: string }) {
     </svg>
   );
 }
-
-/** A small white balloon, drifting in place — stands in for the dotted "i" in "is". */
-export function Balloon({ className = "" }: { className?: string }) {
-  return (
-    <span
-      className={`relative inline-block h-[1em] w-[0.5em] align-[-0.08em] ${className}`}
-    >
-      <svg
-        viewBox="0 0 24 40"
-        preserveAspectRatio="xMidYMax meet"
-        className="absolute inset-x-0 bottom-0 h-[1.3em] w-full motion-safe:animate-[balloon-float_3.2s_ease-in-out_infinite]"
-        aria-hidden="true"
-      >
-        <path
-          d="M12 1.5C6.5 1.5 3 6.2 3 11.5C3 16.4 6.2 20.4 10 21.3L9.3 24.5C9.1 25.3 9.7 26 10.5 26H13.5C14.3 26 14.9 25.3 14.7 24.5L14 21.3C17.8 20.4 21 16.4 21 11.5C21 6.2 17.5 1.5 12 1.5Z"
-          fill="#ffffff"
-          stroke="var(--fg)"
-          strokeWidth="1.1"
-        />
-        <path
-          d="M12 26C11 29 13.5 31 12 34C10.5 37 13 38.5 12 40"
-          fill="none"
-          stroke="var(--fg)"
-          strokeWidth="1"
-          opacity="0.6"
-        />
-      </svg>
-      <span className="sr-only">i</span>
-    </span>
-  );
-}
