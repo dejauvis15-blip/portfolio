@@ -47,7 +47,7 @@ const swatches = [
 export default function TeslaCaseStudy() {
   return (
     <>
-      <CaseHero project={project} />
+      <CaseHero project={project} align="center" />
 
       <section className="py-24 md:py-32">
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
