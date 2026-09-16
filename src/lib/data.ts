@@ -202,10 +202,10 @@ export const projects: Project[] = [
     role: "Solo UX/UI Designer",
     tools: ["Figma", "FigJam"],
     summary:
-      "Netflix's 2025 “elevated” redesign enlarged title cards and drew a blunt user backlash: more clutter, longer scrolling, and no way to fix it themselves. This case study treats that backlash as a design brief — cutting visual density, shortening the path to something worth watching, and giving people real row-level control the way Apple TV and Google TV already do.",
+      "Netflix's 2025 “elevated” redesign enlarged title cards and drew a blunt user backlash: more clutter, longer scrolling, and no way to fix it themselves. This case study treats that backlash as a design brief, cutting visual density, shortening the path to something worth watching, and giving people real control at the row level the way Apple TV and Google TV already do.",
     heroImage: {
       src: "/images/netflix/polished-homepage.png",
-      alt: "Netflix homepage redesign with an Apple TV-inspired hero card and a customizable row stack",
+      alt: "Netflix homepage redesign with an inset hero card and a customizable row stack",
     },
   },
 ];

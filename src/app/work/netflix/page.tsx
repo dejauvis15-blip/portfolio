@@ -26,7 +26,7 @@ const FLOW_URL =
 
 const quickLinks = [
   { href: "#problem", label: "The Problem" },
-  { href: "#solution", label: "Row-Level Control" },
+  { href: "#solution", label: "Row Level Control" },
   { href: "#prototype", label: "Prototype" },
 ];
 
@@ -51,13 +51,13 @@ const problems = [
 const guardrails = [
   {
     icon: TriangleAlert,
-    title: "A three-row minimum",
+    title: "A minimum of three rows",
     body: "Once someone's down to three visible rows, the remaining hide toggles disable themselves with an inline explanation, instead of silently failing or letting the page go empty.",
   },
   {
     icon: Undo2,
     title: "An undo toast",
-    body: "Hiding a row surfaces an immediate, dismissible confirmation with a one-tap Undo, so the action never reads as silently permanent.",
+    body: "Hiding a row surfaces an immediate, dismissible confirmation with a one tap Undo, so the action never reads as silently permanent.",
   },
   {
     icon: RotateCcw,
@@ -77,7 +77,7 @@ const takeaways = [
   },
   {
     label: "Error prevention over error messages",
-    text: "the three-row minimum disables the hide toggle before someone can empty their own homepage, rather than warning them after the fact.",
+    text: "the rule that keeps at least three rows visible disables the hide toggle before someone can empty their own homepage, rather than warning them after the fact.",
   },
   {
     label: "Visibility of system status",
@@ -105,11 +105,11 @@ const sources = [
 export default function NetflixCaseStudy() {
   return (
     <>
-      <CaseHero project={project} />
+      <CaseHero project={project} align="center" />
 
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
-          <Reveal className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl">
+          <Reveal className="mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             <div>
               <p className="text-xs uppercase tracking-[0.12em] text-muted-2">Scope</p>
               <p className="mt-1.5 text-sm md:text-base">Homepage row browsing &amp; customization</p>
@@ -123,7 +123,7 @@ export default function NetflixCaseStudy() {
               <p className="mt-1.5 text-sm md:text-base">Research synthesis, wireframes, mockups, prototype</p>
             </div>
           </Reveal>
-          <Reveal delay={0.1} className="mt-8 flex flex-wrap gap-2">
+          <Reveal delay={0.1} className="mt-8 flex flex-wrap justify-center gap-2">
             {quickLinks.map((link) => (
               <Link
                 key={link.href}
@@ -141,8 +141,8 @@ export default function NetflixCaseStudy() {
       <section className="py-24 md:py-32">
         <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
           {/* 01: Overview */}
-          <div className="max-w-3xl">
-            <SectionHeading number="01" title="Overview" />
+          <div className="max-w-3xl mx-auto text-center">
+            <SectionHeading number="01" title="Overview" className="justify-center" />
             <Reveal delay={0.05}>
               <p className="text-lg text-muted leading-relaxed">
                 Netflix&rsquo;s homepage has always leaned on a simple idea:
@@ -169,14 +169,19 @@ export default function NetflixCaseStudy() {
 
           {/* 02: The Problem */}
           <div id="problem" className="mt-24 md:mt-32 scroll-mt-24">
-            <SectionHeading number="02" title="The Problem" />
-            <Reveal delay={0.05} className="max-w-3xl mb-10">
-              <p className="text-lg text-muted leading-relaxed">
-                Three issues compound each other here, and each one is backed
-                by existing usability research, not just a hunch.
-              </p>
-            </Reveal>
-            <Reveal stagger={0.08} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="max-w-3xl mx-auto text-center">
+              <SectionHeading number="02" title="The Problem" className="justify-center" />
+              <Reveal delay={0.05} className="mb-10">
+                <p className="text-lg text-muted leading-relaxed">
+                  Three issues compound each other here, and each one is
+                  backed by existing usability research, not just a hunch.
+                </p>
+              </Reveal>
+            </div>
+            <Reveal
+              stagger={0.08}
+              className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6"
+            >
               {problems.map((p) => (
                 <RevealItem
                   key={p.title}
@@ -191,27 +196,29 @@ export default function NetflixCaseStudy() {
           </div>
 
           {/* 03: Problem, stated precisely */}
-          <div className="mt-24 md:mt-32">
-            <SectionHeading number="03" title="The Problem, Stated Precisely" />
-            <Callout>
-              Netflix&rsquo;s 2025 redesign reduced how much of the catalog
-              fits on screen, which increased how much scrolling is needed to
-              reach anything relevant. With no way to reorder, pin, or hide a
-              row, people have no way to shortcut that scroll or make the
-              homepage their own.
-            </Callout>
+          <div className="mt-24 md:mt-32 text-center">
+            <SectionHeading number="03" title="The Problem, Stated Precisely" className="justify-center" />
+            <div className="mx-auto max-w-3xl flex justify-center">
+              <Callout>
+                Netflix&rsquo;s 2025 redesign reduced how much of the catalog
+                fits on screen, which increased how much scrolling is needed
+                to reach anything relevant. With no way to reorder, pin, or
+                hide a row, people have no way to shortcut that scroll or make
+                the homepage their own.
+              </Callout>
+            </div>
           </div>
 
           {/* 04: Design process */}
-          <div className="mt-24 md:mt-32">
-            <SectionHeading number="04" title="Design Process" />
-            <Reveal delay={0.05} className="max-w-2xl mb-8">
+          <div className="mt-24 md:mt-32 text-center">
+            <SectionHeading number="04" title="Design Process" className="justify-center" />
+            <Reveal delay={0.05} className="mx-auto max-w-2xl mb-8">
               <p className="text-lg text-muted leading-relaxed">
                 The redesign moved through three fidelity stages, each one
                 building on lessons from the last.
               </p>
             </Reveal>
-            <Reveal delay={0.1} className="mb-14">
+            <Reveal delay={0.1} className="mb-14 flex justify-center">
               <a
                 href={WIREFRAME_URL}
                 target="_blank"
@@ -228,51 +235,52 @@ export default function NetflixCaseStudy() {
                 <StageHead
                   n={1}
                   title="Wireframe"
-                  desc="A low-detail general layout established the core structure: a hero, a row stack, and a colored status dot in each row header marking where reorder, pin, and hide controls would eventually live. This stage was really just about proving the layout could hold the new controls without needing a whole new information architecture."
+                  desc="A simple general layout established the core structure: a hero, a row stack, and a colored status dot in each row header marking where reorder, pin, and hide controls would eventually live. This stage was really just about proving the layout could hold the new controls without needing a whole new information architecture."
                 />
                 <ImageFrame
                   rounded
                   aspect="aspect-[1440/1601]"
                   src={`${IMG}/wireframe-general-layout.png`}
                   alt="Homepage general layout wireframe, showing a placeholder hero and a generic row stack with a status dot marking where row controls will live"
-                  className="max-w-2xl"
+                  className="max-w-2xl mx-auto text-center"
                 />
               </div>
 
               <div>
                 <StageHead
                   n={2}
-                  title="Low-Fidelity"
+                  title="Low Fidelity"
                   desc="This pass filled in the hero with real content shape, metadata, and a mute control, plus the Customize Rows entry point above the row stack, while every row stayed a plain gray placeholder. It confirmed the layout could carry real content before I spent any time on artwork or color."
                 />
                 <ImageFrame
                   rounded
                   aspect="aspect-[1440/1429]"
                   src={`${IMG}/low-fidelity-homepage.png`}
-                  alt="Low-fidelity homepage pass with a working hero (title, metadata, Play and More Info buttons, mute control) and a Customize Rows entry point above the still-placeholder row stack"
-                  className="max-w-2xl"
+                  alt="Low fidelity homepage pass with a working hero (title, metadata, Play and More Info buttons, mute control) and a Customize Rows entry point above the still placeholder row stack"
+                  className="max-w-2xl mx-auto text-center"
                 />
               </div>
 
               <div>
                 <StageHead
                   n={3}
-                  title="Polished (Apple TV-inspired)"
-                  desc="The final visual language borrows deliberately from Apple TV's homescreen. A smaller, inset hero card with rounded corners and real depth stands in for a flat, edge-to-edge banner. Every row gets the same consistent 14px-radius rounded title cards, and a unified badge system (New Season, Recently Added, Leaving Soon) uses the same full-width red band everywhere it appears. The hero carries a short, muted autoplay video loop, mirroring Netflix's own hover-preview pattern, sitting behind the title, genre line, and synopsis on a gradient dark enough to stay legible no matter what's playing underneath."
+                  title="Polished"
+                  desc="While comparing how other platforms like Apple TV present their homescreens, I noticed calmer, more contained layouts tend to feel less overwhelming than one giant banner. That research pointed me toward my own solution: a smaller inset hero card with rounded corners and real depth instead of a flat banner stretching edge to edge. Every row now uses the same consistent rounded title cards at a 14 pixel radius, and a unified badge system (New Season, Recently Added, Leaving Soon) uses the same wide red band everywhere it shows up. The hero also carries a short, muted video loop, echoing Netflix's own hover preview pattern, sitting behind the title, genre line, and synopsis on a gradient dark enough to stay legible no matter what's playing underneath."
                 />
                 <ImageFrame
                   rounded
                   aspect="aspect-[1728/1922]"
                   src={`${IMG}/polished-homepage.png`}
-                  alt="Polished, Apple TV-inspired Netflix homepage redesign with an inset hero card, rounded title cards, and a unified badge system"
+                  alt="Polished Netflix homepage redesign with an inset hero card, rounded title cards, and a unified badge system"
                   priority
+                  className="mx-auto text-center"
                 />
-                <Reveal delay={0.1} className="mt-8">
-                  <p className="text-sm md:text-base text-muted leading-relaxed max-w-2xl">
+                <Reveal delay={0.1} className="mt-8 flex justify-center">
+                  <p className="text-sm md:text-base text-muted leading-relaxed max-w-2xl text-center">
                     Every screen was designed at 1728 pixels wide, the native
                     logical resolution of a MacBook Pro 16&Prime;, so the
-                    deliverable reads as a real, on-device screen rather than
-                    an arbitrary canvas size.
+                    deliverable reads as a real screen on an actual device
+                    rather than an arbitrary canvas size.
                   </p>
                 </Reveal>
               </div>
@@ -280,8 +288,8 @@ export default function NetflixCaseStudy() {
           </div>
 
           {/* 05: Core solution */}
-          <div id="solution" className="mt-24 md:mt-32 scroll-mt-24 max-w-3xl">
-            <SectionHeading number="05" title="The Core Solution: Row-Level Control" />
+          <div id="solution" className="mt-24 md:mt-32 scroll-mt-24 max-w-3xl mx-auto text-center">
+            <SectionHeading number="05" title="The Core Solution: Row Level Control" className="justify-center" />
             <Reveal delay={0.05}>
               <p className="text-lg text-muted leading-relaxed">
                 This is the heart of the whole project, the one feature every
@@ -300,31 +308,32 @@ export default function NetflixCaseStudy() {
           </div>
 
           {/* 06: Customize Rows panel */}
-          <div className="mt-24 md:mt-32">
-            <SectionHeading number="06" title="The Customize Rows Panel" />
-            <Reveal delay={0.05} className="max-w-3xl mb-10">
+          <div className="mt-24 md:mt-32 text-center">
+            <SectionHeading number="06" title="The Customize Rows Panel" className="justify-center" />
+            <Reveal delay={0.05} className="mx-auto max-w-3xl mb-10">
               <p className="text-lg text-muted leading-relaxed">
                 Opening the panel surfaces every row with its controls in one
                 place. Continue Watching shows up pinned, with its badge
                 visible, and the remaining rows can be reordered or hidden
                 right from that same list. The panel also carries the
-                guardrails below it: a note explaining the three-row minimum,
-                and a Hidden Rows section for anything already tucked away.
+                guardrails below it: a note explaining the rule that keeps at
+                least three rows visible, and a Hidden Rows section for
+                anything already tucked away.
               </p>
             </Reveal>
             <ImageFrame
               rounded
               aspect="aspect-[1728/1922]"
               src={`${IMG}/customize-rows-open.png`}
-              alt="Customize Rows panel open over the homepage, showing Continue Watching pinned, two reorderable rows, a three-row-minimum guardrail note, and a Hidden Rows section listing Family TV Favorites"
-              className="max-w-2xl"
+              alt="Customize Rows panel open over the homepage, showing Continue Watching pinned, two reorderable rows, a guardrail note about keeping at least three rows visible, and a Hidden Rows section listing Family TV Favorites"
+              className="max-w-2xl mx-auto text-center"
             />
           </div>
 
           {/* 07: Guardrails */}
-          <div className="mt-24 md:mt-32">
-            <SectionHeading number="07" title="Guardrails, Undo, and Recovery" />
-            <Reveal delay={0.05} className="max-w-3xl mb-10">
+          <div className="mt-24 md:mt-32 text-center">
+            <SectionHeading number="07" title="Guardrails, Undo, and Recovery" className="justify-center" />
+            <Reveal delay={0.05} className="mx-auto max-w-3xl mb-10">
               <p className="text-lg text-muted leading-relaxed">
                 Three safeguards keep this feature from letting someone
                 accidentally empty their own homepage, a failure mode that&rsquo;s
@@ -332,7 +341,10 @@ export default function NetflixCaseStudy() {
                 path.
               </p>
             </Reveal>
-            <Reveal stagger={0.08} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <Reveal
+              stagger={0.08}
+              className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-left"
+            >
               {guardrails.map((g) => (
                 <RevealItem
                   key={g.title}
@@ -350,14 +362,14 @@ export default function NetflixCaseStudy() {
               src={`${IMG}/customize-rows-restored.png`}
               alt="Customize Rows panel after tapping Restore: Family TV Favorites is back in the list with its toggle on, alongside the other three visible rows"
               caption="Restoring a row from the Hidden Rows list lands on the same result as hitting Undo before the toast disappears."
-              className="max-w-2xl"
+              className="max-w-2xl mx-auto text-center"
             />
           </div>
 
           {/* 08: Proving the loop */}
-          <div className="mt-24 md:mt-32">
-            <SectionHeading number="08" title="Proving the Loop: Before and After" />
-            <Reveal delay={0.05} className="max-w-3xl mb-10">
+          <div className="mt-24 md:mt-32 text-center">
+            <SectionHeading number="08" title="Proving the Loop: Before and After" className="justify-center" />
+            <Reveal delay={0.05} className="mx-auto max-w-3xl mb-10">
               <p className="text-lg text-muted leading-relaxed">
                 To show that the feature actually does something, rather than
                 just presenting controls that look functional, the redesign
@@ -365,7 +377,7 @@ export default function NetflixCaseStudy() {
                 Watching carries a visible Pinned badge, the row someone hid
                 is fully gone from the stack, and a new row, &ldquo;Popular on
                 Netflix,&rdquo; backfills the space instead of leaving a
-                shortened, half-empty page. That backfill detail matters:
+                shortened, mostly empty page. That backfill detail matters:
                 hiding a row should make the homepage feel more relevant, not
                 just smaller.
               </p>
@@ -375,21 +387,21 @@ export default function NetflixCaseStudy() {
               aspect="aspect-[1728/1999]"
               src={`${IMG}/after-customize-rows.png`}
               alt="Homepage after using Customize Rows: Continue Watching shows a Pinned badge, a hidden row is fully absent, and a new Popular on Netflix row backfills the space"
-              className="max-w-2xl"
+              className="max-w-2xl mx-auto text-center"
             />
           </div>
 
           {/* 09: Browse by genre */}
-          <div className="mt-24 md:mt-32">
-            <SectionHeading number="09" title="A Second Escape Hatch: Browse by Genre" />
-            <Reveal delay={0.05} className="max-w-3xl mb-10">
+          <div className="mt-24 md:mt-32 text-center">
+            <SectionHeading number="09" title="A Second Escape Hatch: Browse by Genre" className="justify-center" />
+            <Reveal delay={0.05} className="mx-auto max-w-3xl mb-10">
               <p className="text-lg text-muted leading-relaxed">
-                My research synthesis specifically called for &ldquo;a real
-                browse-everything or grid view&rdquo; as part of the fix for
+                My research synthesis specifically called for a real way to
+                browse everything, or a grid view, as part of the fix for
                 endless scrolling, and restoring New &amp; Popular in the
                 navigation only solves part of that. A dedicated genre
                 browsing screen gives people a second way out of the row
-                stack entirely: a horizontal genre-pill selector paired with a
+                stack entirely: a horizontal row of genre pills paired with a
                 true wrapping grid, structurally distinct from every other
                 screen in the product, so scrolling through rows becomes a
                 choice instead of the only path to a decision.
@@ -399,27 +411,28 @@ export default function NetflixCaseStudy() {
               rounded
               aspect="aspect-[1728/1529]"
               src={`${IMG}/browse-by-genre.png`}
-              alt="Browse by Genre screen with a horizontal genre-pill selector and a wrapping title grid"
-              className="max-w-2xl"
+              alt="Browse by Genre screen with a horizontal row of genre pills and a wrapping title grid"
+              className="max-w-2xl mx-auto text-center"
             />
           </div>
 
           {/* 10: Prototype */}
-          <div id="prototype" className="mt-24 md:mt-32 scroll-mt-24">
-            <SectionHeading number="10" title="Prototype" />
-            <Reveal delay={0.05} className="max-w-3xl mb-8">
+          <div id="prototype" className="mt-24 md:mt-32 scroll-mt-24 text-center">
+            <SectionHeading number="10" title="Prototype" className="justify-center" />
+            <Reveal delay={0.05} className="mx-auto max-w-3xl mb-8">
               <p className="text-lg text-muted leading-relaxed">
                 The full flow is wired as an interactive Figma prototype, not
                 just a set of static comps. From the homepage, Customize Rows
-                opens the panel with a Smart Animate transition. Done resolves
-                to the after-state, and the after-state&rsquo;s own Customize
-                Rows control reopens the panel, closing the loop. A second
-                branch covers the safety-net path end to end: hiding a row
-                triggers the undo toast, which either reverses the action or
-                settles into the Hidden Rows list after a timeout, and Restore
-                from that list arrives at the same restored state Undo does.
-                Both recovery paths are actually connected, not just
-                illustrated once and left dangling.
+                opens the panel with a Smart Animate transition. Hitting Done
+                resolves everything into the state you&rsquo;d see afterward,
+                and that same screen&rsquo;s own Customize Rows control
+                reopens the panel, closing the loop. A second branch covers
+                the safety net path end to end: hiding a row triggers the
+                undo toast, which either reverses the action or settles into
+                the Hidden Rows list after a timeout, and Restore from that
+                list arrives at the same restored state Undo does. Both
+                recovery paths actually connect to each other, they aren&rsquo;t
+                just illustrated once and left dangling.
               </p>
             </Reveal>
 
@@ -440,7 +453,7 @@ export default function NetflixCaseStudy() {
               </p>
             </Reveal>
 
-            <Reveal delay={0.1} className="mb-10">
+            <Reveal delay={0.1} className="mb-10 flex justify-center">
               <a
                 href={FLOW_URL}
                 target="_blank"
@@ -456,14 +469,15 @@ export default function NetflixCaseStudy() {
               rounded
               aspect="aspect-[7960/2732]"
               src={`${IMG}/user-flow-diagram.png`}
-              alt="FigJam flow diagram for the row customization system: browsing the homepage into row edit mode, branching into reorder, pin, and hide, with the hide branch running through the three-row guardrail, the undo toast, and the Hidden Rows list, both recovery paths converging on the same restored state"
+              alt="FigJam flow diagram for the row customization system: browsing the homepage into row edit mode, branching into reorder, pin, and hide, with the hide branch running through the guardrail that keeps at least three rows visible, the undo toast, and the Hidden Rows list, both recovery paths converging on the same restored state"
               caption="Mapped in FigJam before any screen was built: three branches off row edit mode, and both recovery paths (Undo, Restore) converging on the same result."
+              className="max-w-5xl mx-auto text-center"
             />
           </div>
 
           {/* 11: Reflection */}
-          <div className="mt-24 md:mt-32 max-w-3xl">
-            <SectionHeading number="11" title="Reflection" />
+          <div className="mt-24 md:mt-32 max-w-3xl mx-auto text-center">
+            <SectionHeading number="11" title="Reflection" className="justify-center" />
             <Reveal delay={0.05}>
               <p className="text-lg text-muted leading-relaxed mb-8">
                 The three problems in my research doc ended up compounding
@@ -474,11 +488,11 @@ export default function NetflixCaseStudy() {
                 Framed that way, this wasn&rsquo;t three unrelated features to
                 design. It was one coherent fix: reduce how much someone has
                 to look at once, shorten the path to relevant content, and
-                hand people the row-level control to make their own homepage
-                smaller and more relevant over time.
+                hand people control at the row level to make their own
+                homepage smaller and more relevant over time.
               </p>
             </Reveal>
-            <Reveal stagger={0.06} className="space-y-5 border-t border-border pt-8">
+            <Reveal stagger={0.06} className="space-y-5 border-t border-border pt-8 text-left">
               {takeaways.map((t) => (
                 <RevealItem key={t.label} className="flex gap-4">
                   <span className="h-1.5 w-1.5 rounded-full bg-accent mt-2.5 shrink-0" />
@@ -493,20 +507,20 @@ export default function NetflixCaseStudy() {
                 Given more time, the next thing worth exploring is a mobile
                 version of the same system. Row control and undo patterns
                 behave differently under touch than under a mouse, and
-                Netflix&rsquo;s own real usage skews heavily mobile, so a
-                touch-first pass would really put these interactions, drag to
-                reorder especially, to the test outside a desktop pointer
-                model.
+                Netflix&rsquo;s own real usage skews heavily mobile, so
+                building and testing a touch based pass would really put
+                these interactions, dragging to reorder especially, to the
+                test outside a desktop pointer model.
               </p>
             </Reveal>
           </div>
 
           {/* Sources */}
-          <Reveal delay={0.1} className="mt-20 pt-8 border-t border-border">
+          <Reveal delay={0.1} className="mt-20 pt-8 border-t border-border text-center">
             <p className="text-xs uppercase tracking-[0.12em] text-muted-2 mb-4">
               Sources &amp; Research
             </p>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1.5 max-w-4xl">
+            <ul className="mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1.5 max-w-4xl text-left">
               {sources.map((s) => (
                 <li key={s} className="text-sm text-muted-2 italic leading-relaxed">
                   {s}
@@ -524,14 +538,12 @@ export default function NetflixCaseStudy() {
 
 function StageHead({ n, title, desc }: { n: number; title: string; desc: string }) {
   return (
-    <Reveal className="flex items-start gap-4 mb-8">
-      <span className="font-display text-lg text-muted-2 shrink-0">
+    <Reveal className="flex flex-col items-center text-center gap-1 mb-8 mx-auto max-w-2xl">
+      <span className="font-display text-lg text-muted-2">
         {String(n).padStart(2, "0")}
       </span>
-      <div>
-        <h3 className="font-display uppercase text-xl md:text-2xl">{title}</h3>
-        <p className="mt-2 text-sm md:text-base text-muted leading-relaxed max-w-2xl">{desc}</p>
-      </div>
+      <h3 className="font-display uppercase text-xl md:text-2xl">{title}</h3>
+      <p className="mt-2 text-sm md:text-base text-muted leading-relaxed">{desc}</p>
     </Reveal>
   );
 }

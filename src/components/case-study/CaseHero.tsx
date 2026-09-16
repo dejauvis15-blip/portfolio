@@ -4,11 +4,21 @@ import { ArrowLeft } from "lucide-react";
 import type { Project } from "@/lib/data";
 import Reveal from "@/components/Reveal";
 
-export default function CaseHero({ project }: { project: Project }) {
+export default function CaseHero({
+  project,
+  align = "left",
+}: {
+  project: Project;
+  /** "center" mirrors a fully centered reference layout; default keeps the existing left-aligned look. */
+  align?: "left" | "center";
+}) {
+  const centered = align === "center";
   return (
     <section className="pt-28 md:pt-36">
-      <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
-        <Reveal>
+      <div
+        className={`mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16 ${centered ? "text-center" : ""}`}
+      >
+        <Reveal className={centered ? "flex justify-center" : undefined}>
           <Link
             href="/#work"
             className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-muted transition-colors hover:border-accent hover:text-fg mb-10"
@@ -19,26 +29,32 @@ export default function CaseHero({ project }: { project: Project }) {
         </Reveal>
 
         <Reveal delay={0.05}>
-          <p className="flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-6">
+          <p
+            className={`flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-6 ${centered ? "justify-center" : ""}`}
+          >
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             {project.category}
           </p>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <h1 className="font-display uppercase leading-[0.88] text-[11vw] sm:text-[8vw] lg:text-6xl xl:text-7xl max-w-5xl">
+          <h1
+            className={`font-display uppercase leading-[0.88] text-[11vw] sm:text-[8vw] lg:text-6xl xl:text-7xl max-w-5xl ${centered ? "mx-auto" : ""}`}
+          >
             {project.title}
           </h1>
         </Reveal>
 
         <Reveal delay={0.18}>
-          <p className="mt-8 max-w-2xl text-lg text-muted leading-relaxed">
+          <p
+            className={`mt-8 max-w-2xl text-lg text-muted leading-relaxed ${centered ? "mx-auto" : ""}`}
+          >
             {project.summary}
           </p>
         </Reveal>
 
         <Reveal delay={0.24}>
-          <dl className="mt-14 flex flex-wrap gap-2">
+          <dl className={`mt-14 flex flex-wrap gap-2 ${centered ? "justify-center" : ""}`}>
             <Meta label="Category" value={project.discipline.join(" · ")} />
             <Meta label="Year" value={project.year} />
             <Meta label="Role" value={project.role} />
