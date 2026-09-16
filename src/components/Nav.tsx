@@ -3,8 +3,11 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Baloo_2 } from "next/font/google";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/data";
+
+const puffy = Baloo_2({ subsets: ["latin"], weight: "800" });
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,7 +40,7 @@ export default function Nav() {
             className="font-display text-xl md:text-2xl tracking-wide uppercase"
             onClick={() => setOpen(false)}
           >
-            Jauvis Dozier
+            Jauvis <span className={`${puffy.className} font-extrabold`}>Dozier</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-10">
