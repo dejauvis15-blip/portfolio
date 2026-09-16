@@ -1,11 +1,11 @@
-import { Baloo_2 } from "next/font/google";
+import { Allura, Baloo_2 } from "next/font/google";
 import { MapPin, Briefcase, FileText } from "lucide-react";
 import { heroPills } from "@/lib/data";
 import Reveal from "@/components/Reveal";
-import { Balloon } from "@/components/icons";
 
 const pillIcons = { pin: MapPin, briefcase: Briefcase, file: FileText };
 
+const script = Allura({ subsets: ["latin"], weight: "400" });
 const cartoon = Baloo_2({ subsets: ["latin"], weight: "800" });
 
 export default function Hero() {
@@ -15,8 +15,8 @@ export default function Hero() {
         <Reveal delay={0.05}>
           <h1 className="font-display normal-case leading-[1.2] tracking-tight text-balance text-[7vw] sm:text-4xl md:text-5xl">
             <span className="font-light text-muted">
-              Jauvis&nbsp;
-              <Balloon />s&nbsp;a&nbsp;
+              <span className={script.className}>Jauvis</span>
+              &nbsp;is&nbsp;a&nbsp;
             </span>
             <span className={`${cartoon.className} font-extrabold text-fg`}>
               product designer
