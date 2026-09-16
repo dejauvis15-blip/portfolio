@@ -97,12 +97,14 @@ export default function SelectedWork() {
             >
               <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-105">
                 <div className="relative w-[78%] aspect-[16/10] overflow-hidden rounded-xl border border-white/15 shadow-xl">
-                  <Image
-                    src={netflix.heroImage.src}
-                    alt={netflix.heroImage.alt}
-                    fill
-                    sizes="(min-width: 1024px) 27vw, (min-width: 640px) 40vw, 78vw"
-                    className="object-cover object-top"
+                  <video
+                    src="/videos/netflix/prototype-demo.mp4"
+                    poster={netflix.heroImage.src}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 h-full w-full object-cover object-top"
                   />
                 </div>
               </div>
