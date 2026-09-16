@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Allura, Baloo_2 } from "next/font/google";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/data";
-import StickManWalk from "@/components/StickManWalk";
+import AfroSmileyFace from "@/components/AfroSmileyFace";
 
 const script = Allura({ subsets: ["latin"], weight: "400" });
 const puffy = Baloo_2({ subsets: ["latin"], weight: "800" });
@@ -51,7 +51,7 @@ export default function Nav() {
               Jauvis
             </span>
             <span className={`${puffy.className} font-extrabold`}>Dozier</span>
-            <StickManWalk className="w-5 h-5 md:w-6 md:h-6 text-fg self-center" />
+            <AfroSmileyFace className="w-5 h-5 md:w-6 md:h-6 text-fg self-center" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-10">
