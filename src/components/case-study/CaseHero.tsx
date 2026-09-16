@@ -3,6 +3,39 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import type { Project } from "@/lib/data";
 import Reveal from "@/components/Reveal";
+import { DiscordMark } from "@/components/icons";
+
+const logoImages: Record<string, string> = {
+  tesla: "/images/tesla/logo-icon.jpg",
+  netflix: "/images/netflix/logo-icon.jpg",
+};
+
+function ProjectLogo({ slug }: { slug: string }) {
+  const image = logoImages[slug];
+  if (image) {
+    return (
+      <span className="flex h-14 w-14 md:h-16 md:w-16 items-center justify-center overflow-hidden rounded-2xl border border-white/15">
+        <Image
+          src={image}
+          alt=""
+          width={64}
+          height={64}
+          className="h-full w-full object-cover"
+        />
+      </span>
+    );
+  }
+
+  if (slug === "discord") {
+    return (
+      <span className="flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-2xl border border-white/15 bg-black/80">
+        <DiscordMark className="h-7 w-7 md:h-8 md:w-8" />
+      </span>
+    );
+  }
+
+  return null;
+}
 
 export default function CaseHero({
   project,
@@ -28,28 +61,22 @@ export default function CaseHero({
           </Link>
         </Reveal>
 
-        <Reveal delay={0.05}>
-          <p
-            className={`flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-muted mb-6 ${centered ? "justify-center" : ""}`}
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-            {project.category}
-          </p>
-        </Reveal>
-
         <Reveal delay={0.1}>
-          <h1
-            className={`font-display uppercase leading-[0.88] text-[11vw] sm:text-[8vw] lg:text-6xl xl:text-7xl max-w-5xl ${centered ? "mx-auto" : ""}`}
+          <div
+            className={`flex items-center gap-4 md:gap-5 ${centered ? "justify-center" : ""}`}
           >
-            {project.title}
-          </h1>
+            <ProjectLogo slug={project.slug} />
+            <h1 className="font-display uppercase leading-none text-[11vw] sm:text-[8vw] lg:text-6xl xl:text-7xl">
+              {project.name}
+            </h1>
+          </div>
         </Reveal>
 
         <Reveal delay={0.18}>
           <p
-            className={`mt-8 max-w-2xl text-lg text-muted leading-relaxed ${centered ? "mx-auto" : ""}`}
+            className={`mt-5 text-lg text-muted ${centered ? "mx-auto" : ""}`}
           >
-            {project.summary}
+            {project.category}
           </p>
         </Reveal>
 
