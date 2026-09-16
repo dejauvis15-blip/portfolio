@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Allura, Baloo_2 } from "next/font/google";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/data";
+import FloatingBalloon from "@/components/FloatingBalloon";
 
 const script = Allura({ subsets: ["latin"], weight: "400" });
 const puffy = Baloo_2({ subsets: ["latin"], weight: "800" });
@@ -51,13 +51,7 @@ export default function Nav() {
               Jauvis
             </span>
             <span className={`${puffy.className} font-extrabold`}>Dozier</span>
-            <Image
-              src="/images/nav-avatar.jpg"
-              alt=""
-              width={40}
-              height={40}
-              className="w-8 h-8 md:w-9 md:h-9 rounded-full object-cover self-center"
-            />
+            <FloatingBalloon className="w-5 h-6 md:w-6 md:h-7 self-center" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-10">
