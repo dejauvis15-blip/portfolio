@@ -16,6 +16,14 @@ export function DiscordMark({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
+export function NetflixMark({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="#E50914" aria-hidden="true">
+      <path d="M5 2h3.4l7.2 16.6V2H19v20h-3.4L8.4 5.4V22H5V2Z" />
+    </svg>
+  );
+}
+
 /** A small white balloon, drifting in place — stands in for the dotted "i" in "is". */
 export function Balloon({ className = "" }: { className?: string }) {
   return (

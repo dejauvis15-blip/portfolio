@@ -1,0 +1,616 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, ArrowDown, ExternalLink, Undo2, RotateCcw, TriangleAlert } from "lucide-react";
+import { getProject, getNextProject } from "@/lib/data";
+import CaseHero from "@/components/case-study/CaseHero";
+import SectionHeading from "@/components/case-study/SectionHeading";
+import Callout from "@/components/case-study/Callout";
+import ImageFrame from "@/components/case-study/ImageFrame";
+import NextProject from "@/components/case-study/NextProject";
+import Reveal, { RevealItem } from "@/components/Reveal";
+
+const project = getProject("netflix")!;
+const nextProject = getNextProject("netflix");
+
+export const metadata: Metadata = {
+  title: `${project.title} — Jauvis Dozier`,
+  description: project.summary,
+};
+
+const IMG = "/images/netflix";
+
+const WIREFRAME_URL =
+  "https://www.figma.com/design/uxMQOWiWWpK2qAyY5xVA7n/Netflix-Homepage-Redesign-%E2%80%94-Wireframe?node-id=0-1";
+const FLOW_URL =
+  "https://www.figma.com/board/OUwXpiZ0cOgS4gNSF6VPZa/Row-Customization-User-Flow--Reorder---Pin---Hide-";
+
+const quickLinks = [
+  { href: "#problem", label: "The Problem" },
+  { href: "#solution", label: "Row-Level Control" },
+  { href: "#prototype", label: "Prototype" },
+];
+
+const problems = [
+  {
+    title: "Clutter & Information Density",
+    body: "Choice overload — more visible options slowing decisions rather than improving them — is well documented in UX research. Netflix's row-based system was originally a hedge against exactly that. The 2025 redesign's larger cards meant fewer titles fit on screen at once, so the same catalog now demanded more scrolling and more visual effort to parse, even though Netflix's own year-long beta found no measurable engagement lift, despite users saying in surveys that they preferred it.",
+    source: "Laws of UX — Choice Overload; Nielsen Norman Group",
+  },
+  {
+    title: "Endless Horizontal Scrolling",
+    body: "Nielsen Norman Group's guidance on horizontal scrolling is direct: it's harder to scan than vertical scrolling and disadvantages users with limited motor precision or spatial reasoning. Bidirectional scrolling is a reasonable convention for a TV-first, remote-control interface, but the 2025 redesign compounded the problem by removing two features that used to help people cut through the row stack: the New & Popular hub and the standalone Categories menu, pushing genre browsing behind search instead.",
+    source: "Nielsen Norman Group — Scrolling and Scrollbars",
+  },
+  {
+    title: "No Reorder, Pin, or Hide",
+    body: "“User control and freedom” is one of the oldest usability heuristics, and it's precisely what's missing here. Netflix has no native way to reorder, pin, or hide a row, and it quietly removed the “Not Interested” button that used to let people suppress unwanted recommendations, a gap third-party browser extensions now exist specifically to patch. Row and home-screen customization is already an established pattern on Apple TV, Google TV, YouTube TV, and Disney+'s 2026 redesign.",
+    source: "Apple Support; TechRadar — Disney+'s 2026 redesign",
+  },
+];
+
+const guardrails = [
+  {
+    icon: TriangleAlert,
+    title: "A three-row minimum",
+    body: "Once a user is down to three visible rows, the remaining hide toggles disable themselves with an inline explanation, rather than silently failing or allowing an empty page.",
+  },
+  {
+    icon: Undo2,
+    title: "An undo toast",
+    body: "Hiding a row surfaces an immediate, dismissible confirmation with a one-tap Undo, so the action is never treated as silently permanent.",
+  },
+  {
+    icon: RotateCcw,
+    title: "A Hidden Rows list",
+    body: "Once the toast expires, the hidden row doesn't disappear without a trace — it moves into its own labeled section inside the same panel, with a Restore button, so recovering from an earlier decision doesn't require guesswork.",
+  },
+];
+
+const takeaways = [
+  {
+    label: "Recognition over recall",
+    text: "a persistent “Customize Rows” entry point sits above the row stack at all times, instead of a feature buried in settings that users have to already know exists.",
+  },
+  {
+    label: "User control and freedom",
+    text: "every row — not just a special “customizable” subset — carries the same reorder, pin, and hide controls, closing the exact gap third-party extensions exist to patch.",
+  },
+  {
+    label: "Error prevention over error messages",
+    text: "the three-row minimum disables the hide toggle before someone can empty their own homepage, rather than warning them after the fact.",
+  },
+  {
+    label: "Visibility of system status",
+    text: "the undo toast and Hidden Rows list mean a hide action is never silently permanent, and recovering from it never requires guesswork.",
+  },
+];
+
+const sources = [
+  "Laws of UX — Choice Overload",
+  "Nielsen Norman Group — “More Choices, More Trouble”",
+  "Nielsen Norman Group — Scrolling and Scrollbars",
+  "CreateBytes — Netflix Design: A Deep Dive into UX Strategy",
+  "Netflix Tudum — How to Use Netflix's New Homepage's Features",
+  "TechRadar — coverage of the 2025 Netflix UI redesign backlash",
+  "Yahoo/AP — coverage of Netflix's engagement research on the redesign",
+  "UX Planet — Understanding Bidirectional Scrolling in Streaming Apps for TV",
+  "TheStreamable — user reactions to Netflix's new interface",
+  "What's on Netflix — reporting on removed New & Popular / Categories features",
+  "Trim (gettrim.cc) — on the removed “Not Interested” button",
+  "UNILAD Tech — on Netflix's hidden genre browsing",
+  "Apple Support — customizing the Apple TV home screen",
+  "TechRadar — Disney+'s 2026 personalization-focused redesign",
+];
+
+export default function NetflixCaseStudy() {
+  return (
+    <>
+      <CaseHero project={project} />
+
+      <section className="py-16 md:py-20">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
+          <Reveal className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl">
+            <div>
+              <p className="text-xs uppercase tracking-[0.12em] text-muted-2">Scope</p>
+              <p className="mt-1.5 text-sm md:text-base">Homepage row browsing &amp; customization</p>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.12em] text-muted-2">Platform</p>
+              <p className="mt-1.5 text-sm md:text-base">Desktop web (1728×1117, MacBook Pro 16&Prime;)</p>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.12em] text-muted-2">Deliverables</p>
+              <p className="mt-1.5 text-sm md:text-base">Research synthesis, wireframes, mockups, prototype</p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.1} className="mt-8 flex flex-wrap gap-2">
+            {quickLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-bg-elevated px-5 py-2.5 text-sm text-fg transition-colors hover:border-accent hover:text-accent"
+              >
+                <ArrowRight size={16} />
+                {link.label}
+              </Link>
+            ))}
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="py-24 md:py-32">
+        <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
+          {/* 01 — Overview */}
+          <div className="max-w-3xl">
+            <SectionHeading number="01" title="Overview" />
+            <Reveal delay={0.05}>
+              <p className="text-lg text-muted leading-relaxed">
+                Netflix&rsquo;s homepage has always leaned on a simple idea:
+                break a massive catalog into small, curated rows so no single
+                screen feels overwhelming. That structure worked well for
+                years, but Netflix&rsquo;s own May 2025 &ldquo;elevated&rdquo;
+                redesign, which enlarged title cards and pushed more
+                information onto every tile, undid a lot of that discipline.
+                Real user feedback in the months after launch was blunt: the
+                page felt more cluttered, scrolling took longer, and nothing
+                on the page let people fix it themselves.
+              </p>
+              <p className="mt-5 text-lg text-muted leading-relaxed">
+                I treated that backlash as a design brief. It comes down to
+                three questions grounded in existing usability research and
+                in what Netflix&rsquo;s own users were actually saying: how do
+                you reduce visual clutter without shrinking the catalog? How
+                do you shorten the path to something worth watching? And how
+                do you give people real control over their own homepage, the
+                way Apple TV, Google TV, and YouTube TV already do?
+              </p>
+            </Reveal>
+          </div>
+
+          {/* 02 — The Problem */}
+          <div id="problem" className="mt-24 md:mt-32 scroll-mt-24">
+            <SectionHeading number="02" title="The Problem" />
+            <Reveal delay={0.05} className="max-w-3xl mb-10">
+              <p className="text-lg text-muted leading-relaxed">
+                Three compounding issues, each backed by existing usability
+                research rather than just a hunch.
+              </p>
+            </Reveal>
+            <Reveal stagger={0.08} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {problems.map((p) => (
+                <RevealItem key={p.title} className="border border-border p-6 md:p-7 flex flex-col">
+                  <h3 className="font-display uppercase text-lg">{p.title}</h3>
+                  <p className="mt-3 text-sm text-muted leading-relaxed flex-1">{p.body}</p>
+                  <p className="mt-4 text-xs text-muted-2 italic">{p.source}</p>
+                </RevealItem>
+              ))}
+            </Reveal>
+          </div>
+
+          {/* 03 — Problem, stated precisely */}
+          <div className="mt-24 md:mt-32">
+            <SectionHeading number="03" title="The Problem, Stated Precisely" />
+            <Callout>
+              Netflix&rsquo;s 2025 redesign reduced how much of the catalog
+              fits on screen, which increased how much scrolling is required
+              to reach anything relevant, and with no way to reorder, pin, or
+              hide a row, users have no way to shortcut that scroll or make
+              the homepage their own.
+            </Callout>
+          </div>
+
+          {/* 04 — Design process */}
+          <div className="mt-24 md:mt-32">
+            <SectionHeading number="04" title="Design Process" />
+            <Reveal delay={0.05} className="max-w-2xl mb-8">
+              <p className="text-lg text-muted leading-relaxed">
+                The redesign moved through three fidelity stages, each
+                building on lessons from the last.
+              </p>
+            </Reveal>
+            <Reveal delay={0.1} className="mb-14">
+              <a
+                href={WIREFRAME_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm text-muted transition-colors hover:border-accent hover:text-fg"
+              >
+                View wireframes in Figma
+                <ExternalLink size={14} />
+              </a>
+            </Reveal>
+
+            <div className="space-y-16">
+              <div>
+                <StageHead
+                  n={1}
+                  title="Wireframe"
+                  desc="A low-detail general layout established the core structure: hero, row stack, and an early annotation calling out where row-level controls (reorder, pin, hide) needed to live. This stage was about proving the layout could hold the new controls without a fundamentally different information architecture."
+                />
+                <ImageFrame
+                  aspect="aspect-[1440/1601]"
+                  src={`${IMG}/wireframe-general-layout.png`}
+                  alt="Homepage general layout wireframe, showing the hero, row stack, and an annotation calling out where row controls need to live"
+                  className="max-w-2xl"
+                />
+              </div>
+
+              <div>
+                <StageHead
+                  n={2}
+                  title="Low-Fidelity"
+                  desc="This pass tightened spacing, established the row-control icon set (reorder handle, pin, hide), and confirmed the row structure would scale across different card counts and row types before any real visual polish was applied."
+                />
+                <ImageFrame
+                  aspect="aspect-[1440/1429]"
+                  src={`${IMG}/low-fidelity-homepage.png`}
+                  alt="Low-fidelity homepage pass with the reorder, pin, and hide icon set established on every row"
+                  className="max-w-2xl"
+                />
+              </div>
+
+              <div>
+                <StageHead
+                  n={3}
+                  title="Polished (Apple TV-inspired)"
+                  desc="The final visual language borrows deliberately from Apple TV's homescreen: a smaller, inset hero card with rounded corners and real depth instead of a flat, edge-to-edge banner; consistent 14px-radius rounded title cards across every row; and a unified badge system (New Season, Recently Added, Leaving Soon) using the same full-width red band everywhere it appears. The hero carries a short, muted autoplay video loop, mirroring Netflix's own hover-preview pattern, behind the title, genre line, and synopsis, sitting on a gradient dark enough to stay legible regardless of what's playing underneath."
+                />
+                <ImageFrame
+                  aspect="aspect-[1728/1921]"
+                  src={`${IMG}/polished-homepage.png`}
+                  alt="Polished, Apple TV-inspired Netflix homepage redesign with an inset hero card, rounded title cards, and a unified badge system"
+                  priority
+                />
+                <Reveal delay={0.1} className="mt-8">
+                  <p className="text-sm md:text-base text-muted leading-relaxed max-w-2xl">
+                    The finished homepage was framed at 1728×1117, the
+                    native logical resolution of a MacBook Pro 16&Prime;, so
+                    the deliverable reads as a real, on-device screen rather
+                    than an arbitrary canvas size.
+                  </p>
+                </Reveal>
+                <ImageFrame
+                  delay={0.05}
+                  aspect="aspect-[1728/1117]"
+                  src={`${IMG}/macbook-framed.png`}
+                  alt="Netflix homepage redesign framed in a MacBook Pro 16-inch viewport"
+                  className="mt-6"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* 05 — Core solution */}
+          <div id="solution" className="mt-24 md:mt-32 scroll-mt-24 max-w-3xl">
+            <SectionHeading number="05" title="The Core Solution: Row-Level Control" />
+            <Reveal delay={0.05}>
+              <p className="text-lg text-muted leading-relaxed">
+                This is the project&rsquo;s central, most differentiated
+                feature, and the one every other decision supports. Every row,
+                not just a special &ldquo;customizable&rdquo; subset, carries
+                the same three controls: a drag handle to reorder, a pin
+                toggle to promote a favorite to the top, and a hide toggle to
+                remove it from the homepage entirely. A persistent
+                &ldquo;Customize Rows&rdquo; entry point sits above the row
+                stack at all times, so the feature is discoverable without
+                hunting through settings.
+              </p>
+            </Reveal>
+          </div>
+          <ImageFrame
+            delay={0.1}
+            aspect="aspect-[1728/259]"
+            src={`${IMG}/row-controls-closeup.png`}
+            alt="Row controls on every row: a drag handle to reorder, a pin toggle, and a hide toggle, shown on the Continue Watching row"
+            caption="Reorder, pin, and hide controls live in the row header itself, not a separate mode you have to switch into."
+            className="mt-10 max-w-4xl"
+          />
+
+          {/* 06 — Customize Rows panel */}
+          <div className="mt-24 md:mt-32">
+            <SectionHeading number="06" title="The Customize Rows Panel" />
+            <Reveal delay={0.05} className="max-w-3xl mb-10">
+              <p className="text-lg text-muted leading-relaxed">
+                Opening the panel surfaces every row with its controls in one
+                place. Continue Watching is shown pinned, with its badge
+                visible; the remaining rows can be reordered or hidden from
+                the same list. The same panel also carries the guardrails
+                below it: a note explaining the three-row minimum, and a
+                Hidden Rows section for anything already tucked away.
+              </p>
+            </Reveal>
+            <ImageFrame
+              aspect="aspect-[680/730]"
+              src={`${IMG}/customize-rows-panel.png`}
+              alt="Customize Rows panel, open state, showing Continue Watching pinned, reorderable rows, a three-row-minimum guardrail note, and a Hidden Rows section"
+              className="max-w-md"
+            />
+          </div>
+
+          {/* 07 — Guardrails */}
+          <div className="mt-24 md:mt-32">
+            <SectionHeading number="07" title="Guardrails, Undo, and Recovery" />
+            <Reveal delay={0.05} className="max-w-3xl mb-10">
+              <p className="text-lg text-muted leading-relaxed">
+                Three safeguards keep the feature from letting someone
+                accidentally empty their own homepage, a failure mode
+                that&rsquo;s easy to overlook when a feature is only tested on
+                its happy path.
+              </p>
+            </Reveal>
+            <Reveal stagger={0.08} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              {guardrails.map((g) => (
+                <RevealItem key={g.title} className="border border-border p-6 md:p-7">
+                  <g.icon size={20} className="text-accent" />
+                  <h3 className="mt-4 font-medium">{g.title}</h3>
+                  <p className="mt-2 text-sm text-muted leading-relaxed">{g.body}</p>
+                </RevealItem>
+              ))}
+            </Reveal>
+            <ImageFrame
+              aspect="aspect-[389/88]"
+              src={`${IMG}/undo-toast.png`}
+              alt="Undo toast reading Row hidden — Family TV Favorites, with a one-tap Undo action"
+              caption="Hiding a row never reads as silently permanent: an immediate, dismissible toast offers a one-tap Undo."
+              className="max-w-sm"
+            />
+          </div>
+
+          {/* 08 — Proving the loop */}
+          <div className="mt-24 md:mt-32">
+            <SectionHeading number="08" title="Proving the Loop: Before and After" />
+            <Reveal delay={0.05} className="max-w-3xl mb-10">
+              <p className="text-lg text-muted leading-relaxed">
+                To demonstrate the feature actually does something, rather
+                than just presenting controls that look functional, the
+                redesign includes a resolved &ldquo;after&rdquo; state:
+                Continue Watching carries a visible Pinned badge, the row the
+                user hid is fully absent from the stack, and a new row,
+                &ldquo;Popular on Netflix,&rdquo; backfills the space rather
+                than leaving a shortened, half-empty page. That backfill
+                detail matters: hiding a row should make the homepage more
+                relevant, not simply smaller.
+              </p>
+            </Reveal>
+            <ImageFrame
+              aspect="aspect-[1728/1999]"
+              src={`${IMG}/after-customize-rows.png`}
+              alt="Homepage after using Customize Rows: Continue Watching shows a Pinned badge, a hidden row is fully absent, and a new Popular on Netflix row backfills the space"
+              className="max-w-2xl"
+            />
+          </div>
+
+          {/* 09 — Browse by genre */}
+          <div className="mt-24 md:mt-32">
+            <SectionHeading number="09" title="A Second Escape Hatch: Browse by Genre" />
+            <Reveal delay={0.05} className="max-w-3xl mb-10">
+              <p className="text-lg text-muted leading-relaxed">
+                My research synthesis specifically called for &ldquo;a real
+                browse-everything or grid view&rdquo; as part of the fix for
+                endless scrolling; restoring New &amp; Popular in the
+                navigation only solves part of that. A dedicated genre
+                browsing screen gives people a second way out of the row
+                stack entirely: a horizontal genre-pill selector and a true
+                wrapping grid, structurally distinct from every other screen
+                in the product, so scrolling through rows becomes a choice
+                rather than the only path to a decision.
+              </p>
+            </Reveal>
+            <ImageFrame
+              aspect="aspect-[1728/1529]"
+              src={`${IMG}/browse-by-genre.png`}
+              alt="Browse by Genre screen with a horizontal genre-pill selector and a wrapping title grid"
+              className="max-w-2xl"
+            />
+          </div>
+
+          {/* 10 — Prototype */}
+          <div id="prototype" className="mt-24 md:mt-32 scroll-mt-24">
+            <SectionHeading number="10" title="Prototype" />
+            <Reveal delay={0.05} className="max-w-3xl mb-8">
+              <p className="text-lg text-muted leading-relaxed">
+                The full flow is wired as an interactive Figma prototype, not
+                just a set of static comps. From the homepage, Customize Rows
+                opens the panel with a Smart Animate transition; Done resolves
+                to the after-state; the after-state&rsquo;s own Customize Rows
+                control reopens the panel, closing the loop. A second branch
+                covers the safety-net path end to end: hiding a row triggers
+                the undo toast, which either reverses the action or settles
+                into the Hidden Rows list after a timeout, and Restore from
+                that list arrives at the same restored state Undo does, so
+                both recovery paths are actually connected rather than
+                illustrated once and left dangling.
+              </p>
+            </Reveal>
+            <Reveal delay={0.1} className="mb-10">
+              <a
+                href={FLOW_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm text-muted transition-colors hover:border-accent hover:text-fg"
+              >
+                View the full user flow in FigJam
+                <ExternalLink size={14} />
+              </a>
+            </Reveal>
+
+            <FlowDiagram />
+          </div>
+
+          {/* 11 — Reflection */}
+          <div className="mt-24 md:mt-32 max-w-3xl">
+            <SectionHeading number="11" title="Reflection" />
+            <Reveal delay={0.05}>
+              <p className="text-lg text-muted leading-relaxed mb-8">
+                The three problems in my research doc turned out to compound
+                each other in a single causal chain: bigger cards reduced how
+                much fit on screen, which increased how much scrolling was
+                required to reach anything relevant, and with no way to prune
+                or reorder rows, users had no way to shortcut that scroll.
+                Framed that way, this wasn&rsquo;t three unrelated features to
+                design, it was one coherent fix: reduce simultaneous visual
+                load, shorten the path to relevant content, and hand users the
+                row-level control to make their own homepage smaller and more
+                relevant over time.
+              </p>
+            </Reveal>
+            <Reveal stagger={0.06} className="space-y-5 border-t border-border pt-8">
+              {takeaways.map((t) => (
+                <RevealItem key={t.label} className="flex gap-4">
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent mt-2.5 shrink-0" />
+                  <p className="text-muted leading-relaxed">
+                    <strong className="text-fg">{t.label}</strong>: {t.text}
+                  </p>
+                </RevealItem>
+              ))}
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="mt-8 text-muted leading-relaxed">
+                Given more time, the next iteration worth exploring is a
+                mobile version of the same system: row control and undo
+                patterns behave differently under touch than under a mouse,
+                and Netflix&rsquo;s own real usage skews heavily mobile, so a
+                touch-first pass would stress-test whether these same
+                interactions, drag-to-reorder in particular, hold up outside
+                a desktop pointer model.
+              </p>
+            </Reveal>
+          </div>
+
+          {/* Sources */}
+          <Reveal delay={0.1} className="mt-20 pt-8 border-t border-border">
+            <p className="text-xs uppercase tracking-[0.12em] text-muted-2 mb-4">
+              Sources &amp; Research
+            </p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1.5 max-w-4xl">
+              {sources.map((s) => (
+                <li key={s} className="text-sm text-muted-2 italic leading-relaxed">
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      <NextProject project={nextProject} />
+    </>
+  );
+}
+
+function StageHead({ n, title, desc }: { n: number; title: string; desc: string }) {
+  return (
+    <Reveal className="flex items-start gap-4 mb-8">
+      <span className="font-display text-lg text-muted-2 shrink-0">
+        {String(n).padStart(2, "0")}
+      </span>
+      <div>
+        <h3 className="font-display uppercase text-xl md:text-2xl">{title}</h3>
+        <p className="mt-2 text-sm md:text-base text-muted leading-relaxed max-w-2xl">{desc}</p>
+      </div>
+    </Reveal>
+  );
+}
+
+/**
+ * A lightweight, code-drawn recreation of the actual Row Customization user
+ * flow mapped in FigJam (branches, guardrail decision, and the two recovery
+ * paths back to the same restored state).
+ */
+function FlowDiagram() {
+  return (
+    <Reveal delay={0.15} className="border border-border p-6 md:p-10">
+      <div className="flex flex-col items-center gap-2 text-center">
+        <FlowNode>Browsing homepage</FlowNode>
+        <ArrowDown size={16} className="text-muted-2" />
+        <div className="flex flex-wrap justify-center gap-3">
+          <FlowNode variant="entry">Long-press row header</FlowNode>
+          <FlowNode variant="entry">Tap Customize Rows</FlowNode>
+        </div>
+        <ArrowDown size={16} className="text-muted-2" />
+        <FlowNode>Row edit mode — reorder, pin, hide controls appear</FlowNode>
+      </div>
+
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Reorder branch */}
+        <div className="border border-border p-5 flex flex-col items-center gap-3 text-center">
+          <p className="text-xs uppercase tracking-[0.1em] text-accent">Reorder</p>
+          <FlowNode small>Drag reorder handle</FlowNode>
+          <ArrowDown size={14} className="text-muted-2" />
+          <FlowNode small>Order saved automatically</FlowNode>
+          <ArrowDown size={14} className="text-muted-2" />
+          <FlowNode small variant="end">Back to homepage</FlowNode>
+        </div>
+
+        {/* Pin branch */}
+        <div className="border border-border p-5 flex flex-col items-center gap-3 text-center">
+          <p className="text-xs uppercase tracking-[0.1em] text-accent">Pin</p>
+          <FlowNode small>Tap pin icon</FlowNode>
+          <ArrowDown size={14} className="text-muted-2" />
+          <FlowNode small>Row pinned to top</FlowNode>
+          <ArrowDown size={14} className="text-muted-2" />
+          <FlowNode small variant="end">Back to homepage</FlowNode>
+        </div>
+
+        {/* Hide branch */}
+        <div className="border border-border p-5 flex flex-col items-center gap-3 text-center">
+          <p className="text-xs uppercase tracking-[0.1em] text-accent">Hide</p>
+          <FlowNode small>Tap hide icon</FlowNode>
+          <ArrowDown size={14} className="text-muted-2" />
+          <FlowNode small variant="decision">3+ rows still visible?</FlowNode>
+          <div className="flex gap-2 text-[11px] text-muted-2">
+            <span>No → blocked, keep 3 rows</span>
+          </div>
+          <ArrowDown size={14} className="text-muted-2" />
+          <FlowNode small>Row hidden</FlowNode>
+          <ArrowDown size={14} className="text-muted-2" />
+          <FlowNode small>Toast: Row hidden, Undo</FlowNode>
+          <div className="mt-2 grid grid-cols-2 gap-3 w-full text-left">
+            <div className="flex flex-col items-center gap-2 text-center">
+              <p className="text-[11px] text-muted-2">Tap Undo</p>
+              <ArrowDown size={12} className="text-muted-2" />
+              <FlowNode small variant="end">Row restored</FlowNode>
+            </div>
+            <div className="flex flex-col items-center gap-2 text-center">
+              <p className="text-[11px] text-muted-2">Toast expires</p>
+              <ArrowDown size={12} className="text-muted-2" />
+              <FlowNode small>Hidden Rows list</FlowNode>
+              <ArrowDown size={12} className="text-muted-2" />
+              <p className="text-[11px] text-muted-2">Tap Restore</p>
+              <ArrowDown size={12} className="text-muted-2" />
+              <FlowNode small variant="end">Row restored</FlowNode>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Reveal>
+  );
+}
+
+function FlowNode({
+  children,
+  small = false,
+  variant = "default",
+}: {
+  children: React.ReactNode;
+  small?: boolean;
+  variant?: "default" | "entry" | "decision" | "end";
+}) {
+  const styles =
+    variant === "entry"
+      ? "border-border-strong text-fg"
+      : variant === "decision"
+        ? "border-accent/50 text-fg"
+        : variant === "end"
+          ? "border-accent/40 text-accent"
+          : "border-border text-fg";
+  return (
+    <span
+      className={`inline-block rounded-lg border ${styles} bg-bg-elevated px-3.5 py-2 ${
+        small ? "text-xs" : "text-sm"
+      } leading-snug`}
+    >
+      {children}
+    </span>
+  );
+}

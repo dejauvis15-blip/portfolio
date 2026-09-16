@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { getProject, projects } from "@/lib/data";
+import { getProject, getNextProject } from "@/lib/data";
 import CaseHero from "@/components/case-study/CaseHero";
 import SectionHeading from "@/components/case-study/SectionHeading";
 import ImageFrame from "@/components/case-study/ImageFrame";
@@ -16,7 +16,7 @@ const quickLinks = [
 ];
 
 const project = getProject("tesla")!;
-const nextProject = projects.find((p) => p.slug !== "tesla")!;
+const nextProject = getNextProject("tesla");
 
 export const metadata: Metadata = {
   title: `${project.title} — Jauvis Dozier`,

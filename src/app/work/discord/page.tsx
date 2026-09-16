@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getProject, projects } from "@/lib/data";
+import { getProject, getNextProject } from "@/lib/data";
 import CaseHero from "@/components/case-study/CaseHero";
 import SectionHeading from "@/components/case-study/SectionHeading";
 import Callout from "@/components/case-study/Callout";
@@ -9,7 +9,7 @@ import NextProject from "@/components/case-study/NextProject";
 import Reveal, { RevealItem } from "@/components/Reveal";
 
 const project = getProject("discord")!;
-const nextProject = projects.find((p) => p.slug !== "discord")!;
+const nextProject = getNextProject("discord");
 
 export const metadata: Metadata = {
   title: `${project.title} — Jauvis Dozier`,
