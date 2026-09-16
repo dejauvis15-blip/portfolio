@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Allura, Baloo_2 } from "next/font/google";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/data";
-import StickManWave from "@/components/StickManWave";
+import StickManWalk from "@/components/StickManWalk";
 
 const script = Allura({ subsets: ["latin"], weight: "400" });
 const puffy = Baloo_2({ subsets: ["latin"], weight: "800" });
@@ -51,7 +51,7 @@ export default function Nav() {
               Jauvis
             </span>
             <span className={`${puffy.className} font-extrabold`}>Dozier</span>
-            <StickManWave className="w-5 h-5 md:w-6 md:h-6 text-fg" />
+            <StickManWalk className="w-5 h-5 md:w-6 md:h-6 text-fg" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-10">
