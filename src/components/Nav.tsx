@@ -4,13 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Allura, Baloo_2 } from "next/font/google";
+import { Allura } from "next/font/google";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/data";
-import FloatingBalloon from "@/components/FloatingBalloon";
 
 const script = Allura({ subsets: ["latin"], weight: "400" });
-const puffy = Baloo_2({ subsets: ["latin"], weight: "800" });
 
 export default function Nav() {
   const pathname = usePathname();
@@ -48,10 +46,8 @@ export default function Nav() {
             onClick={() => setOpen(false)}
           >
             <span className={`${script.className} normal-case tracking-normal text-3xl md:text-4xl`}>
-              Jauvis
+              Jauvis Dozier
             </span>
-            <span className={`${puffy.className} font-extrabold`}>Dozier</span>
-            <FloatingBalloon className="w-5 h-6 md:w-6 md:h-7 self-center" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-10">
