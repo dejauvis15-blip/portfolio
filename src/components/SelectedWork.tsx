@@ -36,9 +36,9 @@ export default function SelectedWork() {
           <Reveal delay={0.05}>
             <Link
               href="/work/tesla"
-              className="group relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
+              className="work-card relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
             >
-              <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:translate-y-4">
+              <div className="work-card-nudge-down absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out">
                 <div className="relative w-[78%] aspect-[3/2] overflow-hidden rounded-xl border border-white/15 shadow-xl">
                   <Image
                     src={tesla.heroImage.src}
@@ -50,7 +50,7 @@ export default function SelectedWork() {
                 </div>
               </div>
 
-              <div className="absolute inset-x-0 top-9 flex flex-col items-center gap-2 opacity-0 -translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+              <div className="work-card-caption-top absolute inset-x-0 top-9 flex flex-col items-center gap-2 opacity-0 -translate-y-3 transition-all duration-300">
                 <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg border border-white/15">
                   <Image
                     src="/images/tesla/logo-icon.jpg"
@@ -68,7 +68,7 @@ export default function SelectedWork() {
                 </span>
               </div>
 
-              <span className="absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+              <span className="work-card-tag absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300">
                 {tesla.index} &middot; {tesla.category}
               </span>
             </Link>
@@ -78,9 +78,9 @@ export default function SelectedWork() {
           <Reveal delay={0.1}>
             <Link
               href="/work/discord"
-              className="group relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
+              className="work-card relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
             >
-              <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:translate-x-[42%]">
+              <div className="work-card-nudge-right absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out">
                 <div className="relative h-[84%] aspect-[458/930] overflow-hidden rounded-[1.6rem] border-2 border-white/15 shadow-xl">
                   <Image
                     src="/images/discord/forum-notifications-screen-dark-mode.png"
@@ -92,7 +92,7 @@ export default function SelectedWork() {
                 </div>
               </div>
 
-              <div className="absolute inset-0 flex flex-col items-start justify-center gap-2 pl-6 opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+              <div className="work-card-caption-left absolute inset-0 flex flex-col items-start justify-center gap-2 pl-6 opacity-0 -translate-x-3 transition-all duration-300">
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-black/80">
                   <DiscordMark className="h-[18px] w-[18px]" />
                 </span>
@@ -104,7 +104,7 @@ export default function SelectedWork() {
                 </span>
               </div>
 
-              <span className="absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+              <span className="work-card-tag absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300">
                 {discord.index} &middot; {discord.category}
               </span>
             </Link>
@@ -118,9 +118,9 @@ export default function SelectedWork() {
               onMouseLeave={resetNetflixPreview}
               onFocus={playNetflixPreview}
               onBlur={resetNetflixPreview}
-              className="group relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
+              className="work-card relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
             >
-              <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out group-hover:scale-105">
+              <div className="work-card-zoom absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out">
                 <div className="relative w-[78%] aspect-[16/10] overflow-hidden rounded-xl border border-white/15 shadow-xl">
                   <video
                     ref={netflixVideoRef}
@@ -135,7 +135,7 @@ export default function SelectedWork() {
                 </div>
               </div>
 
-              <div className="absolute inset-x-0 top-9 flex flex-col items-center gap-2 opacity-0 -translate-y-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+              <div className="work-card-caption-top absolute inset-x-0 top-9 flex flex-col items-center gap-2 opacity-0 -translate-y-3 transition-all duration-300">
                 <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg border border-white/15">
                   <Image
                     src="/images/netflix/logo-icon.jpg"
@@ -153,7 +153,7 @@ export default function SelectedWork() {
                 </span>
               </div>
 
-              <span className="absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+              <span className="work-card-tag absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300">
                 {netflix.index} &middot; {netflix.category}
               </span>
             </Link>
