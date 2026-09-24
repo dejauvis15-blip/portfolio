@@ -11,6 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jauvis-dozier-portfolio.vercel.app"),
   title: "Jauvis Dozier — Undergraduate UX Designer",
   description:
     "Designing thoughtful digital experiences through research, interaction, and visual design. UX/Product design portfolio of Jauvis Dozier.",
