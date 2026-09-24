@@ -64,3 +64,30 @@ body {
 .font-display {
   font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
 }
+
+/*
+ * Selected Work card hover states, written as plain CSS rather than
+ * Tailwind's group-hover: variants — the compiled Tailwind output was
+ * silently missing those variant rules in production.
+ */
+.work-card:hover .work-card-nudge-down {
+  transform: translateY(1rem);
+}
+.work-card:hover .work-card-nudge-right {
+  transform: translateX(42%);
+}
+.work-card:hover .work-card-zoom {
+  transform: scale(1.05);
+}
+.work-card:hover .work-card-caption-top {
+  opacity: 1;
+  transform: translateY(0);
+}
+.work-card:hover .work-card-caption-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+.work-card:hover .work-card-tag {
+  opacity: 1;
+  transform: translateY(0);
+}
