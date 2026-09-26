@@ -177,7 +177,7 @@ export default function TeslaCaseStudy() {
                   identity while maintaining readability across all devices.
                 </p>
               </div>
-              <div className="flex flex-col gap-4 items-center justify-center">
+              <div className="flex flex-col gap-4 items-center">
                 {swatches.map((s) => (
                   <div key={s.hex} className="flex items-center gap-4">
                     <span
