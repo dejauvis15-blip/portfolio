@@ -8,7 +8,7 @@ import Reveal from "@/components/Reveal";
 import { DiscordMark } from "@/components/icons";
 
 export default function SelectedWork() {
-  const [tesla, discord, netflix] = projects;
+  const [netflix, discord, tesla] = projects;
   const netflixVideoRef = useRef<HTMLVideoElement>(null);
 
   const playNetflixPreview = () => {
@@ -32,86 +32,8 @@ export default function SelectedWork() {
         </Reveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-          {/* 01 — Tesla: image nudges down, caption fades up from the top */}
+          {/* 01 — Netflix: hero card zooms in slightly, caption fades up from the top */}
           <Reveal delay={0.05}>
-            <Link
-              href="/work/tesla"
-              className="work-card relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
-            >
-              <div className="work-card-nudge-down absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out">
-                <div className="relative w-[78%] aspect-[3/2] overflow-hidden rounded-xl border border-white/15 shadow-xl">
-                  <Image
-                    src={tesla.heroImage.src}
-                    alt={tesla.heroImage.alt}
-                    fill
-                    sizes="(min-width: 640px) 40vw, 78vw"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
-              <div className="work-card-caption-top absolute inset-x-0 top-9 flex flex-col items-center gap-2 opacity-0 -translate-y-3 transition-all duration-300">
-                <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg border border-white/15">
-                  <Image
-                    src="/images/tesla/logo-icon.jpg"
-                    alt="Tesla"
-                    width={32}
-                    height={32}
-                    className="h-full w-full object-cover"
-                  />
-                </span>
-                <span className="font-display text-sm font-extrabold text-white">
-                  {site.name}
-                </span>
-                <span className="font-mono text-[11px] tracking-wide text-white/70">
-                  Tesla &middot; Homepage Redesign
-                </span>
-              </div>
-
-              <span className="work-card-tag absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300">
-                {tesla.index} &middot; {tesla.category}
-              </span>
-            </Link>
-          </Reveal>
-
-          {/* 02 — Discord: phone shifts aside, caption slides in from the left */}
-          <Reveal delay={0.1}>
-            <Link
-              href="/work/discord"
-              className="work-card relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
-            >
-              <div className="work-card-nudge-right absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out">
-                <div className="relative h-[84%] aspect-[458/930] overflow-hidden rounded-[1.6rem] border-2 border-white/15 shadow-xl">
-                  <Image
-                    src="/images/discord/forum-notifications-screen-dark-mode.png"
-                    alt="Discord forum notification settings screen, dark mode"
-                    fill
-                    sizes="(min-width: 640px) 25vw, 50vw"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
-              <div className="work-card-caption-left absolute inset-0 flex flex-col items-start justify-center gap-2 pl-6 opacity-0 -translate-x-3 transition-all duration-300">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-black/80">
-                  <DiscordMark className="h-[18px] w-[18px]" />
-                </span>
-                <span className="font-display text-sm font-extrabold text-white">
-                  {site.name}
-                </span>
-                <span className="font-mono text-[11px] tracking-wide text-white/70">
-                  Discord &middot; Notifications &amp; Search
-                </span>
-              </div>
-
-              <span className="work-card-tag absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300">
-                {discord.index} &middot; {discord.category}
-              </span>
-            </Link>
-          </Reveal>
-
-          {/* 03 — Netflix: hero card zooms in slightly, caption fades up from the top */}
-          <Reveal delay={0.15}>
             <Link
               href="/work/netflix"
               onMouseEnter={playNetflixPreview}
@@ -158,6 +80,84 @@ export default function SelectedWork() {
               </span>
             </Link>
           </Reveal>
+          {/* 02 — Discord: phone shifts aside, caption slides in from the left */}
+          <Reveal delay={0.1}>
+            <Link
+              href="/work/discord"
+              className="work-card relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
+            >
+              <div className="work-card-nudge-right absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out">
+                <div className="relative h-[84%] aspect-[458/930] overflow-hidden rounded-[1.6rem] border-2 border-white/15 shadow-xl">
+                  <Image
+                    src="/images/discord/forum-notifications-screen-dark-mode.png"
+                    alt="Discord forum notification settings screen, dark mode"
+                    fill
+                    sizes="(min-width: 640px) 25vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="work-card-caption-left absolute inset-0 flex flex-col items-start justify-center gap-2 pl-6 opacity-0 -translate-x-3 transition-all duration-300">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-black/80">
+                  <DiscordMark className="h-[18px] w-[18px]" />
+                </span>
+                <span className="font-display text-sm font-extrabold text-white">
+                  {site.name}
+                </span>
+                <span className="font-mono text-[11px] tracking-wide text-white/70">
+                  Discord &middot; Notifications &amp; Search
+                </span>
+              </div>
+
+              <span className="work-card-tag absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300">
+                {discord.index} &middot; {discord.category}
+              </span>
+            </Link>
+          </Reveal>
+
+          {/* 03 — Tesla: image nudges down, caption fades up from the top */}
+          <Reveal delay={0.15}>
+            <Link
+              href="/work/tesla"
+              className="work-card relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
+            >
+              <div className="work-card-nudge-down absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out">
+                <div className="relative w-[78%] aspect-[3/2] overflow-hidden rounded-xl border border-white/15 shadow-xl">
+                  <Image
+                    src={tesla.heroImage.src}
+                    alt={tesla.heroImage.alt}
+                    fill
+                    sizes="(min-width: 640px) 40vw, 78vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="work-card-caption-top absolute inset-x-0 top-9 flex flex-col items-center gap-2 opacity-0 -translate-y-3 transition-all duration-300">
+                <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg border border-white/15">
+                  <Image
+                    src="/images/tesla/logo-icon.jpg"
+                    alt="Tesla"
+                    width={32}
+                    height={32}
+                    className="h-full w-full object-cover"
+                  />
+                </span>
+                <span className="font-display text-sm font-extrabold text-white">
+                  {site.name}
+                </span>
+                <span className="font-mono text-[11px] tracking-wide text-white/70">
+                  Tesla &middot; Homepage Redesign
+                </span>
+              </div>
+
+              <span className="work-card-tag absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300">
+                {tesla.index} &middot; {tesla.category}
+              </span>
+            </Link>
+          </Reveal>
+
         </div>
       </div>
     </section>
