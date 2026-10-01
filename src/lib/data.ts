@@ -157,21 +157,20 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "tesla",
+    slug: "netflix",
     index: "01",
-    name: "TESLA",
-    title: "Tesla Homepage Redesign",
-    discipline: ["UX/UI Design", "Web Design"],
-    category: "UX/UI Case Study",
+    name: "NETFLIX",
+    title: "Netflix Homepage Redesign",
+    discipline: ["UX/UI Design", "Product Design"],
+    category: "UX Research · UI Design",
     year: "2026",
     role: "Solo UX/UI Designer",
-    tools: ["Figma"],
-    duration: "1 week",
+    tools: ["Figma", "FigJam"],
     summary:
-      "A self-directed redesign of Tesla's homepage focused on visual hierarchy, navigation, and call-to-action clarity — reframing the first impression around Tesla's own brand identity.",
+      "Netflix's 2025 “elevated” redesign enlarged title cards and drew a blunt user backlash: more clutter, longer scrolling, and no way to fix it themselves. This case study treats that backlash as a design brief, cutting visual density, shortening the path to something worth watching, and giving people real control at the row level the way Apple TV and Google TV already do.",
     heroImage: {
-      src: "/images/tesla/hero-band.jpg",
-      alt: "Tesla homepage redesign hero section, with the Model 3 and Model Y and a $299/mo leasing offer",
+      src: "/images/netflix/polished-homepage.png",
+      alt: "Netflix homepage redesign with an inset hero card and a customizable row stack",
     },
   },
   {
@@ -192,20 +191,21 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "netflix",
+    slug: "tesla",
     index: "03",
-    name: "NETFLIX",
-    title: "Netflix Homepage Redesign",
-    discipline: ["UX/UI Design", "Product Design"],
-    category: "UX Research · UI Design",
+    name: "TESLA",
+    title: "Tesla Homepage Redesign",
+    discipline: ["UX/UI Design", "Web Design"],
+    category: "UX/UI Case Study",
     year: "2026",
     role: "Solo UX/UI Designer",
-    tools: ["Figma", "FigJam"],
+    tools: ["Figma"],
+    duration: "1 week",
     summary:
-      "Netflix's 2025 “elevated” redesign enlarged title cards and drew a blunt user backlash: more clutter, longer scrolling, and no way to fix it themselves. This case study treats that backlash as a design brief, cutting visual density, shortening the path to something worth watching, and giving people real control at the row level the way Apple TV and Google TV already do.",
+      "A self-directed redesign of Tesla's homepage focused on visual hierarchy, navigation, and call-to-action clarity — reframing the first impression around Tesla's own brand identity.",
     heroImage: {
-      src: "/images/netflix/polished-homepage.png",
-      alt: "Netflix homepage redesign with an inset hero card and a customizable row stack",
+      src: "/images/tesla/hero-band.jpg",
+      alt: "Tesla homepage redesign hero section, with the Model 3 and Model Y and a $299/mo leasing offer",
     },
   },
 ];
