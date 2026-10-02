@@ -91,3 +91,46 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* "Request an AI summary" footer (ai-summary-footer): restyled for the dark theme */
+.ai-summary-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+.ai-summary-footer__title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-align: center;
+  color: var(--muted-2);
+}
+.ai-summary-footer__icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.75rem;
+}
+.ai-summary-footer__icon {
+  display: flex;
+  color: var(--muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.ai-summary-footer__icon:hover {
+  color: var(--fg);
+  transform: scale(1.1);
+}
+.ai-summary-footer__icon:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+.ai-summary-footer__icon svg {
+  width: 26px;
+  height: 26px;
+}
+.ai-summary-footer__icon svg,
+.ai-summary-footer__icon svg * {
+  fill: currentColor;
+}

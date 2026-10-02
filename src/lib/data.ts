@@ -4,6 +4,7 @@
 
 export const site = {
   name: "Jauvis Dozier",
+  url: "https://jauvis-dozier-portfolio.vercel.app",
   role: "Undergraduate UX Designer",
   email: "dejauvis15@gmail.com",
   linkedin: "https://linkedin.com/in/jauvisdozier",
