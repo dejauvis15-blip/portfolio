@@ -15,7 +15,7 @@ export default function Hero() {
           <h1 className="font-display normal-case leading-[1.2] tracking-tight text-balance text-[7vw] sm:text-4xl md:text-5xl">
             <span className="font-light text-fg">Jauvis&nbsp;is&nbsp;a&nbsp;</span>
             <span className={`${cartoon.className} font-extrabold text-fg`}>
-              product designer
+              UX Designer
             </span>
             <span className="font-light text-fg">&nbsp;honing his craft.</span>
           </h1>
