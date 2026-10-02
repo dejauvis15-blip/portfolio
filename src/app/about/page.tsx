@@ -63,7 +63,7 @@ export default function AboutPage() {
               {/* Portrait — top layer */}
               <div className="absolute left-[18%] top-[36%] z-20 w-[64%] -rotate-3 drop-shadow-2xl">
                 <Image
-                  src="/images/about-collage/portrait-circle.png"
+                  src="/images/about-collage/portrait-oval.png"
                   alt="Jauvis Dozier"
                   width={339}
                   height={387}
