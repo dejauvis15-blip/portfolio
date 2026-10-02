@@ -14,6 +14,7 @@ export const navLinks = [
   { label: "Work", href: "/" },
   { label: "Process", href: "/process" },
   { label: "About", href: "/about" },
+  { label: "Resume", href: "/resume.pdf", external: true },
 ];
 
 export const heroPills = [
