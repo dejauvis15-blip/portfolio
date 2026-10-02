@@ -110,6 +110,12 @@ export const about = {
 
 export const experience = [
   {
+    org: "Tombras",
+    role: "UX Analysis Intern",
+    location: "Knoxville, TN",
+    period: "Oct 2026 – Dec 2026",
+  },
+  {
     org: "Fibers and Composites Manufacturing Facility (FCMF)",
     role: "Undergraduate Media & Website Design Assistant",
     location: "Knoxville, TN",
