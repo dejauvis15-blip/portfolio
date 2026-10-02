@@ -92,13 +92,19 @@ export default function AboutPage() {
               >
                 <div className="flex items-center gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white p-1.5">
-                    <Image
-                      src={job.logo}
-                      alt={`${job.org} logo`}
-                      width={28}
-                      height={28}
-                      className="h-full w-full object-contain"
-                    />
+                    {"logo" in job ? (
+                      <Image
+                        src={job.logo}
+                        alt={`${job.org} logo`}
+                        width={28}
+                        height={28}
+                        className="h-full w-full object-contain"
+                      />
+                    ) : (
+                      <span className="font-display text-lg font-bold text-black">
+                        {job.org[0]}
+                      </span>
+                    )}
                   </div>
                   <div>
                     <p className="font-medium">{job.org}</p>
