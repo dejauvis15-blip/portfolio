@@ -114,6 +114,7 @@ export const experience = [
     role: "UX Analysis Intern",
     location: "Knoxville, TN",
     period: "Oct 2026 – Dec 2026",
+    logo: "/images/logos/tombras.png",
   },
   {
     org: "Fibers and Composites Manufacturing Facility (FCMF)",
