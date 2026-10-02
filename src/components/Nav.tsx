@@ -51,17 +51,29 @@ export default function Nav() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm uppercase tracking-[0.12em] transition-colors ${
-                  isActive(link.href) ? "text-fg" : "text-muted hover:text-fg"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm uppercase tracking-[0.12em] transition-colors text-muted hover:text-fg"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm uppercase tracking-[0.12em] transition-colors ${
+                    isActive(link.href) ? "text-fg" : "text-muted hover:text-fg"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </nav>
 
           <button
@@ -85,16 +97,29 @@ export default function Nav() {
             className="md:hidden overflow-hidden"
           >
             <div className="bg-bg border-b border-white/10 px-6 py-6 flex flex-col gap-5">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="text-2xl font-display uppercase tracking-wide"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.external ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setOpen(false)}
+                    className="text-2xl font-display uppercase tracking-wide"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="text-2xl font-display uppercase tracking-wide"
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
             </div>
           </motion.nav>
         )}
