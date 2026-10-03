@@ -25,12 +25,6 @@ export default function SelectedWork() {
   return (
     <section id="work" className="scroll-mt-20 py-24 md:py-32">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
-        <Reveal className="mb-10 md:mb-12">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-2">
-            Selected Work
-          </p>
-        </Reveal>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {/* 01 — Netflix: hero card zooms in slightly, caption fades up from the top */}
           <Reveal delay={0.05}>
