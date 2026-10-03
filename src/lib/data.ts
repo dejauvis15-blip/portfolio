@@ -13,7 +13,6 @@ export const site = {
 
 export const navLinks = [
   { label: "Work", href: "/" },
-  { label: "Process", href: "/process" },
   { label: "About", href: "/about" },
   { label: "Resume", href: "/resume.pdf", external: true },
 ];
@@ -65,39 +64,6 @@ export const tools = [
   "CSS",
   "C",
   "C++",
-];
-
-export const process = [
-  {
-    number: "01",
-    title: "Discover",
-    description: "Understand the user, problem, and context.",
-  },
-  {
-    number: "02",
-    title: "Define",
-    description: "Identify pain points and establish project goals.",
-  },
-  {
-    number: "03",
-    title: "Ideate",
-    description: "Explore potential solutions and user flows.",
-  },
-  {
-    number: "04",
-    title: "Design",
-    description: "Create wireframes, interfaces, and prototypes.",
-  },
-  {
-    number: "05",
-    title: "Test",
-    description: "Evaluate usability and refine the experience.",
-  },
-  {
-    number: "06",
-    title: "Deliver",
-    description: "Finalize the experience and document the solution.",
-  },
 ];
 
 export const about = {
