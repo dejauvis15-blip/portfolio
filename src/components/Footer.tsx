@@ -26,6 +26,9 @@ export default function Footer() {
           <Link href={site.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-fg transition-colors">
             LinkedIn
           </Link>
+          <Link href={site.github} target="_blank" rel="noopener noreferrer" className="hover:text-fg transition-colors">
+            GitHub
+          </Link>
           <Link href={`mailto:${site.email}`} className="hover:text-fg transition-colors">
             Email
           </Link>

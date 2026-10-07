@@ -8,6 +8,7 @@ export const site = {
   role: "Undergraduate UX Designer",
   email: "dejauvis15@gmail.com",
   linkedin: "https://linkedin.com/in/jauvisdozier",
+  github: "https://github.com/dejauvis15-blip",
   resumeHref: "/resume.pdf",
 };
 
@@ -101,7 +102,7 @@ export const education = [
     school: "University of Tennessee",
     program: "B.S. Information Sciences, UX Design Concentration",
     location: "Knoxville, TN",
-    period: "Aug 2025 – Present",
+    period: "Aug 2025 – May 2028",
     logo: "/images/logos/ut.png",
   },
   {
