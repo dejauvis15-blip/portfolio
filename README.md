@@ -1,52 +1,133 @@
-# Jauvis Dozier — Portfolio
+# Jauvis Dozier — UX / Product Design Portfolio
 
-A dark, editorial UX/product design portfolio built with Next.js 16 (App
-Router), TypeScript, Tailwind CSS v4, and Framer Motion.
+Personal portfolio website showcasing my work in **UX design, product design, front-end development, and digital experiences**.
 
-## Getting started
+The site highlights selected case studies, design process, technical skills, and professional experience while also serving as a project for developing my front-end development skills.
 
-```bash
-npm install
-npm run dev
-```
+🌐 **Live Portfolio:**  
+https://portfolio-wine-gamma-66.vercel.app/
 
-Open [http://localhost:3000](http://localhost:3000).
+---
 
-## Structure
+## 👋 About Me
 
-- `src/app/page.tsx` — homepage (hero, selected work, capabilities, tools,
-  process, about, final CTA)
-- `src/app/work/tesla/page.tsx` — Tesla Homepage Redesign case study
-- `src/app/work/discord/page.tsx` — Discord notifications & search case study
-- `src/app/about/page.tsx` — full about page
-- `src/components/` — homepage sections
-- `src/components/case-study/` — shared case-study building blocks
-  (hero, numbered section headings, callouts, image frames, device grids)
-- `src/lib/data.ts` — all site copy and project metadata in one place
+I'm **Jauvis Dozier**, an Information Science student at the University of Tennessee, Knoxville with a concentration in User Experience Design.
 
-## Still to do
+I enjoy combining **design, technology, and development** to create digital products that are intuitive, visually engaging, and user-centered.
 
-- **Resume**: `public/resume.pdf` is already wired to the "Download Resume"
-  buttons — replace the file whenever the resume is updated (same filename,
-  same path).
-- **LinkedIn / email**: set in `src/lib/data.ts` (`site.linkedin`,
-  `site.email`) — update there if either changes.
+My interests include:
 
-## Image sources
+- UX Design
+- Product Design
+- UI Design
+- UX Research
+- Front-End Development
+- Design Systems
+- Interactive Experiences
 
-- Discord case-study mockups (`public/images/discord/`) were extracted from
-  the original case-study export via `scripts/extract-discord-images.js`
-  (kept for reference/reproducibility — not part of the app build). The case
-  study's hero image is a Mockuuups Studio lifestyle mockup composited with
-  the real "Server notifications" screen.
-- Tesla final-design imagery (`public/images/tesla/hero-band.jpg`,
-  `full-homepage.jpg`, `cybertruck-band.jpg`) came straight from the
-  Tesla-Prototype Figma file via the Figma MCP; the laptop/tablet device
-  shots (`final-*.jpg`) were cropped out of a single exported presentation
-  frame via `scripts/crop-tesla-frame.js`. `model-3/x/y.jpg` and
-  `cybertruck.jpg` are the source vehicle photography used in the redesign.
+---
 
-## Deploying
+## 🚀 Portfolio Features
 
-Any Next.js host works (Vercel is the simplest). `npm run build` produces a
-fully static export of every route — no server-side data fetching is used.
+The portfolio includes:
+
+- Responsive homepage
+- Selected project showcase
+- Detailed UX case studies
+- About page
+- Design capabilities and tools
+- Design process overview
+- Resume access
+- Responsive layouts across screen sizes
+- Motion and interaction design
+- Reusable React components
+
+---
+
+## 🎨 Featured Projects
+
+### Tesla Homepage Redesign
+
+A UX/UI redesign exploring ways to improve the Tesla homepage experience through stronger visual hierarchy, navigation, and product presentation.
+
+**Focus:**
+
+- UX/UI Design
+- Visual Design
+- Responsive Design
+- Prototyping
+- Information Hierarchy
+
+---
+
+### Discord UX Redesign
+
+A case study focused on improving Discord's notification and search experience.
+
+The project explores usability problems and redesign opportunities to make information easier to find and manage.
+
+**Focus:**
+
+- UX Research
+- User Flows
+- Wireframing
+- UI Design
+- Prototyping
+- Interaction Design
+
+---
+
+## 🛠️ Tech Stack
+
+### Front End
+
+- Next.js 16
+- React
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+
+### Design
+
+- Figma
+- Adobe Photoshop
+- Adobe Illustrator
+
+### Development Tools
+
+- Git
+- GitHub
+- VS Code
+- Vercel
+
+---
+
+## 🧱 Project Structure
+
+```text
+portfolio/
+│
+├── public/
+│   ├── images/
+│   └── resume.pdf
+│
+├── scripts/
+│
+├── src/
+│   ├── app/
+│   │   ├── page.tsx
+│   │   ├── about/
+│   │   └── work/
+│   │       ├── tesla/
+│   │       └── discord/
+│   │
+│   ├── components/
+│   │   └── case-study/
+│   │
+│   └── lib/
+│       └── data.ts
+│
+├── next.config.ts
+├── package.json
+├── tsconfig.json
+└── README.md
