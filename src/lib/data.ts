@@ -8,6 +8,7 @@ export const site = {
   role: "Undergraduate UX Designer",
   email: "dejauvis15@gmail.com",
   linkedin: "https://linkedin.com/in/jauvisdozier",
+  github: "https://github.com/dejauvis15-blip",
   resumeHref: "/resume.pdf",
 };
 
@@ -53,6 +54,7 @@ export const capabilities = [
 
 export const tools = [
   "Figma",
+  "FigJam",
   "Adobe Photoshop",
   "Adobe Illustrator",
   "Adobe Creative Suite",
@@ -61,14 +63,17 @@ export const tools = [
   "Python",
   "React",
   "JavaScript",
+  "HTML",
   "CSS",
+  "SQL",
+  "Git",
   "C",
   "C++",
 ];
 
 export const about = {
   name: "Jauvis Dozier",
-  program: "Information Science — User Experience Design",
+  program: "Information Sciences — User Experience Design",
   school: "University of Tennessee, Knoxville",
   role: "Undergraduate Media and Website Design Assistant",
   org: "Fibers and Composites Manufacturing Facility (FCMF)",
@@ -78,7 +83,7 @@ export const about = {
 export const experience = [
   {
     org: "Tombras",
-    role: "UX Analysis Intern",
+    role: "UX Analyst Intern",
     location: "Knoxville, TN",
     period: "Oct 2026 – Dec 2026",
     logo: "/images/logos/tombras.png",
@@ -95,9 +100,9 @@ export const experience = [
 export const education = [
   {
     school: "University of Tennessee",
-    program: "B.S. Information Science, UX Design Concentration",
+    program: "B.S. Information Sciences, UX Design Concentration",
     location: "Knoxville, TN",
-    period: "Aug 2025 – Present",
+    period: "Aug 2025 – May 2028",
     logo: "/images/logos/ut.png",
   },
   {
