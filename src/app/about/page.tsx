@@ -165,6 +165,9 @@ export default function AboutPage() {
               <Link href={site.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-fg transition-colors">
                 LinkedIn
               </Link>
+              <Link href={site.github} target="_blank" rel="noopener noreferrer" className="hover:text-fg transition-colors">
+                GitHub
+              </Link>
               <Link href={`mailto:${site.email}`} className="group inline-flex items-center gap-2 text-fg hover:text-accent transition-colors">
                 {site.email}
                 <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
