@@ -15,6 +15,7 @@ export const site = {
 export const navLinks = [
   { label: "Work", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Dev", href: "https://www.jauvis.dev", external: true },
   { label: "Resume", href: "/resume.pdf", external: true },
 ];
 
