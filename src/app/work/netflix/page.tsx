@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ExternalLink, Undo2, RotateCcw, TriangleAlert } from "lucide-react";
@@ -85,6 +87,37 @@ const takeaways = [
   },
 ];
 
+// TL;DR shown right after the project metadata.
+const tldr = [
+  {
+    label: "Problem",
+    text: "Netflix's 2025 redesign enlarged title cards, so less of the catalog fits on screen and people scroll more, with no way to customize their homepage.",
+  },
+  {
+    label: "Solution",
+    text: "Row-level control (reorder, pin, hide) on every row, with guardrails and undo so nobody can break their own homepage, plus a Browse by Genre grid as a second way out of the row stack.",
+  },
+  {
+    label: "Outcome",
+    // TODO: one line on the strongest result (density comparison or test finding).
+    text: null,
+  },
+];
+
+// TODO: visible titles above the fold at 1728px, counted from the density comparison.
+const densityTitleCounts: { current: number; redesign: number } | null = null;
+
+// TODO: once usability tested, fill in one entry per task. While this list is
+// empty, the Validation section shows the "not yet tested" plan instead.
+const validationFindings: { task: string; finding: string }[] = [];
+
+const plannedMeasures = [
+  "Time from landing on the homepage to starting something to watch",
+  "Whether people find Customize Rows without being told it exists",
+  "Whether people can recover a hidden row using both Undo and the Hidden Rows list",
+  "How the page's perceived clutter compares to the current Netflix homepage",
+];
+
 const sources = [
   "Laws of UX, Choice Overload",
   "Nielsen Norman Group, “More Choices, More Trouble”",
@@ -134,6 +167,23 @@ export default function NetflixCaseStudy() {
                 {link.label}
               </Link>
             ))}
+          </Reveal>
+
+          {/* TL;DR */}
+          <Reveal delay={0.15} className="mx-auto mt-14 max-w-3xl">
+            <div className="rounded-2xl border border-border bg-bg-elevated/60 p-6 md:p-8 text-left">
+              <p className="text-xs uppercase tracking-[0.12em] text-muted-2 mb-5">TL;DR</p>
+              <dl className="space-y-4">
+                {tldr.map((item) => (
+                  <div key={item.label} className="sm:grid sm:grid-cols-[7rem_1fr] sm:gap-4">
+                    <dt className="font-display uppercase text-sm text-fg">{item.label}</dt>
+                    <dd className="mt-1 sm:mt-0 text-fg/90 leading-relaxed">
+                      {item.text ?? <Todo>One line on the strongest result</Todo>}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -305,6 +355,14 @@ export default function NetflixCaseStudy() {
                 on the Continue Watching row of the polished homepage above.
               </p>
             </Reveal>
+            <PendingImage
+              file="row-header-controls.png"
+              // TODO: match the exported image's width/height ratio.
+              aspect="aspect-[16/9]"
+              alt="Close-up of a row header showing the drag handle, pin toggle, and hide toggle"
+              caption="Every row header carries the same three controls, with no separate edit mode."
+              className="mt-10 text-center"
+            />
           </div>
 
           {/* 06: Customize Rows panel */}
@@ -391,9 +449,30 @@ export default function NetflixCaseStudy() {
             />
           </div>
 
-          {/* 09: Browse by genre */}
+          {/* 09: Visual density */}
           <div className="mt-24 md:mt-32 text-center">
-            <SectionHeading number="09" title="A Second Escape Hatch: Browse by Genre" className="justify-center" />
+            <SectionHeading number="09" title="Before and After: Visual Density" className="justify-center" />
+            <Reveal delay={0.05} className="mx-auto max-w-3xl mb-10">
+              <p className="text-lg text-muted leading-relaxed">
+                At the same 1728px viewport, the current Netflix homepage
+                shows{" "}
+                {densityTitleCounts ? densityTitleCounts.current : <Todo>count</Todo>}{" "}
+                titles above the fold. The redesign shows{" "}
+                {densityTitleCounts ? densityTitleCounts.redesign : <Todo>count</Todo>}.
+              </p>
+            </Reveal>
+            <PendingImage
+              file="density-comparison.png"
+              // TODO: match the exported image's width/height ratio.
+              aspect="aspect-[2/1]"
+              alt="Current Netflix homepage beside the redesign at the same screen size, with visible titles counted on each"
+              className="max-w-5xl mx-auto text-center"
+            />
+          </div>
+
+          {/* 10: Browse by genre */}
+          <div className="mt-24 md:mt-32 text-center">
+            <SectionHeading number="10" title="A Second Escape Hatch: Browse by Genre" className="justify-center" />
             <Reveal delay={0.05} className="mx-auto max-w-3xl mb-10">
               <p className="text-lg text-muted leading-relaxed">
                 My research synthesis specifically called for a real way to
@@ -416,9 +495,9 @@ export default function NetflixCaseStudy() {
             />
           </div>
 
-          {/* 10: Prototype */}
+          {/* 11: Prototype */}
           <div id="prototype" className="mt-24 md:mt-32 scroll-mt-24 text-center">
-            <SectionHeading number="10" title="Prototype" className="justify-center" />
+            <SectionHeading number="11" title="Prototype" className="justify-center" />
             <Reveal delay={0.05} className="mx-auto max-w-3xl mb-8">
               <p className="text-lg text-muted leading-relaxed">
                 The full flow is wired as an interactive Figma prototype, not
@@ -475,9 +554,43 @@ export default function NetflixCaseStudy() {
             />
           </div>
 
-          {/* 11: Reflection */}
+          {/* 12: Validation */}
           <div className="mt-24 md:mt-32 max-w-3xl mx-auto text-center">
-            <SectionHeading number="11" title="Reflection" className="justify-center" />
+            <SectionHeading number="12" title="Validation" className="justify-center" />
+            {validationFindings.length > 0 ? (
+              <Reveal stagger={0.06} className="space-y-5 text-left">
+                {validationFindings.map((v) => (
+                  <RevealItem key={v.task} className="flex gap-4">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent mt-2.5 shrink-0" />
+                    <p className="text-muted leading-relaxed">
+                      <strong className="text-fg">{v.task}</strong>: {v.finding}
+                    </p>
+                  </RevealItem>
+                ))}
+              </Reveal>
+            ) : (
+              <>
+                <Reveal delay={0.05}>
+                  <p className="text-lg text-muted leading-relaxed mb-8">
+                    This project hasn&rsquo;t been usability tested yet. If I
+                    were testing it, I&rsquo;d measure:
+                  </p>
+                </Reveal>
+                <Reveal stagger={0.06} className="space-y-5 text-left">
+                  {plannedMeasures.map((m) => (
+                    <RevealItem key={m} className="flex gap-4">
+                      <span className="h-1.5 w-1.5 rounded-full bg-accent mt-2.5 shrink-0" />
+                      <p className="text-muted leading-relaxed">{m}</p>
+                    </RevealItem>
+                  ))}
+                </Reveal>
+              </>
+            )}
+          </div>
+
+          {/* 13: Reflection */}
+          <div className="mt-24 md:mt-32 max-w-3xl mx-auto text-center">
+            <SectionHeading number="13" title="Reflection" className="justify-center" />
             <Reveal delay={0.05}>
               <p className="text-lg text-muted leading-relaxed mb-8">
                 The three problems in my research doc ended up compounding
@@ -533,6 +646,57 @@ export default function NetflixCaseStudy() {
 
       <NextProject project={nextProject} />
     </>
+  );
+}
+
+/** A visible "TODO" marker for content still to be supplied. */
+function Todo({ children }: { children: string }) {
+  return (
+    <span className="rounded border border-dashed border-amber-400/70 px-1.5 text-amber-300">
+      TODO: {children}
+    </span>
+  );
+}
+
+/**
+ * An image still to be exported: renders the real image once the file exists in
+ * public/images/netflix, and a labeled placeholder box until then.
+ */
+function PendingImage({
+  file,
+  alt,
+  aspect,
+  caption,
+  className = "",
+}: {
+  file: string;
+  alt: string;
+  aspect: string;
+  caption?: string;
+  className?: string;
+}) {
+  if (existsSync(join(process.cwd(), "public", IMG, file))) {
+    return (
+      <ImageFrame
+        rounded
+        aspect={aspect}
+        src={`${IMG}/${file}`}
+        alt={alt}
+        caption={caption}
+        className={className}
+      />
+    );
+  }
+  return (
+    <Reveal className={className}>
+      <div
+        className={`relative w-full ${aspect} rounded-xl border border-dashed border-amber-400/60 bg-bg-elevated/40 flex flex-col items-center justify-center gap-2 p-6 text-center`}
+      >
+        <p className="text-sm text-amber-300">TODO: export {IMG}/{file}</p>
+        <p className="max-w-md text-xs text-muted-2">{alt}</p>
+      </div>
+      {caption && <p className="mt-3 text-sm text-muted-2 max-w-2xl">{caption}</p>}
+    </Reveal>
   );
 }
 
