@@ -41,9 +41,7 @@ export default function SelectedWork() {
                     className="h-full w-full object-cover"
                   />
                 </span>
-                <span className="font-mono text-[11px] tracking-wide text-white/70">
-                  Ole Smoky &middot; Merch Experience
-                </span>
+                <span className="font-display text-xl md:text-2xl font-extrabold text-white">Ole Smoky</span>
               </div>
             </Link>
           </Reveal>
@@ -79,9 +77,7 @@ export default function SelectedWork() {
                     className="h-full w-full object-cover"
                   />
                 </span>
-                <span className="font-mono text-[11px] tracking-wide text-white/70">
-                  Netflix &middot; Homepage Redesign
-                </span>
+                <span className="font-display text-xl md:text-2xl font-extrabold text-white">Netflix</span>
               </div>
             </Link>
           </Reveal>
@@ -107,9 +103,7 @@ export default function SelectedWork() {
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-black/80">
                   <DiscordMark className="h-[18px] w-[18px]" />
                 </span>
-                <span className="font-mono text-[11px] tracking-wide text-white/70">
-                  Discord &middot; Notifications &amp; Search
-                </span>
+                <span className="font-display text-xl md:text-2xl font-extrabold text-white">Discord</span>
               </div>
             </Link>
           </Reveal>
