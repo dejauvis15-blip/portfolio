@@ -73,6 +73,9 @@ body {
 .work-card:hover .work-card-nudge-down {
   transform: translateY(1rem);
 }
+.work-card:hover .work-card-nudge-down-lg {
+  transform: translateY(2.75rem);
+}
 .work-card:hover .work-card-nudge-right {
   transform: translateX(42%);
 }

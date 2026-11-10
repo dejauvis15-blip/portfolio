@@ -7,6 +7,7 @@ import { DiscordMark } from "@/components/icons";
 
 const logoImages: Record<string, string> = {
   netflix: "/images/netflix/logo-icon.jpg",
+  "ole-smoky": "/images/ole-smoky/logo-icon.png",
 };
 
 function ProjectLogo({ slug }: { slug: string }) {

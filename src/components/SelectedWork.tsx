@@ -19,10 +19,10 @@ export default function SelectedWork() {
               href="/work/ole-smoky"
               className="work-card relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
             >
-              <div className="work-card-nudge-down absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out">
-                <div className="relative w-[86%] aspect-[7/3] overflow-hidden rounded-xl border border-white/15 shadow-xl">
+              <div className="work-card-nudge-down-lg absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out">
+                <div className="relative w-[62%] aspect-square overflow-hidden rounded-xl border border-white/15 shadow-xl">
                   <Image
-                    src={oleSmoky.heroImage.src}
+                    src="/images/ole-smoky/card.jpg"
                     alt={oleSmoky.heroImage.alt}
                     fill
                     sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 86vw"
@@ -32,8 +32,14 @@ export default function SelectedWork() {
               </div>
 
               <div className="work-card-caption-top absolute inset-x-0 top-9 flex flex-col items-center gap-2 opacity-0 -translate-y-3 transition-all duration-300">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/15 bg-[#d8c9a6] font-display text-[11px] font-extrabold text-black">
-                  OS
+                <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full">
+                  <Image
+                    src="/images/ole-smoky/logo-icon.png"
+                    alt="Ole Smoky"
+                    width={32}
+                    height={32}
+                    className="h-full w-full object-cover"
+                  />
                 </span>
                 <span className="font-display text-sm font-extrabold text-white">
                   {site.name}
