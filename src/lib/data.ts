@@ -138,8 +138,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "netflix",
+    slug: "ole-smoky",
     index: "01",
+    name: "OLE SMOKY",
+    title: "Ole Smoky Merchandise Experience",
+    discipline: ["UX/UI Design", "E-commerce"],
+    category: "UX Research · E-commerce Design",
+    year: "2026",
+    role: "UX Designer",
+    tools: ["Figma", "FigJam", "Notion"],
+    duration: "Fall 2026",
+    summary:
+      "Ole Smoky's merch lived behind a single menu tab as one flat list of 362 products and 21 category pills. I reorganized it into four clear groups, then expanded the work into navigation, a storytelling landing page, quick checkout, and a full mobile journey, shaped by rounds of feedback with the Ole Smoky team.",
+    heroImage: {
+      src: "/images/ole-smoky/hero.jpg",
+      alt: "Ole Smoky merchandise landing page redesign shown on desktop and mobile",
+    },
+  },
+  {
+    slug: "netflix",
+    index: "02",
     name: "NETFLIX",
     title: "Netflix Homepage Redesign",
     discipline: ["UX/UI Design", "Product Design"],
@@ -156,7 +174,7 @@ export const projects: Project[] = [
   },
   {
     slug: "discord",
-    index: "02",
+    index: "03",
     name: "DISCORD",
     title: "Fixing Discord's Fragmented Notifications & Search",
     discipline: ["UX/UI Design", "Product Design"],

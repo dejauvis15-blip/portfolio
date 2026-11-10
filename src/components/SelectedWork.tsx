@@ -7,14 +7,50 @@ import Reveal from "@/components/Reveal";
 import { DiscordMark } from "@/components/icons";
 
 export default function SelectedWork() {
-  const [netflix, discord] = projects;
+  const [oleSmoky, netflix, discord] = projects;
 
   return (
     <section id="work" className="scroll-mt-20 py-24 md:py-32">
       <div className="mx-auto max-w-[1600px] px-6 md:px-10 lg:px-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-          {/* 01 — Netflix: hero card zooms in slightly, caption fades up from the top */}
+          {/* 01 — Ole Smoky: mockup nudges down, caption fades up from the top */}
           <Reveal delay={0.05}>
+            <Link
+              href="/work/ole-smoky"
+              className="work-card relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
+            >
+              <div className="work-card-nudge-down absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out">
+                <div className="relative w-[86%] aspect-[7/3] overflow-hidden rounded-xl border border-white/15 shadow-xl">
+                  <Image
+                    src={oleSmoky.heroImage.src}
+                    alt={oleSmoky.heroImage.alt}
+                    fill
+                    sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 86vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="work-card-caption-top absolute inset-x-0 top-9 flex flex-col items-center gap-2 opacity-0 -translate-y-3 transition-all duration-300">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/15 bg-[#d8c9a6] font-display text-[11px] font-extrabold text-black">
+                  OS
+                </span>
+                <span className="font-display text-sm font-extrabold text-white">
+                  {site.name}
+                </span>
+                <span className="font-mono text-[11px] tracking-wide text-white/70">
+                  Ole Smoky &middot; Merch Experience
+                </span>
+              </div>
+
+              <span className="work-card-tag absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300">
+                {oleSmoky.index} &middot; {oleSmoky.category}
+              </span>
+            </Link>
+          </Reveal>
+
+          {/* 02 — Netflix: hero card zooms in slightly, caption fades up from the top */}
+          <Reveal delay={0.1}>
             <Link
               href="/work/netflix"
               className="work-card relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
@@ -57,8 +93,8 @@ export default function SelectedWork() {
               </span>
             </Link>
           </Reveal>
-          {/* 02 — Discord: phone shifts aside, caption slides in from the left */}
-          <Reveal delay={0.1}>
+          {/* 03 — Discord: phone shifts aside, caption slides in from the left */}
+          <Reveal delay={0.15}>
             <Link
               href="/work/discord"
               className="work-card relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
