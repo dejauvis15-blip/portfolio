@@ -7,7 +7,7 @@ import Reveal from "@/components/Reveal";
 import { DiscordMark } from "@/components/icons";
 
 export default function SelectedWork() {
-  const [netflix, discord, tesla] = projects;
+  const [netflix, discord] = projects;
 
   return (
     <section id="work" className="scroll-mt-20 py-24 md:py-32">
@@ -89,48 +89,6 @@ export default function SelectedWork() {
 
               <span className="work-card-tag absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300">
                 {discord.index} &middot; {discord.category}
-              </span>
-            </Link>
-          </Reveal>
-
-          {/* 03 — Tesla: image nudges down, caption fades up from the top */}
-          <Reveal delay={0.15}>
-            <Link
-              href="/work/tesla"
-              className="work-card relative block aspect-square overflow-hidden rounded-2xl border border-border bg-bg-elevated"
-            >
-              <div className="work-card-nudge-down absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-out">
-                <div className="relative w-[78%] aspect-[3/2] overflow-hidden rounded-xl border border-white/15 shadow-xl">
-                  <Image
-                    src={tesla.heroImage.src}
-                    alt={tesla.heroImage.alt}
-                    fill
-                    sizes="(min-width: 640px) 40vw, 78vw"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
-              <div className="work-card-caption-top absolute inset-x-0 top-9 flex flex-col items-center gap-2 opacity-0 -translate-y-3 transition-all duration-300">
-                <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg border border-white/15">
-                  <Image
-                    src="/images/tesla/logo-icon.jpg"
-                    alt="Tesla"
-                    width={32}
-                    height={32}
-                    className="h-full w-full object-cover"
-                  />
-                </span>
-                <span className="font-display text-sm font-extrabold text-white">
-                  {site.name}
-                </span>
-                <span className="font-mono text-[11px] tracking-wide text-white/70">
-                  Tesla &middot; Homepage Redesign
-                </span>
-              </div>
-
-              <span className="work-card-tag absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300">
-                {tesla.index} &middot; {tesla.category}
               </span>
             </Link>
           </Reveal>

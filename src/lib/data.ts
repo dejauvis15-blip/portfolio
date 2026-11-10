@@ -171,24 +171,6 @@ export const projects: Project[] = [
       alt: "Discord server notifications screen shown in a lifestyle phone mockup",
     },
   },
-  {
-    slug: "tesla",
-    index: "03",
-    name: "TESLA",
-    title: "Tesla Homepage Redesign",
-    discipline: ["UX/UI Design", "Web Design"],
-    category: "UX/UI Case Study",
-    year: "2026",
-    role: "Solo UX/UI Designer",
-    tools: ["Figma"],
-    duration: "1 week",
-    summary:
-      "A self-directed redesign of Tesla's homepage focused on visual hierarchy, navigation, and call-to-action clarity — reframing the first impression around Tesla's own brand identity.",
-    heroImage: {
-      src: "/images/tesla/hero-band.jpg",
-      alt: "Tesla homepage redesign hero section, with the Model 3 and Model Y and a $299/mo leasing offer",
-    },
-  },
 ];
 
 export function getProject(slug: string) {

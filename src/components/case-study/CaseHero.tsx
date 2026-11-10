@@ -6,7 +6,6 @@ import Reveal from "@/components/Reveal";
 import { DiscordMark } from "@/components/icons";
 
 const logoImages: Record<string, string> = {
-  tesla: "/images/tesla/logo-icon.jpg",
   netflix: "/images/netflix/logo-icon.jpg",
 };
 
