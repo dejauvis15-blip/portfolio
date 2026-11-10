@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { projects, site } from "@/lib/data";
+import { projects } from "@/lib/data";
 import Reveal from "@/components/Reveal";
 import { DiscordMark } from "@/components/icons";
 
 export default function SelectedWork() {
-  const [oleSmoky, netflix, discord] = projects;
+  const [oleSmoky, netflix] = projects;
 
   return (
     <section id="work" className="scroll-mt-20 py-24 md:py-32">
@@ -41,17 +41,10 @@ export default function SelectedWork() {
                     className="h-full w-full object-cover"
                   />
                 </span>
-                <span className="font-display text-sm font-extrabold text-white">
-                  {site.name}
-                </span>
                 <span className="font-mono text-[11px] tracking-wide text-white/70">
                   Ole Smoky &middot; Merch Experience
                 </span>
               </div>
-
-              <span className="work-card-tag absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300">
-                {oleSmoky.index} &middot; {oleSmoky.category}
-              </span>
             </Link>
           </Reveal>
 
@@ -86,17 +79,10 @@ export default function SelectedWork() {
                     className="h-full w-full object-cover"
                   />
                 </span>
-                <span className="font-display text-sm font-extrabold text-white">
-                  {site.name}
-                </span>
                 <span className="font-mono text-[11px] tracking-wide text-white/70">
                   Netflix &middot; Homepage Redesign
                 </span>
               </div>
-
-              <span className="work-card-tag absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300">
-                {netflix.index} &middot; {netflix.category}
-              </span>
             </Link>
           </Reveal>
           {/* 03 — Discord: phone shifts aside, caption slides in from the left */}
@@ -121,17 +107,10 @@ export default function SelectedWork() {
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-black/80">
                   <DiscordMark className="h-[18px] w-[18px]" />
                 </span>
-                <span className="font-display text-sm font-extrabold text-white">
-                  {site.name}
-                </span>
                 <span className="font-mono text-[11px] tracking-wide text-white/70">
                   Discord &middot; Notifications &amp; Search
                 </span>
               </div>
-
-              <span className="work-card-tag absolute inset-x-4 bottom-4 font-mono text-[11px] text-white opacity-0 translate-y-1.5 transition-all delay-75 duration-300">
-                {discord.index} &middot; {discord.category}
-              </span>
             </Link>
           </Reveal>
 

@@ -40,8 +40,14 @@ function ProjectLogo({ slug }: { slug: string }) {
 export default function CaseHero({
   project,
   align = "left",
+  titleClassName = "font-display",
+  showMeta = true,
 }: {
   project: Project;
+  /** Font class for the big title, e.g. a project's own brand typeface. */
+  titleClassName?: string;
+  /** Show the Category / Year / Role / Tools pills under the title. */
+  showMeta?: boolean;
   /** "center" mirrors a fully centered reference layout; default keeps the existing left-aligned look. */
   align?: "left" | "center";
 }) {
@@ -66,7 +72,7 @@ export default function CaseHero({
             className={`flex items-center gap-4 md:gap-5 ${centered ? "justify-center" : ""}`}
           >
             <ProjectLogo slug={project.slug} />
-            <h1 className="font-display uppercase leading-none text-[11vw] sm:text-[8vw] lg:text-6xl xl:text-7xl">
+            <h1 className={`${titleClassName} uppercase leading-none text-[11vw] sm:text-[8vw] lg:text-6xl xl:text-7xl`}>
               {project.name}
             </h1>
           </div>
@@ -80,6 +86,7 @@ export default function CaseHero({
           </p>
         </Reveal>
 
+        {showMeta && (
         <Reveal delay={0.24}>
           <dl className={`mt-14 flex flex-wrap gap-2 ${centered ? "justify-center" : ""}`}>
             <Meta label="Category" value={project.discipline.join(" · ")} />
@@ -88,6 +95,7 @@ export default function CaseHero({
             <Meta label="Tools" value={project.tools.join(", ")} />
           </dl>
         </Reveal>
+        )}
 
         <Reveal delay={0.1} className="mt-16 md:mt-20">
           <div className="relative aspect-[16/9] md:aspect-[21/9] w-full overflow-hidden rounded-xl border border-border bg-bg-elevated">

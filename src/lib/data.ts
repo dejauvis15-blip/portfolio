@@ -143,7 +143,7 @@ export const projects: Project[] = [
     name: "OLE SMOKY",
     title: "Ole Smoky Merchandise Experience",
     discipline: ["UX/UI Design", "E-commerce"],
-    category: "UX Research · E-commerce Design",
+    category: "UX Analyst Intern",
     year: "2026",
     role: "UX Designer",
     tools: ["Figma", "FigJam", "Notion"],
